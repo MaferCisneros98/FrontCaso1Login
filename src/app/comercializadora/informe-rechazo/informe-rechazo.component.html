@@ -1,1 +1,27 @@
-<p>informe-rechazo works!</p>
+<app-menu></app-menu>
+<div class="container">
+  <div class="container" style="text-align: center">
+    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+</div>
+  <h1 align="center">Rechazo de Garantía</h1>
+  <a href="verificacion" class="btn btn-dark"  style="margin-block: 20px; margin-trim: 400px;" type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
+  <form target="_blank" action="https://formsubmit.co/maria.cisneros.est@tecazuay.edu.ec" method="POST">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <label for="name">Cliente: </label>
+          <input type="text" name="name" class="form-control" placeholder="Cliente" required>
+        </div>
+        <div class="col">
+          <label for="name">Placa: </label>
+          <input type="email" name="email" class="form-control" placeholder="Placa" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Motivo de rechazo: </label>
+      <textarea placeholder="" class="form-control" name="message" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fas fa-share-square"></i> Enviar</button>
+  </form>
+</div>

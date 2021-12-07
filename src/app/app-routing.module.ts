@@ -9,6 +9,8 @@ import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './auth/registro.component';
 import { ProdGuardService as guard } from './guards/prod-guard.service';
 import { VerificacionDocumentosComponent } from './comercializadora/verificacion-documentos/verificacion-documentos.component';
+import { InformeRechazoComponent } from './comercializadora/informe-rechazo/informe-rechazo.component';
+import { ComercializadoraAceptacionComponent } from './comercializadora-aceptacion/comercializadora-aceptacion.component';
 
 
 
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'lista', component: ListaProductoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'detalle/:id', component: DetalleProductoComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
   { path: 'verificacion', component: VerificacionDocumentosComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'informe-rechazo', component: InformeRechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'comercializadora-aceptacion', component: ComercializadoraAceptacionComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'editar/:id', component: EditarProductoComponent, canActivate: [guard], data: { expectedRol: ['ROLE_COMERCIALIZADORA'] } },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

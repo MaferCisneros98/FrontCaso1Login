@@ -9,7 +9,13 @@
           <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
         </li>
         <li class="nav-item" *ngIf="isLogged" >
-          <a class="nav-link" routerLink="/verificacion" *ngIf="iscomercializadora" ><i class="far fa-list-alt" ></i> Verificacion de Documentos</a>
+          <a class="nav-link" routerLink="/verificacion" *ngIf="iscomercializadora" ><i class="fas fa-tasks" ></i> Verificacion Documentos</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged" >
+          <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora" ><i class="far fa-list-alt" ></i> Informe Concesionaria</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged" >
+          <a class="nav-link" routerLink="/nuevo" *ngIf="iscomercializadora" ><i class="fas fa-file-contract"></i> Realizar Inspeccion</a>
         </li>
         <li class="nav-item" *ngIf="isLogged" >
           <a class="nav-link" routerLink="/nuevo" *ngIf="isTaller" ><i class="far fa-list-alt" ></i> Taller</a>
@@ -27,3 +33,5 @@
       </ul>
     </div>
   </nav>
+
+  
