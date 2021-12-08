@@ -1,0 +1,36 @@
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<div class="col-12 text-center mb-5 mt-2">
+  <h2 class="text-warning text-uppercase h6">Lista</h2>
+  <h1 class="text-capitalize">&bull; De cotización &bull;</h1>
+  <div class="underline">
+  </div>
+</div>
+<p align="right" class="mt-5" style="margin-right: 50px;">
+  <button class="btn btn-default" class="btn btn-primary" type="button" routerLink="/cotizacion">Nueva Cotización</button>
+</p>
+<div class="container mt-2">
+  <table class="table table-bordered border-primary">
+    <thead>
+      <tr class="table-info">
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Estado de Cotizacion</th>
+        <th scope="col">Acciones</th> 
+        
+      </tr>
+    </thead>
+  <tbody>
+      <tr *ngFor="let item of cotizaciones">
+        <td>{{item.nombre}}</td>
+        <td>{{item.cedula}}</td>
+        <td>{{item.correo}}</td>
+        <td> 
+          <button class="btn btn-primary btn-xs " >Generar Cotización</button> 
+          
+        </td>
+      </tr>
+  </tbody>
+  
+  </table>
+</div>

@@ -1,0 +1,76 @@
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="divToda">
+    <div class="container">
+        <h1 align="center">&bull; Generar venta &bull;</h1>
+    </div>
+
+    <form class="mt-5" action="/my-handling-form-page" method="post">
+        <ul class="mt-5 mu=5">
+            <!--Cedula-->
+            <li>
+                <span class="input-group-btn">
+                    <label>Cedula:</label>
+                    <input class="input2" type="text" formControlName="cedula">
+                    <label>Nombre:</label>
+                    <input class="input2" type="text" formControlName="nombre">
+                    <label>Apellido:</label>
+                    <input class="input2" type="text" formControlName="apellido">
+                </span>
+            </li>
+            <!--Descripcion-->
+            <li>
+                <label for="msg">Descripción:</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </li>
+            <!--Cod vehiculo-->
+            <li>
+                <span class="input-group-btn">
+                    <label for="mail">Cod vehiculo:</label>
+                    <input type="text" id="mail" name="user_mail">
+                    <button class="btn btn-default" class="btn btn-primary" type="button">Buscar codigo</button>
+                </span>
+            </li>
+            <!--Modelo-->
+            <li class="mr-5">
+                <span class="input-group-btn">
+                    <label for="mail" class="mt-5">Modelo:</label>
+                    <select name="estado" id="estado" formControlName="estado" class="form-control">
+                        <option [ngValue]="item" *ngFor="let item of vehiculos">{{item.modelo}}
+                            <label>{{item.marca}}</label>
+                        </option>
+                    </select>
+                </span>
+            </li>
+            <!--Color-->
+            <li>
+                <label for="mail">Color:</label>
+                <input type="text" id="mail" name="user_mail">
+            </li>
+
+            <!--Subtotal-->
+            <li>
+                <label for="mail">Subtotal:</label>
+                <input type="text" id="mail" name="user_mail">
+            </li>
+            <!--iva-->
+            <li>
+                <span class="input-group-btn">
+                    <label for="mail">Iva:</label>
+                    <input type="text" id="mail" name="user_mail">
+                    <button class="btn btn-default" class="btn btn-primary" type="button">Calcular</button>
+                </span>
+            </li>
+            <!--Total-->
+            <li>
+                <label for="mail">Total:</label>
+                <input type="text" id="mail" name="user_mail">
+            </li>
+            <p align="right" class="mt-5">
+                <button class="btn btn-default" class="btn btn-primary" type="button">Generar Factura</button>
+            </p>
+        </ul>
+    </form>
+
+</div>

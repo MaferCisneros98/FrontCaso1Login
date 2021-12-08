@@ -1,0 +1,57 @@
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<header>Cotizacion</header>
+
+<form id="form" [formGroup]="cotizacionForm" (ngSubmit)="guardar()">
+
+    <ul class="mt-5 mu=5">
+        <!--Informacion Cliente-->
+        <li>
+            <span class="input-group-btn">
+                <label>Cedula:</label>
+                <input class="input2" type="text" formControlName="cedula">
+                <label>Nombre:</label>
+                <input class="input2" type="text" formControlName="nombre">
+                <label>Apellido:</label>
+                <input class="input2" type="text" formControlName="apellido">
+            </span>
+        </li>
+        <!--Factura--> 
+        <div class="mt-5">
+            <h4 align="center">Cotizacion</h4>
+        </div>
+        <div class="underline"></div>
+        <!--Fecha-->
+        <li class="mt-5">
+            <label class="mr-5">Correo:</label>
+            <input type="text" formControlName="correo">
+        </li>
+        <!--Cedula-->
+        <li>
+            <label class="mr-5">Fecha de Nacimiento:</label>
+            <input type="date" formControlName="fecha_nacimiento">
+        </li>
+        <!--Nombre-->
+        <li>
+            <label class="mr-5">Modelo:</label>
+            <input type="text" formControlName="modelo">
+        </li>
+        <!--Descripcion-->
+        <li>
+            <label class="mr-5">Marca:</label>
+            <input type="text" formControlName="modelo">
+        </li>
+        <p align="right" class="mt-5">
+            <button class="btn btn-default" class="btn btn-primary" type="submit" >Enviar Cotizacion</button>
+        </p>
+        
+        <!--Garantia-->
+        <div class="underline"></div>
+        
+    </ul>
+    
+
+</form>
+<p align="right" class="mt-5" style="margin-right: 120px;">
+    <button class="btn btn-default" class="btn btn-primary" routerLink="/lista">Regresar a la lista</button>
+</p>

@@ -1,37 +1,69 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Star Motors</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
-        </li>
-        <li class="nav-item" *ngIf="isLogged" >
-          <a class="nav-link" routerLink="/verificacion" *ngIf="iscomercializadora" ><i class="fas fa-tasks" ></i> Verificacion Documentos</a>
-        </li>
-        <li class="nav-item" *ngIf="isLogged" >
-          <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora" ><i class="far fa-list-alt" ></i> Informe Concesionaria</a>
-        </li>
-        <li class="nav-item" *ngIf="isLogged" >
-          <a class="nav-link" routerLink="/nuevo" *ngIf="iscomercializadora" ><i class="fas fa-file-contract"></i> Realizar Inspeccion</a>
-        </li>
-        <li class="nav-item" *ngIf="isLogged" >
-          <a class="nav-link" routerLink="/nuevo" *ngIf="isTaller" ><i class="far fa-list-alt" ></i> Taller</a>
-        </li>
-        <li class="nav-item" *ngIf="isLogged" >
-          <a class="nav-link" routerLink="/detalle" *ngIf="isConcesionaria" ><i class="far fa-list-alt" ></i> Detalle</a>
-        </li>
-        <li class="nav-item" *ngIf="!isLogged">
-            <a class="nav-link"  routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
-          </li>
-          <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
-            <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open" ></i> Cerrar Sesión</a>
-          </li>
-        
-      </ul>
-    </div>
-  </nav>
+  <a class="navbar-brand" href="#">Star Motors</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
+      </li>
 
-  
+      <!--Concesionaria-->
+
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/creacion-cliente" *ngIf="iscomercializadora"><i class="fas fa-user-plus"></i> Crear Cliente</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="fas fa-file-signature"></i> Generar Cotizacion</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/" *ngIf="iscomercializadora"><i class="fas fa-file-contract"></i> Generar Reclamo</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/creacion-cliente" *ngIf="iscomercializadora"><i class="fas fa-tasks"></i> Lista de Cotizaciones</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/listar-garantias" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Listado de Garantias</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/nuevo" *ngIf="iscomercializadora"><i class="far fa-id-card"></i> Listado Clientes</a>
+      </li>
+
+
+      <!--Comercializadora-->
+
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/iniciocomercializadora"><i class="fas fa-home"></i> Comercializadora</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/verificacion" *ngIf="iscomercializadora"><i class="fas fa-tasks"></i> Verificacion Documentos</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Informe Concesionaria</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/nuevo" *ngIf="iscomercializadora"><i class="fas fa-file-signature"></i> Realizar Inspeccion</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/detalle" *ngIf="isConcesionaria"><i class="far fa-list-alt"></i> Detalle</a>
+      </li>
+
+
+      <!--Taller-->
+
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/nuevo" *ngIf="isTaller"><i class="far fa-list-alt"></i> Taller</a>
+      </li>
+
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
+        <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open"></i> Cerrar Sesión</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

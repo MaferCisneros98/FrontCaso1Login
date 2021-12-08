@@ -10,7 +10,7 @@ import { EditarProductoComponent } from './producto/editar-producto.component';
 import { interceptorProvider } from './interceptors/prod-interceptor.service';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,10 +22,19 @@ import { IndexComponent } from './index/index.component';
 
 import { InformeRechazoComponent } from './comercializadora/informe-rechazo/informe-rechazo.component';
 import { VerificacionDocumentosComponent } from './comercializadora/verificacion-documentos/verificacion-documentos.component';
-import { ComercializadoraAceptacionComponent } from './comercializadora-aceptacion/comercializadora-aceptacion.component';
-import { ComercializadoraCorreoComponent } from './comercializadora-correo/comercializadora-correo.component';
 
+import { ClienteComponent } from './cliente/cliente.component';
 
+import { CrearClienteComponent } from './concesionaria/crear-cliente/crear-cliente.component';
+import { ComercializadoraAceptacionComponent } from './comercializadora/comercializadora-aceptacion/comercializadora-aceptacion.component';
+import { ComercializadoraCorreoComponent } from './comercializadora/comercializadora-correo/comercializadora-correo.component';
+import { IniciocomercializadoraComponent } from './comercializadora/iniciocomercializadora/iniciocomercializadora.component';
+import { GenerarReclamoComponent } from './concesionaria/generar-reclamo/generar-reclamo.component';
+import { GenerarCotizacionComponent } from './concesionaria/generar-cotizacion/generar-cotizacion.component';
+import { VentaComponent } from './venta/venta.component';
+import { ListaCotizacionesComponent } from './concesionaria/lista-cotizaciones/lista-cotizaciones.component';
+import { ListarClientesComponent } from './concesionaria/listar-clientes/listar-clientes.component';
+import { ListadoGarantiasComponent } from './concesionaria/listado-grarantias/listado-garantias.component';
 
 
 @NgModule({
@@ -42,7 +51,18 @@ import { ComercializadoraCorreoComponent } from './comercializadora-correo/comer
     VerificacionDocumentosComponent,
     InformeRechazoComponent,
     ComercializadoraAceptacionComponent,
-    ComercializadoraCorreoComponent
+    ComercializadoraCorreoComponent,
+    ClienteComponent,
+    IniciocomercializadoraComponent,
+    CrearClienteComponent,
+    GenerarReclamoComponent,
+    CrearClienteComponent,
+    GenerarCotizacionComponent,
+    VentaComponent,
+    ListaCotizacionesComponent,
+    ListarClientesComponent,
+    ListadoGarantiasComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -50,6 +70,7 @@ import { ComercializadoraCorreoComponent } from './comercializadora-correo/comer
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [interceptorProvider],
