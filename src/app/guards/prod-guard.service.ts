@@ -31,7 +31,7 @@ export class ProdGuardService implements CanActivate {
   }*/
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const expectedRol = route.data.expectedRol;
-    this.realRol = this.tokenService.comercializadora() ? 'comercializadora' : 'taller';
+    this.realRol = this.tokenService.comercializadora() ? 'comercializadora' : 'concesionaria';
     if (!this.tokenService.isLogged() || expectedRol.indexOf(this.realRol) < 0) {
       this.router.navigate(['/']);
       return false;

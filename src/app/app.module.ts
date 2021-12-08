@@ -23,18 +23,17 @@ import { IndexComponent } from './index/index.component';
 import { InformeRechazoComponent } from './comercializadora/informe-rechazo/informe-rechazo.component';
 import { VerificacionDocumentosComponent } from './comercializadora/verificacion-documentos/verificacion-documentos.component';
 
-import { ClienteComponent } from './cliente/cliente.component';
-
-import { CrearClienteComponent } from './concesionaria/crear-cliente/crear-cliente.component';
-import { ComercializadoraAceptacionComponent } from './comercializadora/comercializadora-aceptacion/comercializadora-aceptacion.component';
-import { ComercializadoraCorreoComponent } from './comercializadora/comercializadora-correo/comercializadora-correo.component';
-import { IniciocomercializadoraComponent } from './comercializadora/iniciocomercializadora/iniciocomercializadora.component';
+import { VentaComponent } from './concesionaria/venta/venta.component';
 import { GenerarReclamoComponent } from './concesionaria/generar-reclamo/generar-reclamo.component';
 import { GenerarCotizacionComponent } from './concesionaria/generar-cotizacion/generar-cotizacion.component';
-import { VentaComponent } from './venta/venta.component';
 import { ListaCotizacionesComponent } from './concesionaria/lista-cotizaciones/lista-cotizaciones.component';
 import { ListarClientesComponent } from './concesionaria/listar-clientes/listar-clientes.component';
-import { ListadoGarantiasComponent } from './concesionaria/listado-grarantias/listado-garantias.component';
+import { ListadoGarantiasComponent } from './concesionaria/listado-garantias/listado-garantias.component';
+import { IniciocomercializadoraComponent } from './comercializadora/iniciocomercializadora/iniciocomercializadora.component';
+import { CrearClienteComponent } from './concesionaria/crear-cliente/crear-cliente.component';
+
+
+
 
 
 @NgModule({
@@ -50,19 +49,14 @@ import { ListadoGarantiasComponent } from './concesionaria/listado-grarantias/li
     IndexComponent,
     VerificacionDocumentosComponent,
     InformeRechazoComponent,
-    ComercializadoraAceptacionComponent,
-    ComercializadoraCorreoComponent,
-    ClienteComponent,
-    IniciocomercializadoraComponent,
-    CrearClienteComponent,
     GenerarReclamoComponent,
-    CrearClienteComponent,
     GenerarCotizacionComponent,
-    VentaComponent,
     ListaCotizacionesComponent,
     ListarClientesComponent,
-    ListadoGarantiasComponent
-    
+    ListadoGarantiasComponent,
+    IniciocomercializadoraComponent,
+    CrearClienteComponent,
+    VentaComponent
   ],
   imports: [
     BrowserModule,
@@ -70,8 +64,8 @@ import { ListadoGarantiasComponent } from './concesionaria/listado-grarantias/li
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
-    FormsModule
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

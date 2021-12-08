@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { VehiculosService } from '../services/vehiculos/vehiculos.service';
+import { VehiculosService } from 'src/app/services/vehiculos/vehiculos.service';
 
 @Component({
   selector: 'app-venta',

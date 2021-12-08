@@ -6,6 +6,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
+     
       <li class="nav-item">
         <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
       </li>
@@ -13,43 +14,50 @@
       <!--Concesionaria-->
 
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/creacion-cliente" *ngIf="iscomercializadora"><i class="fas fa-user-plus"></i> Crear Cliente</a>
+        <a class="nav-link" routerLink="/creacion-cliente" *ngIf="isConcesionaria"><i class="fas fa-user-plus"></i>
+          Crear Cliente</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="fas fa-file-signature"></i> Generar Cotizacion</a>
+        <a class="nav-link" routerLink="/cotizacion" *ngIf="isConcesionaria"><i class="fas fa-file-signature"></i> Generar Cotizacion</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/" *ngIf="iscomercializadora"><i class="fas fa-file-contract"></i> Generar Reclamo</a>
+        <a class="nav-link" routerLink="/venta" *ngIf="isConcesionaria"><i class="far fa-list-alt"></i> Venta</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/creacion-cliente" *ngIf="iscomercializadora"><i class="fas fa-tasks"></i> Lista de Cotizaciones</a>
+        <a class="nav-link" routerLink="/reclamos" *ngIf="isConcesionaria"><i class="fas fa-file-contract"></i> Generar
+          Reclamo</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/listar-garantias" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Listado de Garantias</a>
+        <a class="nav-link" routerLink="/lista" *ngIf="isConcesionaria"><i class="fas fa-tasks"></i> Lista
+          de Cotizaciones</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/nuevo" *ngIf="iscomercializadora"><i class="far fa-id-card"></i> Listado Clientes</a>
+        <a class="nav-link" routerLink="/listar-garantias" *ngIf="isConcesionaria"><i class="far fa-list-alt"></i>
+          Listado de Garantias</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/listar-clientes" *ngIf="isConcesionaria"><i class="far fa-id-card"></i> Listado
+          Clientes</a>
       </li>
 
 
       <!--Comercializadora-->
 
-      <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/iniciocomercializadora"><i class="fas fa-home"></i> Comercializadora</a>
+      <li class="nav-item"  *ngIf="isLogged">
+        <a class="nav-link" routerLink="/inicio-comercializadora" *ngIf="iscomercializadora"><i class="fas fa-home"></i> Comercializadora</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/verificacion" *ngIf="iscomercializadora"><i class="fas fa-tasks"></i> Verificacion Documentos</a>
+        <a class="nav-link" routerLink="/verificacion" *ngIf="iscomercializadora"><i class="fas fa-tasks"></i>
+          Verificacion Documentos</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Informe Concesionaria</a>
+        <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Informe
+          Concesionaria</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/nuevo" *ngIf="iscomercializadora"><i class="fas fa-file-signature"></i> Realizar Inspeccion</a>
+        <a class="nav-link" routerLink="/nuevo" *ngIf="iscomercializadora"><i class="fas fa-file-signature"></i>
+          Realizar Inspeccion</a>
       </li>
-      <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/detalle" *ngIf="isConcesionaria"><i class="far fa-list-alt"></i> Detalle</a>
-      </li>
-
 
       <!--Taller-->
 
