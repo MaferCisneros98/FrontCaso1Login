@@ -6,10 +6,6 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-     
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
-      </li>
 
       <!--Concesionaria-->
 
@@ -44,11 +40,7 @@
       <!--Comercializadora-->
 
       <li class="nav-item"  *ngIf="isLogged">
-        <a class="nav-link" routerLink="/inicio-comercializadora" *ngIf="iscomercializadora"><i class="fas fa-home"></i> Comercializadora</a>
-      </li>
-      <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/verificacion" *ngIf="iscomercializadora"><i class="fas fa-tasks"></i>
-          Verificacion Documentos</a>
+        <a class="nav-link" routerLink="/inicio-comercializadora" *ngIf="iscomercializadora"><i class="fas fa-home"></i>  Revisión Documentos</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
         <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Informe
