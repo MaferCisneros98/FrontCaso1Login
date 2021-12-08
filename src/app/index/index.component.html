@@ -3,6 +3,19 @@
     <div class="container" style="text-align: center">
         <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
     </div>
-    <div *ngIf="isLogged; else loggedOut"><h2>Bienvenido {{nombreUsuario}}</h2></div>
-<ng-template #loggedOut><h2>Somos una empresa especializada en la comercialización de coches nuevos, usados, repuestos, accesorios, mantenimiento preventivo y correctivo y trabajos de carrocería y pintura. Contamos con personal altamente cualificado, tecnología punta e infraestructura que garanticen siempre un servicio integral de máxima calidad.</h2></ng-template>
+    <div *ngIf="isLogged; else loggedOut">
+        <h2>Bienvenido {{nombreUsuario}}</h2>
+    </div>
+    <ng-template #loggedOut>
+        <div class="card border-warning mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h2 class="card-text">Somos una empresa especializada en la comercialización de coches nuevos,
+                        usados, repuestos, accesorios, mantenimiento preventivo y correctivo y trabajos de carrocería y
+                        pintura. Contamos con personal altamente cualificado, tecnología punta e infraestructura que
+                        garanticen siempre un servicio integral de máxima calidad.</h2>
+                </div>
+            </div>
+        </div>
+    </ng-template>
 </div>
