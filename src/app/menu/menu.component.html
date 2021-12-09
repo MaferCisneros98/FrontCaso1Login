@@ -7,6 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
 
+
       <!--Concesionaria-->
 
       <li class="nav-item" *ngIf="isLogged">
@@ -14,7 +15,8 @@
           Crear Cliente</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/cotizacion" *ngIf="isConcesionaria"><i class="fas fa-file-signature"></i> Generar Cotizacion</a>
+        <a class="nav-link" routerLink="/cotizacion" *ngIf="isConcesionaria"><i class="fas fa-file-signature"></i>
+          Generar Cotizacion</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
         <a class="nav-link" routerLink="/venta" *ngIf="isConcesionaria"><i class="far fa-list-alt"></i> Venta</a>
@@ -39,8 +41,9 @@
 
       <!--Comercializadora-->
 
-      <li class="nav-item"  *ngIf="isLogged">
-        <a class="nav-link" routerLink="/inicio-comercializadora" *ngIf="iscomercializadora"><i class="fas fa-home"></i>  Revisión Documentos</a>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/inicio-comercializadora" *ngIf="iscomercializadora"><i class="fas fa-home"></i>
+          Revisión Documentos</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
         <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Informe
@@ -54,9 +57,12 @@
       <!--Taller-->
 
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/nuevo" *ngIf="isTaller"><i class="far fa-list-alt"></i> Taller</a>
+        <a class="nav-link" routerLink="/informe" *ngIf="isTaller"><i class="far fa-list-alt"></i> Taller</a>
       </li>
-
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/solicitud" *ngIf="isTaller"><i class="far fa-list-alt"></i> Solicitud </a>
+      </li>
+      <!--Iniciar sesion-->
       <li class="nav-item" *ngIf="!isLogged">
         <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
       </li>
