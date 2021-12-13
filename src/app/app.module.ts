@@ -32,8 +32,13 @@ import { ListadoGarantiasComponent } from './concesionaria/listado-garantias/lis
 import { IniciocomercializadoraComponent } from './comercializadora/iniciocomercializadora/iniciocomercializadora.component';
 import { CrearClienteComponent } from './concesionaria/crear-cliente/crear-cliente.component';
 import { ComercializadoraAceptacionComponent } from './comercializadora/comercializadora-aceptacion/comercializadora-aceptacion.component';
+<<<<<<< HEAD
 import { InformecomerComponent } from './comercializadora/informecomer/informecomer.component';
 import { RechazoComponent } from './comercializadora/rechazo/rechazo.component';
+=======
+import { InformeTallerComponent } from './taller/informe-taller/informe-taller.component';
+import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-taller.component';
+>>>>>>> e40ce30dd696a4b1636549e980e42f69353ebf19
 
 
 
@@ -61,10 +66,15 @@ import { RechazoComponent } from './comercializadora/rechazo/rechazo.component';
     CrearClienteComponent,
     VentaComponent,
     ComercializadoraAceptacionComponent,
+<<<<<<< HEAD
     InformecomerComponent,
     RechazoComponent
     
     
+=======
+    InformeTallerComponent,
+    SolicitudTallerComponent
+>>>>>>> e40ce30dd696a4b1636549e980e42f69353ebf19
   ],
   imports: [
     BrowserModule,
