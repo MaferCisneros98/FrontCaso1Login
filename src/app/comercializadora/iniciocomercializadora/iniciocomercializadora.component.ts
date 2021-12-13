@@ -21,12 +21,8 @@ export class IniciocomercializadoraComponent implements OnInit {
 
   ngOnInit() {
     this.cargarProductos();
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_COMERCIALIZADORA') {
-        this.isComercializadora = true;
-      }
-    });
+    this.isComercializadora = this.tokenService.comercializadora();
+    
   }
   cargarProductos(): void {
     this.productoService.lista().subscribe(

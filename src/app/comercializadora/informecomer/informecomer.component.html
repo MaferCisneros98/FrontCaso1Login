@@ -1,0 +1,53 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="row">
+    <div id="htmlData">
+          <div class="container" style="text-align: center">
+    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+  </div>
+      <h1 align="center">Informe Comercializadora</h1>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col">
+            <label for="name">Cliente: </label>
+            <input type="text" name="name" class="form-control" placeholder="Cliente" required>
+          </div>
+          <div class="col">
+            <label for="name">Placa: </label>
+            <input type="email" name="email" class="form-control" placeholder="Placa" required>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card " style="width: 50rem;">
+        <div class="card-body">
+          <div class="container ">
+            <div class="row">
+              <label class="col-2 col-sm-3" for="name">Costo reparación: </label>
+              <input class="col-2 col-sm-3" type="number" name="num1" [(ngModel)]="num1" placeholder="Taller"
+                required>
+              <!-- Force next columns to break to new line -->
+              <div class="w-100"></div>
+              <label class="col-2 col-sm-3" for="name">Costo: </label>
+              <input class="col-2 col-sm-3" type="text" name="num2" [(ngModel)]="num2" placeholder="%" required>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <br>
+       <label for="name">Garantía Total: {{num3}}</label>
+       <br><br>
+      <label for="name">TOTAL A CANCELAR: {{num4}}</label>
+      <br><br>
+      
+    </div>
+  </div>
+</div>
+<div>
+    <button class="btn btn-warning  ml-4" (click)="porcentaje()"> Porcentaje</button>
+    <button class="btn btn-dark  ml-4"(click)="total()"><i class="fas fa-equals"></i> Total</button>
+    <br><br>
+  <button class="btn btn-danger  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
+</div>

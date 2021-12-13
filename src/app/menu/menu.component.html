@@ -40,10 +40,13 @@
       <!--Comercializadora-->
 
       <li class="nav-item"  *ngIf="isLogged">
-        <a class="nav-link" routerLink="/inicio-comercializadora" *ngIf="iscomercializadora"><i class="fas fa-home"></i>  Revisión Documentos</a>
+        <a class="nav-link" routerLink="/inicio-comercializadora" *ngIf="iscomercializadora"><i class="fas fa-tasks"></i>  Revisión Documentos</a>
+      </li>
+      <li class="nav-item"  *ngIf="isLogged">
+        <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="fas fa-user-times"></i>  Rechazo Garantía</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/rechazo" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Informe
+        <a class="nav-link" routerLink="/informecomer" *ngIf="iscomercializadora"><i class="far fa-list-alt"></i> Informe
           Concesionaria</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">

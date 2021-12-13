@@ -3,32 +3,26 @@
     <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
 </div>
 <div class="container">
-  <table class="table table-Light table-striped">
+  <table class="table table-bordered border-secondary">
     <thead>
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Ver</th>
-        <th scope="col" *ngIf="isComercializadora">Editar</th>
-        <th scope="col" *ngIf="isComercializadora">Borrar</th>
+      <tr class="table-secondary">
+        <th style="text-align: center" scope="col">Id</th>
+        <th style="text-align: center" scope="col">Nombre Cliente</th>
+        <th style="text-align: center" scope="col">Placa</th>
+        <th style="text-align: center" scope="col">Ver</th>
       </tr>
     </thead>
 
     <tbody>
       <tr *ngFor="let producto of productos">
-        <td>{{producto.id}}</td>
-        <td>{{producto.nombre}}</td>
-        <td>{{producto.precio}}€</td>
-        <a href="verificacion" class="btn btn-success"
-        style="" type="button"><i class="fas fa-eye"></i> Ver</a>
+        <td align="center">{{producto.id}}</td>
+        <td align="center">{{producto.nombre}}</td>
+        <td align="center">{{producto.precio}}$</td>
+        
+        <td style="text-align: center"><button  class="btn btn-success" routerLink="/verificacion/{{producto.id}}"><i class="fas fa-eye"></i> Ver</button></td>
+        
         
       </tr>
     </tbody>
   </table>
-  <div class="mt-3" *ngIf="isComercializadora">
-    <button class="btn btn-outline-success btn-lg" routerLink="/nuevo">
-      <i class="fas fa-plus-circle"></i> Nuevo Producto</button>
-  </div>
-
 </div>

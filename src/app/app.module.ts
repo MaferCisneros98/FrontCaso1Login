@@ -32,6 +32,8 @@ import { ListadoGarantiasComponent } from './concesionaria/listado-garantias/lis
 import { IniciocomercializadoraComponent } from './comercializadora/iniciocomercializadora/iniciocomercializadora.component';
 import { CrearClienteComponent } from './concesionaria/crear-cliente/crear-cliente.component';
 import { ComercializadoraAceptacionComponent } from './comercializadora/comercializadora-aceptacion/comercializadora-aceptacion.component';
+import { InformecomerComponent } from './comercializadora/informecomer/informecomer.component';
+import { RechazoComponent } from './comercializadora/rechazo/rechazo.component';
 
 
 
@@ -58,7 +60,11 @@ import { ComercializadoraAceptacionComponent } from './comercializadora/comercia
     IniciocomercializadoraComponent,
     CrearClienteComponent,
     VentaComponent,
-    ComercializadoraAceptacionComponent
+    ComercializadoraAceptacionComponent,
+    InformecomerComponent,
+    RechazoComponent
+    
+    
   ],
   imports: [
     BrowserModule,
