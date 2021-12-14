@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/service/producto.service';
+//correo
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 @Component({
   selector: 'app-comercializadora-aceptacion',

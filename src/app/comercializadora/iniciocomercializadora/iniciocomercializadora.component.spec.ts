@@ -1,10 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IniciocomercializadoraComponent } from './iniciocomercializadora.component';
 
-
-
-
-
 describe('VerificacionDocumentosComponent', () => {
   let component: IniciocomercializadoraComponent;
   let fixture: ComponentFixture<IniciocomercializadoraComponent>;
