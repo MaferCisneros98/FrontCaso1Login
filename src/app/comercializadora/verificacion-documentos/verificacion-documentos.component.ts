@@ -19,8 +19,10 @@ export class VerificacionDocumentosComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
-  ) { }
+    ) { }
 
+
+  
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params.id;
     this.productoService.detail(id).subscribe(
@@ -35,7 +37,7 @@ export class VerificacionDocumentosComponent implements OnInit {
       }
     );
   }
-
+  
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params.id;
     this.productoService.update(id, this.producto).subscribe(
