@@ -6,36 +6,42 @@
   <h1 align="center">Aceptacion de Garantía</h1>
   <a href="verificacion" class="btn btn-dark"  style="margin-block: 20px; margin-trim: 400px;" type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
   <form target="_blank" action="https://formspree.io/f/meqnqqqq" method="POST">
+    <form class="contact-form" (submit)="sendEmail($event)">
     <div class="form-group">
-      <div class="form-row">
+      
         <div class="col">
-            <label for="name">Cliente: </label>
-          <input type="text" name="name" class="form-control" placeholder="Cliente" required>
-        </div>
-        <div class="col">
-            <label for="name">Placa: </label>
-          <input type="email" name="email" class="form-control" placeholder="Placa" required>
-        </div>
-        <div class="col">
-            <label for="name">Fecha cita: </label>
-            <input type="email" name="email" class="form-control" placeholder="MM/DD/AA" required>
-          </div>
-          <div class="col">
-            <label for="name" >Hora: </label>
-            <input type="email" name="email" class="form-control" placeholder="" required>
-          </div>
+          <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="form-group">
+                <label for="nombre">Nombre Cliente</label>
+                <input type="text" class="form-control" id="nombre" name="user_name" [(ngModel)]="producto.nombre"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Placa Cliente</label>
+                <input type="text" class="form-control" id="precio" name="user_email" [(ngModel)]="producto.precio"
+                    required>
+            </div>
+        </form>
       </div>
     </div>
     <div class="form-group">
-      <textarea class="form-control" name="message" rows="8" placeholder="Por favor leer y seguir las siguientes recomendaciones,puesto que en esta situación es necesaria la colaboración de las y los clientes:
- NO acudir al taller si se tiene fiebre o síntomas respiratorios.
- Llegar media hora antes de la hora señalada.
- Respetar las indicaciones establecidas en el local.
- Respetar las distancias de seguridad, evitando crear aglomeraciones.
+      <textarea class="form-control" name="message" rows="8" placeholder= required>
+        Fecha:
+        Hora:
 
-    Muchas gracias.
-    Star Motors" required></textarea>
+        Por favor leer y seguir las siguientes recomendaciones,puesto que en esta situación es necesaria la colaboración de las y los clientes:
+         NO acudir al taller si se tiene fiebre o síntomas respiratorios.
+         Llegar media hora antes de la hora señalada.
+         Respetar las indicaciones establecidas en el local.
+         Respetar las distancias de seguridad, evitando crear aglomeraciones.
+        
+            Muchas gracias.
+            Star Motors</textarea>
     </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fas fa-share-square"></i> Enviar</button>
+    <input type="submit" value="Send">
+    <button icon="pi pi-check" (click)="displayBasic=false" label="Ok" styleClass="p-button-text">Send</button>
+    
+    
   </form>
+</form>
 </div>

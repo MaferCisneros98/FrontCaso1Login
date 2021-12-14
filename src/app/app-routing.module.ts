@@ -20,13 +20,13 @@ import { TallerGuardGuard as guards } from './guards/taller-guard.guard';
 import { IniciocomercializadoraComponent } from './comercializadora/iniciocomercializadora/iniciocomercializadora.component';
 import { InformeRechazoComponent } from './comercializadora/informe-rechazo/informe-rechazo.component';
 import { ComercializadoraAceptacionComponent } from './comercializadora/comercializadora-aceptacion/comercializadora-aceptacion.component';
-<<<<<<< HEAD
+
 import { InformecomerComponent } from './comercializadora/informecomer/informecomer.component';
 import { RechazoComponent } from './comercializadora/rechazo/rechazo.component';
-=======
+
 import { InformeTallerComponent } from './taller/informe-taller/informe-taller.component';
 import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-taller.component';
->>>>>>> e40ce30dd696a4b1636549e980e42f69353ebf19
+
 
 
 

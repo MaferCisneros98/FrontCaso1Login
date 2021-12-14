@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class NuevoProductoComponent implements OnInit {
 
   nombre = '';
-  precio: number = null;
+  precio: string = null;
 
   constructor(
     private productoService: ProductoService,
