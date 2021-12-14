@@ -2,10 +2,11 @@
 <div class="container">
   <div class="container" style="text-align: center">
     <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
-</div>
+  </div>
   <h1 align="center">Rechazo de Garantía</h1>
-  <a href="verificacion" class="btn btn-warning"  style="margin-block: 20px; margin-trim: 400px;" type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
-  <form target="_blank" action="https://formsubmit.co/maria.cisneros.est@tecazuay.edu.ec" method="POST">
+  <a href="verificacion" class="btn btn-warning" style="margin-block: 20px; margin-trim: 400px;" type="button"><i
+      class="fas fa-chevron-circle-left"></i> Regresar</a>
+  <form class="contact-form" (submit)="sendEmail($event)">
     <div class="form-group">
       <div class="form-row">
         <div class="col">
@@ -24,5 +25,5 @@
     </div>
     <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fas fa-share-square"></i> Enviar</button>
   </form>
-  
+
 </div>
