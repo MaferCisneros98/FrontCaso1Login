@@ -4,26 +4,35 @@
     <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
   </div>
   <h1 align="center">Rechazo de Garantía</h1>
-  <a href="verificacion" class="btn btn-warning" style="margin-block: 20px; margin-trim: 400px;" type="button"><i
-      class="fas fa-chevron-circle-left"></i> Regresar</a>
-  <form class="contact-form" (submit)="sendEmail($event)">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col">
-          <label for="name">Cliente: </label>
-          <input type="text" name="name" class="form-control" placeholder="Cliente" required>
-        </div>
-        <div class="col">
-          <label for="name">Placa: </label>
-          <input type="email" name="email" class="form-control" placeholder="Placa" required>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="name">Motivo de rechazo: </label>
-      <textarea placeholder="" class="form-control" name="message" rows="4" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fas fa-share-square"></i> Enviar</button>
-  </form>
+  <div class="container" *ngIf="producto">
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+      <form class="contact-form" (submit)="sendEmail($event)">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col">
+              <label for="nombre">Nombre Cliente</label>
+              <input type="text" class="form-control" id="nombre" name="user_name" [(ngModel)]="producto.nombre"
+                required>
+            </div>
 
+            <div class="col">
+              <label for="precio">Placa Cliente</label>
+              <input type="text" class="form-control" id="precio" name="user_email" [(ngModel)]="producto.precio"
+                required>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Motivo de rechazo:
+            {{producto.nombre}}
+            {{producto.precio}}
+          </label>
+          <textarea placeholder="" class="form-control" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fas fa-share-square"></i> Enviar</button>
+      </form>
+    </form>
+  </div>
 </div>
