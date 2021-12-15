@@ -2,30 +2,35 @@
 <div class="container">
   <div class="container" style="text-align: center">
     <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
-</div>
+  </div>
   <h1 align="center">Cancelación de Garantía</h1>
-  <a href="verificacion" class="btn btn-dark"  style="margin-block: 20px; margin-trim: 400px;" type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
-  
-    <form class="contact-form" (submit)="sendEmail($event)">
+  <a href="verificacion" class="btn btn-dark" style="margin-block: 20px; margin-trim: 400px;" type="button"><i
+      class="fas fa-chevron-circle-left"></i> Regresar</a>
+
+  <form class="contact-form" (submit)="sendEmail($event)">
     <div class="form-group">
       <div class="form-row">
         <div class="col">
-            <label for="name">Cliente: </label>
+          <label for="name">Cliente: </label>
           <input type="text" name="user_name" class="form-control" placeholder="Cliente" required>
         </div>
         <div class="col">
-            <label for="name">Placa: </label>
+          <label for="name">Placa: </label>
           <input type="email" name="user_email" class="form-control" placeholder="Placa" required>
+        </div>
+        <div class="col">
+          <label>Correo Cliente</label>
+          <input type="text" class="form-control" name="user_email" required>
         </div>
       </div>
     </div>
     <div class="form-group">
-      <textarea class="form-control" name="message" rows="4" placeholder= required>
-        Motivo por el que se le niega la garantía:
+      <textarea class="form-control" name="message" rows="4" placeholder=required>
+Motivo por el que se le niega la garantía:
         
       </textarea>
     </div>
-    <input type="submit" value="Send">
-    <button icon="pi pi-check" (click)="displayBasic=false" label="Ok" styleClass="p-button-text">Send</button>
-</form>
+    <input type="submit" value="Enviar">
+
+  </form>
 </div>
