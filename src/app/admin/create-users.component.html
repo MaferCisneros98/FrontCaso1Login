@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="container" style="text-align: center">
+    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+</div>
+<h3>Registro</h3>
+
+<form class="card m-3">
+    <input  [formControl]="nombre" class="p-2 mb-2" placeholder="nombre"/>
+    <input  [formControl]="usuario" class="p-2 mb-2" placeholder="usuario"/>
+    <input  [formControl]="mail" class="p-2 mb-2" placeholder="mail"/>
+    <input type="password" [formControl]="pass" class="p-2 mb-2" placeholder="clave"/>
+   <label>Rol</label>
+    <select [formControl]="rol" class="p-2 mb-2">Rol
+        <option value="ROL_CLIENTE">Cliente</option>
+        <option value="ROLE_TALLER">Taller</option>
+        <option value="ROLE_CONCESONARIA">Concecionaria</option>
+        <option value="ROLE_COMERCIALIZADORA">Comercializadora</option>
+    </select>
+
+    <button (click)="registrar()" class="btn btn-success">
+          Aceptar</button>
+</form>
+
+  <h1>Lista de Usuarios</h1>
+    <div class="table-responsive">
+      <table class=" table tablesorter" id="">
+        <thead class=" text-primary">
+          <tr>
+            <th>Nombre</th>
+            <th>Usuario</th>
+            <th>Mail</th>
+            <th>Rol</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let user of users'>
+            <td>{{user.nombre}}</td>
+            <td>{{user.nombreUsuario}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.roles[0]['rolNombre']}}</td>
+            <tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>
