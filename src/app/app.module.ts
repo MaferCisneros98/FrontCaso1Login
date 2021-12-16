@@ -39,6 +39,13 @@ import { RechazoComponent } from './comercializadora/rechazo/rechazo.component';
 import { InformeTallerComponent } from './taller/informe-taller/informe-taller.component';
 import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-taller.component';
 import { CreateUsersComponent } from './admin/create-users.component';
+import { OrdenReparacionComponent } from './comercializadora/orden-reparacion/orden-reparacion.component';
+import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
+import { ReparacionesEjecutarComponent } from './comercializadora/reparaciones-ejecutar/reparaciones-ejecutar.component';
+import { ListaRepuestosComponent } from './comercializadora/lista-repuestos/lista-repuestos.component';
+import { CrearRepuestosComponent } from './comercializadora/crear-repuestos/crear-repuestos.component';
+import { RepuestosComponent } from './comercializadora/repuestos/repuestos.component';
+import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.component';
 
 
 @NgModule({
@@ -67,7 +74,14 @@ import { CreateUsersComponent } from './admin/create-users.component';
     InformecomerComponent,
     RechazoComponent,
     InformeTallerComponent,
-    SolicitudTallerComponent
+    SolicitudTallerComponent,
+    OrdenReparacionComponent,
+    DespachoRepuestosComponent,
+    ReparacionesEjecutarComponent,
+    ListaRepuestosComponent,
+    CrearRepuestosComponent,
+    RepuestosComponent,
+    EditarRepuestoComponent
 
   ],
   imports: [
