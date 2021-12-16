@@ -38,6 +38,7 @@ import { RechazoComponent } from './comercializadora/rechazo/rechazo.component';
 
 import { InformeTallerComponent } from './taller/informe-taller/informe-taller.component';
 import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-taller.component';
+import { CreateUsersComponent } from './admin/create-users.component';
 
 
 @NgModule({
@@ -62,7 +63,7 @@ import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-ta
     CrearClienteComponent,
     VentaComponent,
     ComercializadoraAceptacionComponent,
-
+    CreateUsersComponent,
     InformecomerComponent,
     RechazoComponent,
     InformeTallerComponent,

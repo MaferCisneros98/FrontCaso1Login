@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { NuevoUsuario } from 'src/app/models/nuevo-usuario';
 
 import { ToastrService } from 'ngx-toastr';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { TokenService } from '../service/token.service';
 import { AuthService } from '../service/auth.service';
 import { usuarioService } from '../service/user.service';
@@ -27,32 +27,33 @@ export class CreateUsersComponent implements OnInit {
   email: string;
   password: string;
   errMsj: string;
-  roles:string[];
+  roles: string[];
   isLogged = false;
 
-  constructor(private serv:usuarioService,
+  constructor(private serv: usuarioService,
     private tokenService: TokenService,
     private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
-    ) { }
+  ) { }
 
   users: NuevoUsuario[] = [];
   ngOnInit() {
     this.getUsers();
-   }
+  }
 
-  getUsers(){
-    this.serv.lista().subscribe( response => {
-      return this.users =response})
+  getUsers() {
+    this.serv.lista().subscribe(response => {
+      return this.users = response
+    })
   }
   registrar(): void {
     let nom = this.nombre.value;
     let us = this.usuario.value;
     let ma = this.mail.value;
     let pass = this.pass.value;
-    let roles:string[] = [this.rol.value];
-    this.nuevoUsuario = new NuevoUsuario(nom, us, ma, pass, roles );
+    let roles: string[] = [this.rol.value];
+    this.nuevoUsuario = new NuevoUsuario(nom, us, ma, pass, roles);
     console.log(this.nuevoUsuario);
     this.authService.nuevo(this.nuevoUsuario).subscribe(
       data => {
@@ -66,18 +67,18 @@ export class CreateUsersComponent implements OnInit {
       err => {
         this.errMsj = err.error.mensaje;
         this.toastr.error(this.errMsj, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
+          timeOut: 3000, positionClass: 'toast-top-center',
         });
-         console.log(err.error.message);
+        console.log(err.error.message);
       }
     )
   }
-  limpiar(){
+  limpiar() {
     this.nombre.setValue('');
-    this.usuario.setValue(''); 
-  this.pass.setValue(''); 
-  this.mail.setValue(''); 
-  this.rol.setValue(''); 
+    this.usuario.setValue('');
+    this.pass.setValue('');
+    this.mail.setValue('');
+    this.rol.setValue('');
   }
 
 

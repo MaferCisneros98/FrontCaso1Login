@@ -26,6 +26,7 @@ import { RechazoComponent } from './comercializadora/rechazo/rechazo.component';
 import { InformeTallerComponent } from './taller/informe-taller/informe-taller.component';
 import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-taller.component';
 import { VerificacionDocumentosComponent } from './comercializadora/verificacion-documentos/verificacion-documentos.component';
+import { CreateUsersComponent } from './admin/create-users.component';
 
 
 
@@ -33,6 +34,7 @@ import { VerificacionDocumentosComponent } from './comercializadora/verificacion
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
+  { path : 'users', component: CreateUsersComponent},
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
 
