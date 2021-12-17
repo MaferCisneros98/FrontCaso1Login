@@ -11,6 +11,7 @@ export class FilterPipe implements PipeTransform {
     for (const item of value) {
       if (item.materiales.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultPosts.push(item);
+
       };
     };
     return resultPosts;
