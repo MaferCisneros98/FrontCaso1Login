@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InformetallerService {
-  private API_SERVER = "http://localhost:8080/informe/";
+  private API_SERVER = "http://localhost:8090/informe/";
   constructor(private httpClient : HttpClient
     ) { 
 

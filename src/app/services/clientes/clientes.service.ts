@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ClientesService {
 
-  private API_SERVER = "http://localhost:8080/clientes/";
+  private API_SERVER = "http://localhost:8090/clientes/";
 
 
   constructor(private httpClient : HttpClient) { }

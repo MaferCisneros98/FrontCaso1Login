@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<div class="col-12 text-center mb-5 mt-2">
+    <div style="text-align: center;">
+        <img src="../../../../assets/logotipo.jpeg"  class="img-fluid" width="300" height="300">
+      </div>
+  <h1 class="text-capitalize">&bull; Ingresar Repuestos &bull;</h1>
+  <div class="underline">
+  </div>
+</div>
+
+
+<form id="form" [formGroup]="repuestosForm" (ngSubmit)="guardar()">
+ 
+    <ul class="mt-5 mu=5">
+
+       
+        <li>
+            <label>Nombre</label>
+            <input type="text" formControlName="materiales">
+        </li>
+        <li>
+            <label >Stock:</label>
+            <input type="text" formControlName="stock">
+        </li>
+        <li>
+            <label>Precio:</label>
+            <input type="text" formControlName="precio">
+        </li>
+       
+
+        <p align="center" class="mt-5">
+            <button class="btn btn-warning" class="btn btn-warning" type="submit">
+              Ingresar Repuesto</button>
+
+        </p>
+
+    
+       
+    </ul>
+
+
+</form>

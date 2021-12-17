@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { Pipe, PipeTransform } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaProductoComponent } from './producto/lista-producto.component';
@@ -22,7 +22,7 @@ import { IndexComponent } from './index/index.component';
 
 import { InformeRechazoComponent } from './comercializadora/informe-rechazo/informe-rechazo.component';
 import { VerificacionDocumentosComponent } from './comercializadora/verificacion-documentos/verificacion-documentos.component';
-
+import { FilterPipe } from './pipes/filter.pipe';
 import { VentaComponent } from './concesionaria/venta/venta.component';
 import { GenerarReclamoComponent } from './concesionaria/generar-reclamo/generar-reclamo.component';
 import { GenerarCotizacionComponent } from './concesionaria/generar-cotizacion/generar-cotizacion.component';
@@ -34,6 +34,15 @@ import { CrearClienteComponent } from './concesionaria/crear-cliente/crear-clien
 import { ComercializadoraAceptacionComponent } from './comercializadora/comercializadora-aceptacion/comercializadora-aceptacion.component';
 import { InformeTallerComponent } from './taller/informe-taller/informe-taller.component';
 import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-taller.component';
+import { CrearRepuestosComponent } from './comercializadora/crear-repuestos/crear-repuestos.component';
+import { ListaRepuestosComponent } from './comercializadora/lista-repuestos/lista-repuestos.component';
+import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
+import { InformeDespachoComponent } from './comercializadora/informe-despacho/informe-despacho.component';
+import { RepuestosComponent } from './comercializadora/repuestos/repuestos.component';
+import { ReparacionesEjecutarComponent } from './comercializadora/reparaciones-ejecutar/reparaciones-ejecutar.component';
+import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.component';
+import { OrdenReparacionComponent } from './comercializadora/orden-reparacion/orden-reparacion.component';
+
 
 
 
@@ -41,6 +50,7 @@ import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-ta
 
 @NgModule({
   declarations: [
+   
     AppComponent,
     ListaProductoComponent,
     DetalleProductoComponent,
@@ -50,6 +60,7 @@ import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-ta
     RegistroComponent,
     MenuComponent,
     IndexComponent,
+    FilterPipe,
     VerificacionDocumentosComponent,
     InformeRechazoComponent,
     GenerarReclamoComponent,
@@ -62,7 +73,16 @@ import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-ta
     VentaComponent,
     ComercializadoraAceptacionComponent,
     InformeTallerComponent,
-    SolicitudTallerComponent
+    SolicitudTallerComponent,
+    CrearRepuestosComponent,
+    ListaRepuestosComponent,
+    DespachoRepuestosComponent,
+    InformeDespachoComponent,
+    RepuestosComponent,
+    ReparacionesEjecutarComponent,
+    EditarRepuestoComponent,
+    OrdenReparacionComponent,
+    
   ],
   imports: [
     BrowserModule,

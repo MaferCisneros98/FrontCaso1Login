@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SolicitudtallerService {
-  private API_SERVER = "http://localhost:8080/solicitud/";
+  private API_SERVER = "http://localhost:8090/solicitud/";
   constructor(private httpClient : HttpClient
     ) { 
 
