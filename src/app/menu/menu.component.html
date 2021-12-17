@@ -75,10 +75,16 @@
       <!--Taller-->
 
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/informe" *ngIf="isTaller"><i class="far fa-list-alt"></i> Taller</a>
+        <a class="nav-link" routerLink="/informe" *ngIf="isTaller"><i class="far fa-list-alt"></i> Informe Taller</a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
-        <a class="nav-link" routerLink="/solicitud" *ngIf="isTaller"><i class="far fa-list-alt"></i> Solicitud </a>
+        <a class="nav-link" routerLink="/solicitud" *ngIf="isTaller"><i class="far fa-list-alt"></i> Solicitud de Repuestos</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/listasolicitud" *ngIf="isTaller"><i class="far fa-list-alt"></i> Lista de Solicitudes </a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/listainforme" *ngIf="isTaller"><i class="far fa-list-alt"></i> Lista de Informes </a>
       </li>
       <!--Iniciar sesion-->
       <li class="nav-item" *ngIf="!isLogged">

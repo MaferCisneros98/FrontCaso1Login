@@ -83,6 +83,8 @@ const routes: Routes = [
   //taller
   { path: 'informe', component:InformeTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
   { path: 'solicitud', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'listasolicitud', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'listainforme', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
   { path: '**', redirectTo: '', pathMatch: 'full' },
 
   

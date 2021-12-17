@@ -1,0 +1,43 @@
+<p class="text-center fs-1" name="from_name" ><b>STAR MOTORS TALLER</b></p>
+<div align="center"><img src="assets/logotipo.jpg"  class="img-fluid" width="300" height="300" aligment="center"></div>
+<p class="text-center fs-2" ><b>EDITAR SOLICITUD DE REPUESTOS</b></p>
+<hr>
+<form >
+
+    <ul class="mt-5 mu=5">
+
+        <div class="form-floating">
+         
+            <input type="text" [(ngModel)]="solicitudTaller.id_cliente"  class="form-control input" name="id_cliente">
+            <label>ID Cliente:</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating">
+          
+            <input type="text" [(ngModel)]="solicitudTaller.placa"  class="form-control input" name="placa">
+            <label>Placa Vehiculo</label>
+        </div>
+        <br><br>
+        <div class="form-floating">
+           
+            <input type="text" [(ngModel)]="solicitudTaller.repuestos" class="form-control input" name="repuestos">
+            <label>Repuestos </label>
+        </div>
+      <br><br> 
+     <div class="form-floating">
+       
+        <input type="text" [(ngModel)]="solicitudTaller.descripcion" class="form-control input" name="descripcion">
+        <label>Descripcion </label>
+     </div>
+  
+
+        <p  class="mt-5">
+            <button  (click)="Actualizar(solicitudTaller)" style="float: right" class="btn btn-default" class="btn btn-success">Editar</button>
+        </p>
+        
+    </ul>
+</form>
+<p  class="mt-5" style="margin-left: 35px;">
+    <button class="btn btn-default" class="btn btn-warning" style="float: left" routerLink="/listar" >Regresar a la lista</button>
+</p>
