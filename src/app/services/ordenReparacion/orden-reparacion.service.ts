@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class OrdenReparacionService {
 
-  private API_SERVER = "http://localhost:8090/ordenR/";
+  private API_SERVER = "http://localhost:8080/ordenR/";
   constructor(private httpClient : HttpClient) { }
   public saveordenR(orden:any):Observable<any>{
     return this.httpClient.post(this.API_SERVER,orden);
