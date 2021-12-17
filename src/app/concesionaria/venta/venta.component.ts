@@ -6,6 +6,8 @@ import jspdf, * as JSPdf from 'jspdf';
 import html2canvas from 'html2canvas';
 import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Cliente } from '../../models/Cliente';
+import { ClientesService } from '../../services/clientes/clientes.service';
 
 
 
@@ -16,17 +18,33 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class VentaComponent implements OnInit {
 
+  cliente: Cliente = new Cliente();
+
   cargar: boolean = false;
   factura: any = { detalleList: [] };
   
+  
 
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private service:ClientesService) { }
 
   ngOnInit(): void {
-    
-   
+    this.recuperarDatos();
+  }
 
+
+  /*Metodo para traer datos*/
+  recuperarDatos(){
+    let id=localStorage.getItem("id");
+    this.service.getClienteId(+id)
+    .subscribe(data=>{
+      this.cliente=data;
+    })
+
+  }
+
+  sumar(){
+     this.factura.total = 2+2;
   }
 
 
@@ -43,6 +61,7 @@ export class VentaComponent implements OnInit {
     let formulario: any = document.getElementById('formulario');
     if (formulario.reportValidity()) {
       this.cargar = true;
+      this.factura.id_cliente=this.cliente.id_cliente;
       this.factura.fecha = new Date();
       this.factura.total = 0;
       for (let i = 0; i < this.factura.detalleList.length; i++) {
