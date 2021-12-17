@@ -27,6 +27,14 @@ import { InformeTallerComponent } from './taller/informe-taller/informe-taller.c
 import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-taller.component';
 import { VerificacionDocumentosComponent } from './comercializadora/verificacion-documentos/verificacion-documentos.component';
 import { CreateUsersComponent } from './admin/create-users.component';
+import { CrearRepuestosComponent } from './comercializadora/crear-repuestos/crear-repuestos.component';
+import { ListaRepuestosComponent } from './comercializadora/lista-repuestos/lista-repuestos.component';
+import { RepuestosComponent } from './comercializadora/repuestos/repuestos.component';
+import { ReparacionesEjecutarComponent } from './comercializadora/reparaciones-ejecutar/reparaciones-ejecutar.component';
+import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
+import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.component';
+import { OrdenReparacionComponent } from './comercializadora/orden-reparacion/orden-reparacion.component';
+
 
 
 
@@ -46,7 +54,20 @@ const routes: Routes = [
   { path: 'informe-rechazo/:id', component: InformeRechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'informecomer', component: InformecomerComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'comercializadora-aceptacion/:id', component: ComercializadoraAceptacionComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
-
+  { path: 'inicio-comercializadora', component: IniciocomercializadoraComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'rechazo', component: InformeRechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'editar', component: EditarProductoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'ordenR', component: OrdenReparacionComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'despacho', component: DespachoRepuestosComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'reparaciones', component: ReparacionesEjecutarComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'listaR', component: ListaRepuestosComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'repuesto', component:CrearRepuestosComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'repuestos', component: RepuestosComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'editarR', component: EditarRepuestoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'verificacion', component: VerificacionDocumentosComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'informe-rechazo', component: InformeRechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'comercializadora-aceptacion', component: ComercializadoraAceptacionComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+ 
 
   //concesionaria
   { path: 'creacion-cliente', component: CrearClienteComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },

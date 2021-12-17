@@ -1,0 +1,69 @@
+form {
+   
+    margin: 0 auto;
+    width: 800px;
+   
+    padding: 1em;
+    border: 1px solid yellow;
+    border-radius: 1em;
+    background: snow;
+    border-top: 6px;
+  }
+  
+  header {
+    position: relative;
+    margin: 100px 0 25px 0;
+    font-size: 2.3em;
+    text-align: center;
+    letter-spacing: 7px;
+  }
+  form li + li {
+    margin-top: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  label {
+    /* Tamaño y alineación uniforme */
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+  }
+  
+  input{
+    
+    width: 30%;
+    padding: 2px;
+    font: 1em sans-serif;
+    width:  30%;
+  
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-color: #000;
+    margin-left: 20px;
+    
+  }
+  #txtContenido {
+    width: 30%;
+    height: 100px;
+    resize: none;
+    border: #aaa solid 1px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .input2{
+    
+    padding: 2px;
+    font: 1em sans-serif;
+
+    width:  18%;
+    box-sizing: border-box;
+
+    border: 1px solid #999;
+    border-color: #000;
+    margin-left: 20px;
+  }
