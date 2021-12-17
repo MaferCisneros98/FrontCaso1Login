@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './auth/registro.component';
 import { MenuComponent } from './menu/menu.component';
@@ -56,6 +57,7 @@ import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.compo
     NuevoProductoComponent,
     EditarProductoComponent,
     LoginComponent,
+    FilterPipe,
     RegistroComponent,
     MenuComponent,
     IndexComponent,
