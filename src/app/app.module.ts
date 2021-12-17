@@ -47,6 +47,7 @@ import { ListaRepuestosComponent } from './comercializadora/lista-repuestos/list
 import { CrearRepuestosComponent } from './comercializadora/crear-repuestos/crear-repuestos.component';
 import { RepuestosComponent } from './comercializadora/repuestos/repuestos.component';
 import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.component';
+import { EditarClienteComponent } from './concesionaria/editar-cliente/editar-cliente.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.compo
     ListaRepuestosComponent,
     CrearRepuestosComponent,
     RepuestosComponent,
-    EditarRepuestoComponent
+    EditarRepuestoComponent,
+    EditarClienteComponent
 
   ],
   imports: [

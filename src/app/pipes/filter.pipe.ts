@@ -9,7 +9,7 @@ export class FilterPipe implements PipeTransform {
     if (arg === '' || arg.length < 1) return value;
     const resultPosts = [];
     for (const item of value) {
-      if (item.materiales.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+      if (item.cedula.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultPosts.push(item);
 
       };

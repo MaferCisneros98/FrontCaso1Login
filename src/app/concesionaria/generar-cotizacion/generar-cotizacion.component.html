@@ -1,20 +1,21 @@
 <app-menu></app-menu>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
 <header>Cotizacion</header>
 
-<form id="form" [formGroup]="cotizacionForm" (ngSubmit)="guardar()">
+<form id="form" [formGroup]="cotizacionForm" (ngSubmit)="guardar()"  class="contact-form" (submit)="sendEmail($event)">
+    <div class="underline"></div>
 
     <ul class="mt-5 mu=5">
         <!--Informacion Cliente-->
         <li>
             <span class="input-group-btn">
                 <label>Cedula:</label>
-                <input class="input2" type="text" formControlName="cedula">
+                <input  class="input2" type="text" formControlName="cedula"  minlength=10 maxlength=10>
                 <label>Nombre:</label>
-                <input class="input2" type="text" formControlName="nombre">
+                <input name="user_name" class="input2" type="text" formControlName="nombre" pattern="(^[a-zA-Z]+$)">
                 <label>Apellido:</label>
-                <input class="input2" type="text" formControlName="apellido">
+                <input class="input2" type="text" formControlName="apellido" pattern="(^[a-zA-Z]+$)">
             </span>
         </li>
         <!--Factura--> 
@@ -25,34 +26,42 @@
         <!--Fecha-->
         <li class="mt-5">
             <label class="mr-5">Correo:</label>
-            <input type="text" formControlName="correo">
+            <input name="user_email" type="email" ngModel  ngModel [email]="true" formControlName="correo">
         </li>
         <!--Cedula-->
         <li>
             <label class="mr-5">Fecha de Nacimiento:</label>
-            <input type="date" formControlName="fecha_nacimiento">
+            <input type="date" formControlName="fecha_nacimiento" onkeydown="return false" min="1980-01-01" max="2002-12-30">
         </li>
         <!--Nombre-->
         <li>
             <label class="mr-5">Modelo:</label>
-            <input type="text" formControlName="modelo">
+            <input type="text"   name="message" formControlName="modelo">
         </li>
         <!--Descripcion-->
         <li>
             <label class="mr-5">Marca:</label>
-            <input type="text" formControlName="modelo">
+            <input type="text"  name="message" formControlName="marca"  pattern="(^[a-zA-Z]+$)">
         </li>
+
+        
+
         <p align="right" class="mt-5">
-            <button class="btn btn-default" class="btn btn-primary" type="submit" >Enviar Cotizacion</button>
+            
+            <button class="btn btn-default" class="btn btn-warning" [disabled]="cotizacionForm.invalid"  type="submit" >Enviar Cotizacion</button>
         </p>
         
         <!--Garantia-->
         <div class="underline"></div>
         
     </ul>
+
+    
+    
     
 
 </form>
 <p align="right" class="mt-5" style="margin-right: 120px;">
-    <button class="btn btn-default" class="btn btn-primary" routerLink="/lista">Regresar a la lista</button>
+    <button class="btn btn-default" class="btn btn-dark" routerLink="/lista-cotizaciones">Regresar a la lista</button>
 </p>
+

@@ -34,6 +34,7 @@ import { ReparacionesEjecutarComponent } from './comercializadora/reparaciones-e
 import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
 import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.component';
 import { OrdenReparacionComponent } from './comercializadora/orden-reparacion/orden-reparacion.component';
+import { EditarClienteComponent } from './concesionaria/editar-cliente/editar-cliente.component';
 
 
 
@@ -70,13 +71,15 @@ const routes: Routes = [
  
 
   //concesionaria
-  { path: 'creacion-cliente', component: CrearClienteComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
-  { path: 'cotizacion', component: GenerarCotizacionComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] }  },
-  { path: 'venta', component: VentaComponent, canActivate: [guard], data: { expectedRol: ['cncesionaria'] } },
-  { path: 'reclamos', component: GenerarReclamoComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
-  { path: 'lista', component: ListaCotizacionesComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] }  },
+  { path: 'venta', component: VentaComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
+  {path: 'listarclientes', component: ListarClientesComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] }},
+  {path: 'creacion-cliente', component: CrearClienteComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] }},
   { path: 'listar-garantias', component: ListadoGarantiasComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
-  { path: 'listar-clientes', component: ListarClientesComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] }},
+  {path: 'generar-reclamo/:garantia', component: GenerarReclamoComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
+  {path: 'editar-cliente', component: EditarClienteComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
+  {path: 'cotizacion', component: GenerarCotizacionComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
+  {path: 'lista-cotizaciones', component: ListaCotizacionesComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] }},
+  { path: 'reclamos-garantia', component: GenerarReclamoComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
   //taller
   { path: 'informe', component:InformeTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
   { path: 'solicitud', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
