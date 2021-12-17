@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InformetallerService } from 'src/app/services/informetaller/informetaller.service';
-
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 @Component({
   selector: 'app-informe-taller',
@@ -34,6 +34,22 @@ this.informeForm=this.fb.group({
     },
       error => {console.error(error)}
     )
+  }
+  
+  displayBasic: boolean = false;
+  public sendEmail(e: Event) {
+    e.preventDefault();
+    emailjs.sendForm('service_5up9k1b', 'template_omqqqsa', e.target as HTMLFormElement, 'user_FdjTVgCweoSvdsrOBPXy4'
+    )
+      .then((result: EmailJSResponseStatus) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
+  
+  showDialog() {
+      this.displayBasic = true;
   }
 
 }

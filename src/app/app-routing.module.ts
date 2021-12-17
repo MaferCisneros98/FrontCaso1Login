@@ -35,6 +35,10 @@ import { DespachoRepuestosComponent } from './comercializadora/despacho-repuesto
 import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.component';
 import { OrdenReparacionComponent } from './comercializadora/orden-reparacion/orden-reparacion.component';
 import { EditarClienteComponent } from './concesionaria/editar-cliente/editar-cliente.component';
+import { ListarinformeComponent } from './taller/listarinforme/listarinforme/listarinforme.component';
+import { ListarsolicitudComponent } from './taller/listarsolicitud/listarsolicitud/listarsolicitud.component';
+import { EditarsolicitudComponent } from './taller/editarsolicitud/editarsolicitud/editarsolicitud.component';
+import { EditarinformeComponent } from './taller/editarinforme/editarinforme/editarinforme.component';
 
 
 
@@ -83,8 +87,10 @@ const routes: Routes = [
   //taller
   { path: 'informe', component:InformeTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
   { path: 'solicitud', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
-  { path: 'listasolicitud', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
-  { path: 'listainforme', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'listasolicitud', component:ListarsolicitudComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'listainforme', component:ListarinformeComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'editarSolicitud', component:EditarsolicitudComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'editarInforme', component:EditarinformeComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
   { path: '**', redirectTo: '', pathMatch: 'full' },
 
   

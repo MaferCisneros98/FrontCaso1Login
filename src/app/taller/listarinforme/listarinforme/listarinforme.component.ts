@@ -24,9 +24,10 @@ export class ListarinformeComponent implements OnInit {
       
     this.informeService.obtenerInforme().subscribe(resp=>{
       this.informes=resp;},
-  error =>{console.error(error)
+       error =>{console.error(error)
     });
     }
+
     Editar(informe:informeTaller):void{
       localStorage.setItem("id", informe.id_InformeTaller.toString());
     this.router.navigate(["editarInforme"]);
