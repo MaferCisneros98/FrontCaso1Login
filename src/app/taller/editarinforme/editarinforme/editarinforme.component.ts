@@ -28,7 +28,7 @@ export class EditarinformeComponent implements OnInit {
     })
 }
   Actualizar(informeTaller:informeTaller){
-    this.service.Updateinforme(informeTaller)
+    this.service.UpdateInforme(informeTaller)
     .subscribe(data=>{
       this.informeTaller=data;
       alert("Informe actualizado");

@@ -27,7 +27,7 @@ this.informeForm=this.fb.group({
 });
   }
   guardar(): void{
-    this.informeService.saveinforme(this.informeForm.value).subscribe(resp =>{
+    this.informeService.saveInforme(this.informeForm.value).subscribe(resp =>{
       this.informeForm.reset();
       this.informes=this.informes.filter(informe => resp.id!==informe.id);
       this.informes.push(resp);

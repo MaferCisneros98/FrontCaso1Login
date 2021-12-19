@@ -7,7 +7,6 @@
       </div>
       <h1 align="center">Informe Comercializadora</h1>
       <!--calculo-->
-
       <div class="container">
         <div class="card " style="width: 50rem;">
           <div class="card-body">
@@ -77,4 +76,33 @@ Valor total a pagar: {{num4}}
 <div>
   <br><br>
   <button class="btn btn-danger  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
+</div>
+<br><br>
+<div class="container">
+  <table class="table table-bordered border-secondary">
+    <thead>
+      <tr class="table-secondary">
+        <th style="text-align: center" scope="col"> Cedula Cliente</th>
+        <th style="text-align: center" scope="col"> Nombre Cliente</th>
+        <th style="text-align: center" scope="col"> Apellido Cliente</th>
+        <th style="text-align: center" scope="col">Placa</th>
+        <th style="text-align: center" scope="col">Garantía %</th>
+        <th style="text-align: center" scope="col">Costo Total</th>
+        <th style="text-align: center" scope="col">Ver</th>
+        
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of clientes | filter:filterPost">
+        <td align="center">{{item.cedula}}</td>
+        <td align="center">{{item.nombre}}</td>
+        <td align="center">{{item.apellido}}</td>
+        <td align="center">{{num2}} </td>
+        <td align="center">{{num4}} </td>
+  
+      </tr>
+    </tbody>
+  </table>
 </div>

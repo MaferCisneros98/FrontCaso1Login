@@ -1,7 +1,9 @@
-
 <app-menu></app-menu>
-<p class="text-center fs-1" name="from_name" ><b>STAR MOTORS TALLER</b></p>
-  <div align="center"><img src="assets/logotipo.jpg"  class="img-fluid" width="300" height="300" aligment="center"></div>
+
+  <div class="container" style="text-align: center">
+    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+  </div>
+
   <p class="text-center fs-2" ><b>SOLICITUD DE REPUESTOS</b></p>
   <hr>
   <form class="form-floating" [formGroup]="solicitudForm" (ngSubmit)="guardarSolicitud()" (ngSubmit)="sendEmail($event)">

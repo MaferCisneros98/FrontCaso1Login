@@ -1,16 +1,4 @@
 
-form {
-   
-    margin: 0 auto;
-    width: 800px;
-   
-    padding: 1em;
-    border: 1px solid yellow;
-    border-radius: 1em;
-    background: snow;
-    border-top: 6px;
-  }
-  
   header {
     position: relative;
     margin: 100px 0 25px 0;
