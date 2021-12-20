@@ -8,7 +8,7 @@ import { Vehiculo } from 'src/app/models/Vehiculo';
 })
 export class VehiculosService {
 
-  private API_SERVER = "http://localhost:8080/vehiculos/";
+  private API_SERVER = "http://localhost:8090/vehiculos/";
 
   constructor(private httpClient : HttpClient) { }
 

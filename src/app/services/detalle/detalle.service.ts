@@ -8,7 +8,7 @@ import { FacturaCuerpo } from '../../models/FacturaCuerpo';
 })
 export class DetalleService {
 
-  private API_SERVER = "http://localhost:8080/facturacuerpo/";
+  private API_SERVER = "http://localhost:8090/facturacuerpo/";
 
   constructor(private httpClient : HttpClient) { }
 

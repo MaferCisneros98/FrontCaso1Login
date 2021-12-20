@@ -8,7 +8,7 @@ import { FacturaCabecera } from '../../models/FacturaCabecera';
 })
 export class FacturaService {
 
-  private API_SERVER = "http://localhost:8080/facturacabecera/";
+  private API_SERVER = "http://localhost:8090/facturacabecera/";
 
   constructor(private httpClient : HttpClient) { }
 
