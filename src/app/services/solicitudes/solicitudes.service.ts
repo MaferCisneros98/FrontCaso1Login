@@ -10,7 +10,7 @@ import { Garantia } from '../../models/Garantia';
   })
   export class Solicitudes {
   
-    private API_SERVER = "http://localhost:8090/garantias/"; 
+    private API_SERVER = "http://localhost:8080/garantias/"; 
   
     constructor(private httpClient : HttpClient) { }
   

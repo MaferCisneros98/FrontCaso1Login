@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CotizacionService {
 
-  private API_SERVER = "http://localhost:8090/cotizaciones/"; 
+  private API_SERVER = "http://localhost:8080/cotizaciones/"; 
 
   constructor(private httpClient : HttpClient) { }
 

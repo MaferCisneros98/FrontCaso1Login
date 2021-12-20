@@ -8,7 +8,7 @@ import { Repuestos } from 'src/app/models/repuestos';
 })
 export class RepuestosService {
 
-  private API_SERVER = "http://localhost:8090/repuestos/";
+  private API_SERVER = "http://localhost:8080/repuestos/";
 
 
   constructor(private httpClient : HttpClient) { }

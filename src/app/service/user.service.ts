@@ -8,7 +8,7 @@ import { NuevoUsuario } from '../models/nuevo-usuario';
 })
 export class usuarioService {
 
-  productoURL = 'http://localhost:8090/api/usuario';
+  productoURL = 'http://localhost:8080/api/usuario';
 
   constructor(private httpClient: HttpClient) { }
 
