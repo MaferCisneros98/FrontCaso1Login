@@ -7,38 +7,45 @@
   <p class="text-center fs-2" ><b>SOLICITUD DE REPUESTOS</b></p>
   <hr>
   <form class="form-floating" [formGroup]="solicitudForm" (ngSubmit)="guardarSolicitud()" (ngSubmit)="sendEmail($event)">
-    <div class="form-floating">
-      <input type="text" class="form-control input" id="floatingInputValue" name= "to_email" formControlName="to_email"  required>
-      <label for="floatingInputValue">Ingrese el correo</label>
+    <div class="underline"></div>
+    <br><br>
+    <div>
+      <label for="floatingInputValue">Ingrese el correo:</label>
+      <input type="text"  id="floatingInputValue" name= "to_email" formControlName="to_email"  required>
+     
     </div>
     <br><br><br>
-    <div class="form-floating"> 
-    <input type="text" class="form-control input" id="floatingInputValue" formControlName="id_cliente" name="id_cliente" required>
-    <label for="floatingInputValue">Ingrese la Cedula del propietario  ejm: 0100000000</label>
+    <div> 
+      <label >Cedula:</label>
+      &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
+    <input type="text"  id="floatingInputValue" formControlName="id_cliente" name="id_cliente" required>
+   
   </div>
   <br><br><br>
-  <div class="form-floating">
-    <input type="text" class="form-control input" id="floatingInputValue"  formControlName="placa" name="placa" required>
-    <label for="floatingInputValue">Ingrese la placa del vehículo  ejem: AZ000</label>
+  <div >
+    <label>Placa Vehículo:</label> &nbsp;&nbsp;
+    <input type="text"  id="floatingInputValue"  formControlName="placa" name="placa" required>
+   
   </div>
     <br><br>
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text input">Ingrese los <br>repuestos<br> a solicitar</span>
+      <label>Ingrese los <br>repuestos<br> a solicitar</label> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp; 
     </div>
-    <textarea class="form-control input" aria-label="With textarea" formControlName="repuestos" name= "repuestos" required></textarea>
+    <textarea  class="form-control input"  aria-label="With textarea" formControlName="repuestos" name= "repuestos" required></textarea>
   </div>
   <br><br>
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text input">Descripcion</span>
+      <label>Descripción</label> &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;&nbsp; 
     </div>
-    <textarea class="form-control input" aria-label="With textarea" id="floatingInputValue"placeholder="Ingrese una nota, caso contrario ingrese SN" value="Ingrese una nota, caso contrario ingrese SN" name="message" formControlName="descripcion"></textarea>
+    <textarea  class="form-control input"  aria-label="With textarea" id="floatingInputValue"placeholder="Ingrese una nota, caso contrario ingrese SN" value="Ingrese una nota, caso contrario ingrese SN" name="message" formControlName="descripcion"></textarea>
   </div>
-  <br><br><br>
+  <br><br>
   <div class="col text-center">
-    <button class="btn btn-default btn btn-dark input" type="submit">Enviar</button>
+    <button class="btn btn-default btn btn-warning input" type="submit">Enviar</button>
   </div>
+  <br>
 </form>
