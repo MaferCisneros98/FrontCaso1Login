@@ -4,7 +4,7 @@
         <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
     </div>
     <h1 align="center">Verificación Documentos</h1>
-    <div class="container" *ngIf="producto">
+    <div class="container" *ngIf="factura">
         <div class="container">
             <div class="row">
                 <div class="col-sm-5 col-md-6">
@@ -12,44 +12,44 @@
                     <div class="underline"></div>
                     <!--Fecha-->
                     <label for="name">Fecha: </label>
-                    <input type="text" id="name" name="user_name" class="form-control" placeholder="" required>
+                    <input type="text" id="name" name="fecha" class="form-control" [(ngModel)]="factura.fecha" placeholder="" required>
                     <!--Cedula-->
                     <label for="name">Cédula: </label>
-                    <input type="text" id="name" name="user_name" class="form-control" placeholder="" required>
+                    <input type="text" id="name1" name="cedula" class="form-control" [(ngModel)]="factura.cliente.cedula"placeholder="" required>
                     <!--Nombre-->
                     <label for="name">Nombre: </label>
-                    <input type="text" id="name" name="user_name" class="form-control" placeholder="" required>
+                    <input type="text" id="name2" name="factura.fecha" class="form-control" placeholder="" required>
                     <!--Cedula-->
                     <label for="name" class="mr-5">Descripcion:</label>
-                    <textarea type="text" class="form-control" name="message" rows="3" required></textarea>
+                    <textarea type="text" class="form-control" name="factura.fecha" rows="3" required></textarea>
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                     <h2 align="center">Garantia</h2>
                     <div class="underline"></div>
                     <!--Número de Chasis-->
                     <label for="name">Número de Chasis: </label>
-                    <input type="text" id="name" name="user_name" class="form-control" placeholder="" required>
+                    <input type="text" id="name3" name="factura.fecha" class="form-control" placeholder="" required>
                     <!--Número de Motor-->
                     <label for="name">Número de Motor: </label>
-                    <input type="text" id="name" name="user_name" class="form-control" placeholder="" required>
+                    <input type="text" id="name4" name="factura.fecha" class="form-control" placeholder="" required>
                     <!--Año Fabricacion-->
                     <label for="name">Año de fabicación: </label>
-                    <input type="text" id="name" name="user_name" class="form-control" placeholder="" required>
+                    <input type="text" id="name5" name="factura.fecha" class="form-control" placeholder="" required>
                     <!--RAMV-->
                     <label for="name">RAMV:</label>
-                    <input type="text" id="name" name="user_name" class="form-control" placeholder="" required>
+                    <input type="text" id="name6" name="factura.fecha" class="form-control" placeholder="" required>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row align-items-center">
-                <button class="btn btn-warning"  style="margin-block: 20px; margin-top: 40px;"routerLink="/comercializadora-aceptacion/{{producto.id}}"><i class="far fa-eye"></i>
+                <button class="btn btn-warning"  style="margin-block: 20px; margin-top: 40px;"><i class="far fa-eye"></i>
                     Aceptar</button>
                 <div class="col">
-                    <a href="informe-rechazo/{{producto.id}}" class="btn btn-danger"  style="margin-block: 20px; margin-top: 40px;" type="button"><i class="far fa-times-circle"></i> Denegar</a>
+                    <a href="" class="btn btn-danger"  style="margin-block: 20px; margin-top: 40px;" type="button"><i class="far fa-times-circle"></i> Denegar</a>
                 </div>
                 <div class="col">
-                    <a href="inicio-comercializadora" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
+                    <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
                 </div>
             </div>
     </div>

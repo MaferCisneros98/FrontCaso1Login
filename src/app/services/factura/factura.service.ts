@@ -20,6 +20,11 @@ export class FacturaService {
     return this.httpClient.post<FacturaCabecera>(this.API_SERVER+"guardar/",facturaCabecera);
 
   }
+  public getAllFacturas():Observable<any>{
+    return this.httpClient.get(this.API_SERVER); 
+  }
 
-
+  public facturaById(id: number){
+    return this.httpClient.get<FacturaCabecera>(this.API_SERVER+id);
+  }
 }

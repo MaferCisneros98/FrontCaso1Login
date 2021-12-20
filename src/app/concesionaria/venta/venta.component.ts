@@ -90,7 +90,7 @@ export class VentaComponent implements OnInit {
 
     return this.http
       .post<any>(
-        'http://localhost:8090/facturacuerpo/guardar',this.factura,httpOptions)
+        'http://localhost:8080/facturacuerpo/guardar',this.factura,httpOptions)
       .pipe(catchError((e) => 'error'));
   }
 
