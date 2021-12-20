@@ -1,38 +1,46 @@
-<app-menu></app-menu>
 
-  <div class="container" style="text-align: center">
-    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
-  </div>
-  <p class="text-center fs-1" name="from_name" ><b>STAR MOTORS TALLER</b></p>
+  <p class="text-center fs-1" name="from_name" ><b>STAR MOTORS <br>TALLER</b></p>
+  <p class="text-center fs-2" ><b>EDITAR INFORME</b></p>
   
-<p class="text-center fs-2" ><b>EDITAR INFORME</b></p>
-<hr>
-<form >
-
-    <ul class="mt-5 mu=5">
-        <div class="form-floating" >
-            <input type="text" [(ngModel)]="informeTaller.id_cliente" class="form-control input"   name="id_cliente">
-            <label  for="floatingInputValue">ID Cliente</label>
+  <form >
+  <div class="underline"></div>
+      <ul class="mt-5 mu=5">
+          <div>
+              <label  for="floatingInputValue">ID Cliente:</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" [(ngModel)]="informeTaller.id_cliente"  name="id_cliente">
+              
+            </div>
+          <br>
+          <br>
+          <div>
+              <label for="floatingInputValue">Placa Vehiculo:</label>&nbsp;
+              <input type="text" [(ngModel)]="informeTaller.placa" name="placa">
+            
           </div>
-        <br>
-        <br>
-        <div class="form-floating">
-            <input type="text" [(ngModel)]="informeTaller.placa" class="form-control input" name="placa">
-            <label for="floatingInputValue">Placa Vehiculo</label>
-        </div>
-        <br><br>
-        <div class="form-floating">
-            <input type="text" [(ngModel)]="informeTaller.descripcion" class="form-control input" name="descripcion">
-            <label for="floatingInputValue">Descripcion </label>
-        </div>
-      <br><br> 
-
-        <p  class="mt-5">
-            <button (click)="Actualizar(informeTaller)" style="float:right"class="btn btn-default" class="btn btn-success">Editar</button>
-        </p>
-        
-    </ul>
-</form>
-<p  class="mt-5" style="margin-left: 35px;">
-    <button class="btn btn-default" class="btn btn-warning" style="float: left" routerLink="/listar">Regresar a la lista</button>
-</p>
+          <br><br>
+          <div>
+              <label for="floatingInputValue">Descripción:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" [(ngModel)]="informeTaller.descripcion" name="descripcion">
+             
+          </div>
+        <br><br> 
+        <div>
+          <label for="floatingInputValue">Total:</label>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+          <input type="text" [(ngModel)]="informeTaller.total" name="total">
+         
+      </div>
+      <br><br>
+  
+          <p  class="mt-5">
+              <button (click)="Actualizar(informeTaller)" style="float:right"class="btn btn-default" class="btn btn-warning">Editar</button>
+          </p>
+          
+      </ul>
+      <p  class="mt-5" style="margin-left: 35px;">
+          <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/listar">Regresar a la lista</button>
+      </p>
+      <br>
+  </form>
+  
