@@ -51,6 +51,8 @@ export class TokenService {
     }
     return this.roles;
   }
+
+  
   public comercializadora(): boolean {
     if (!this.isLogged()) {
       return false;
