@@ -1,3 +1,39 @@
+
 .input{
     border-color: black;
 }
+input{
+    
+    width: 30%;
+    padding: 2px;
+    font: 1em sans-serif;
+  
+    /* Tamaño uniforme del campo de texto */
+    height: 25px;
+    box-sizing: border-box;
+  
+    /* Hacer coincidir los bordes del campo del formulario */
+    border: 1px solid #999;
+    border-color: #000;
+    
+    
+  }
+
+  form {
+    /* Centrar el formulario en la página */
+    margin: 0 auto;
+    width: 800px;
+    /* Esquema del formulario */
+    padding: 1em;
+    border: 2px solid #CCC;
+    border-radius: 1em;
+    /*background: url('https://www.wallpaperkiss.com/wimg/b/114-1149918_big.jpg');*/
+    border-top: 6px;
+  }
+
+  .underline {
+    border-bottom: solid 2px #474544;
+    margin: -0.512em auto;
+    width: 100%;
+  }
+  
