@@ -6,14 +6,14 @@
   <h1 align="center">&bull; Aceptación de Garantía &bull;</h1>
   <a href="inicio-comercializadora" class="btn btn-dark" style="margin-block: 20px; margin-trim: 400px;"
     type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
-  <div class="container" *ngIf="producto">
-    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+  <div class="container" *ngIf="factura">
+ 
       <form class="contact-form" (submit)="sendEmail($event)">
         <div class="form-group">
           <div class="form-row">
             <div class="col">
               <label for="nombre">Nombre Cliente</label>
-              <input type="text" class="form-control" id="nombre" name="user_name" [(ngModel)]="producto.nombre"
+              <input type="text" class="form-control" id="nombre" name="user_name" [(ngModel)]="factura.cliente.nombre"
                 required>
             </div>
 
@@ -33,7 +33,7 @@
         <div class="form-group">
           <textarea class="form-control" name="message" rows="8" placeholder=required>
 
-            {{producto.nombre}}
+            {{factura.cliente.nombre}}
             {{producto.precio}}
             Fecha:
             Hora:
@@ -52,6 +52,6 @@
         </div>
         <input type="submit" class="btn btn-success" value="Send">
       </form>
-    </form>
+  
   </div>
 </div>

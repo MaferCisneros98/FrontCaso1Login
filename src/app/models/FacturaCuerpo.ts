@@ -8,6 +8,7 @@ export class FacturaCuerpo{
     total?:number;
     placa?:string;
     factura:FacturaCabecera;
+    vehiculo:Vehiculo;
     
     
 }

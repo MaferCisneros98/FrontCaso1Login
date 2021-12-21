@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Producto } from 'src/app/models/producto';
-import { ProductoService } from 'src/app/service/producto.service';
+import { FacturaCabecera } from 'src/app/models/FacturaCabecera';
+import { FacturaCuerpo } from 'src/app/models/FacturaCuerpo';
+import { FacturaService } from 'src/app/services/factura/factura.service';
 
 @Component({
   selector: 'app-verificacion-documentos',
@@ -12,10 +13,11 @@ import { ProductoService } from 'src/app/service/producto.service';
 })
 export class VerificacionDocumentosComponent implements OnInit {
 
-  producto: Producto = null;
 
+  factura:FacturaCabecera = new FacturaCabecera();
+  
   constructor(
-    private productoService: ProductoService,
+    private facturaService: FacturaService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -24,36 +26,42 @@ export class VerificacionDocumentosComponent implements OnInit {
 
   
   ngOnInit() {
-    const id = this.activatedRoute.snapshot.params.id;
-    this.productoService.detail(id).subscribe(
-      data => {
-        this.producto = data;
-      },
-      err => {
-        this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
-        });
-        this.router.navigate(['/']);
-      }
-    );
+    this.cagar();
   }
+  ver(facturaCabecera:FacturaCabecera):void{
+    console.log('Dato enviado--> ' + facturaCabecera.id_factura);
+    localStorage.setItem("idFactura", facturaCabecera.id_factura.toString());
+    this.router.navigate(["verificacion"]);
+
+  }
+  verRechazo(facturaCabecera:FacturaCabecera):void{
+    console.log('Dato enviado--> ' + facturaCabecera.id_factura);
+    localStorage.setItem("idFactura", facturaCabecera.id_factura.toString());
+    this.router.navigate(["informe-rechazo"]);
+
+  }
+  verAceptacion(facturaCabecera:FacturaCabecera):void{
+    console.log('Dato enviado--> ' + facturaCabecera.id_factura);
+    localStorage.setItem("idFactura", facturaCabecera.id_factura.toString());
+    this.router.navigate(["comercializadora-aceptacion"]);
+
+  }
+  cagar(){
+    console.log('Ingresa a llamar cargar');
+    let id=localStorage.getItem("idFactura");
+    console.log('Id... >' + id);
+    const that = this;
+    this.facturaService.facturaById(+id)
+    .subscribe(data=>{
+      console.log('holii'+ data);
+      that.factura=data;
+      
+    })
+  }
+
   
   onUpdate(): void {
-    const id = this.activatedRoute.snapshot.params.id;
-    this.productoService.update(id, this.producto).subscribe(
-      data => {
-        this.toastr.success('Producto Actualizado', 'OK', {
-          timeOut: 3000, positionClass: 'toast-top-center'
-        });
-        this.router.navigate(['/lista']);
-      },
-      err => {
-        this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
-        });
-        // this.router.navigate(['/']);
-      }
-    );
+   
   }
 
 }
