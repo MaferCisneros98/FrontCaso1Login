@@ -5,32 +5,48 @@
   </div>
 <p class="text-center fs-2" ><b>EDITAR SOLICITUD DE REPUESTOS</b></p>
 <hr>
+
 <form >
     <div class="underline"></div>
     <ul class="mt-5 mu=5">
 
         <div >
-            <label>ID Cliente:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Cedula:</label> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
             <input type="text" [(ngModel)]="solicitudTaller.id_cliente"   name="id_cliente">
             
         </div>
         <br>
         <br>
         <div >
-            <label>Placa Vehículo:</label>&nbsp;
+            <label>Nombre:</label>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+            <input type="text" [(ngModel)]="solicitudTaller.nombre"   name="nombre">
+            
+        </div>
+        <br>
+        <br>
+        <div >
+            <label>Placa Vehículo:</label> &nbsp;
             <input type="text input" [(ngModel)]="solicitudTaller.placa"  name="placa">
            
         </div>
       
         <br><br>
         <div >
-            <label>Repuestos:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Repuestos:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
             <input type="text" [(ngModel)]="solicitudTaller.repuestos"  name="repuestos">
             
         </div>
       <br><br> 
+      <div >
+        <label>Cantidad:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+        <input type="text" [(ngModel)]="solicitudTaller.cantidad"   name="cantidad">
+        
+    </div>
+    <br>
+    <br>
      <div >
-        <label>Descripción: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Descripción: </label>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
         <input type="text" [(ngModel)]="solicitudTaller.descripcion"  name="descripcion">
        
      </div>

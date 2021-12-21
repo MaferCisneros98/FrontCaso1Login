@@ -17,9 +17,11 @@
   <table class="table table-bordered border-black">
     <thead>
       <tr class="table-secondary">
-        <th scope="col">Id_cliente</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Cliente</th>
         <th scope="col">Placa Vehiculo</th>
         <th scope="col">Repuestos</th>
+        <th scope="col">Cantidad</th>
         <th scope="col">Descripcion de la Solicitud</th>
         <th scope="col">Edicion</th> 
         
@@ -28,8 +30,10 @@
   <tbody>
       <tr *ngFor="let item of solicitudes">
         <td>{{item.id_cliente}}</td>
+        <td>{{item.nombre}}</td>
         <td>{{item.placa}}</td>
         <td>{{item.repuestos}}</td>
+        <td>{{item.cantidad}}</td>
         <td>{{item.descripcion}}</td>
         <td> 
           <button (click)="Editar(item)" class="btn btn-success btn-xs " > Editar Solicitud</button> 
@@ -40,4 +44,11 @@
   </tbody>
   
   </table>
-
+  <div class="mt-5 " style="margin-right: 50px; " text-align="right">
+    <button  class="btn btn-warning" type="button" routerLink="/solicitud">Generar Nueva Solicitud</button>
+  </div>
+ 
+</div>
+<p  class="mt-5" style="margin-left: 35px;">
+  <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/">Regresar a la lista</button>
+</p>
