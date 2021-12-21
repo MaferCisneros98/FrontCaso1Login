@@ -17,10 +17,11 @@
   <table class="table table-bordered border-black" >
     <thead >
       <tr class="table-secondary ">
-        <th scope="col">Id_cliente</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Nombre</th>
         <th scope="col">Placa Vehiculo</th>
         <th scope="col">Descripcion de Informe</th>
-        <th scope="col">Total</th>
+        <th scope="col">Total</th> 
         <th scope="col">Edicion</th> 
       
         
@@ -29,6 +30,7 @@
   <tbody>
       <tr *ngFor="let item of informes">
         <td>{{item.id_cliente}}</td>
+        <td>{{item.nombre}}</td>
         <td>{{item.placa}}</td>
         <td>{{item.descripcion}}</td>
         <td>{{item.total}}</td>

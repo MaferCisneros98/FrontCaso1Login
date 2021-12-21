@@ -5,7 +5,6 @@
   </div>
 
   <p class="text-center fs-2" ><b>SOLICITUD DE REPUESTOS</b></p>
-  <hr>
   <form class="form-floating" [formGroup]="solicitudForm" (ngSubmit)="guardarSolicitud()" (ngSubmit)="sendEmail($event)">
     <div class="underline"></div>
     <br><br>
@@ -14,14 +13,21 @@
       <input type="text"  id="floatingInputValue" name= "to_email" formControlName="to_email"  required>
      
     </div>
-    <br><br><br>
+    <br><br>
     <div> 
       <label >Cedula:</label>
       &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
     <input type="text"  id="floatingInputValue" formControlName="id_cliente" name="id_cliente" required>
    
   </div>
-  <br><br><br>
+  <br><br>
+  <div> 
+    <label >Nombre:</label>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+  <input type="text"  id="floatingInputValue" formControlName="nombre" name="nombre" required>
+ 
+</div>
+  <br><br>
   <div >
     <label>Placa Vehículo:</label> &nbsp;&nbsp;
     <input type="text"  id="floatingInputValue"  formControlName="placa" name="placa" required>
@@ -36,6 +42,12 @@
     <textarea  class="form-control input"  aria-label="With textarea" formControlName="repuestos" name= "repuestos" required></textarea>
   </div>
   <br><br>
+  <div >
+    <label>Cantidad:</label> 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text"  id="floatingInputValue"  formControlName="cantidad" name="cantidad" required>
+  </div>
+    <br><br>
 
   <div class="input-group">
     <div class="input-group-prepend">
@@ -45,7 +57,8 @@
   </div>
   <br><br>
   <div class="col text-center">
-    <button class="btn btn-default btn btn-warning input" type="submit">Enviar</button>
+    <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/">Regresar</button>
+    <button class="btn btn-default btn btn-warning input" style="float:right" type="submit">Enviar</button>
   </div>
   <br>
 </form>
