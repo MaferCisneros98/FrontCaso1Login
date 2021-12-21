@@ -4,6 +4,10 @@
         <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
     </div>
     <h1 align="center">Verificación Documentos</h1>
+    <div class="col">
+        <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i
+                class="fas fa-chevron-circle-left"></i> Regresar</a>
+    </div>
     <div class="container" *ngIf="factura">
         <div class="container">
             <div class="row">
@@ -11,48 +15,56 @@
                     <h2 align="center">Factura</h2>
                     <div class="underline"></div>
                     <!--Fecha-->
-                    <label for="name">Fecha: </label>
-                    <input type="text" id="name" name="fecha" class="form-control" [(ngModel)]="factura.fecha" placeholder="" required>
+                    <th for="name">Fecha: </th>
+                    <input type="text" id="name" name="fecha" class="form-control" [(ngModel)]="factura.fecha"
+                        placeholder="" required>
                     <!--Cedula-->
-                    <label for="name">Cédula: </label>
-                    <input type="text" id="name1" name="cedula" class="form-control" [(ngModel)]="factura.cliente.cedula"placeholder="" required>
+                    <th for="name">Cédula: </th>
+                    <input type="text" id="name1" name="cedula" class="form-control"
+                        [(ngModel)]="factura.cliente.cedula" placeholder="" required>
                     <!--Nombre-->
-                    <label for="name">Nombre: </label>
-                    <input type="text" id="name2" name="nombre" class="form-control" [(ngModel)]="factura.cliente.nombre" placeholder="" required>
+                    <th for="name">Nombre: </th>
+                    <input type="text" id="name2" name="nombre" class="form-control"
+                        [(ngModel)]="factura.cliente.nombre" placeholder="" required>
                     <!--Cedula-->
-                    <label for="name" class="mr-5">Descripcion:</label>
-                    <textarea type="text" class="form-control" name="tipo" [(ngModel)]="factura.tipo"rows="3" required></textarea>
+                    <th for="name" class="mr-5">Descripcion:</th>
+                    <textarea type="text" class="form-control" name="tipo" [(ngModel)]="factura.tipo" rows="2"
+                        required></textarea>
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                     <h2 align="center">Garantia</h2>
                     <div class="underline"></div>
                     <!--Número de Chasis-->
-                    <label for="name">Número de Chasis: </label>
-                    <input type="text" id="name3" name="factura.vehiculo.numero_chasis" class="form-control" placeholder="" required>
+                    <th for="name">Número de Chasis: </th>
+                    <input type="text" id="name3" name="factura.vehiculo.numero_chasis" class="form-control"
+                        placeholder="" required>
                     <!--Número de Motor-->
-                    <label for="name">Número de Motor: </label>
+                    <th for="name">Número de Motor: </th>
                     <input type="text" id="name4" name="factura.fecha" class="form-control" placeholder="" required>
                     <!--Año Fabricacion-->
-                    <label for="name">Año de fabicación: </label>
+                    <th for="name">Año de fabicación: </th>
                     <input type="text" id="name5" name="factura.fecha" class="form-control" placeholder="" required>
                     <!--RAMV-->
-                    <label for="name">RAMV:</label>
+                    <th for="name">RAMV:</th>
                     <input type="text" id="name6" name="factura.fecha" class="form-control" placeholder="" required>
                 </div>
             </div>
         </div>
+        <br><br>
+
         <div class="container">
-            <div class="row align-items-center">
-                <button  class="btn btn-warning" (click)="verAceptacion(factura)"><i class="far fa-eye"></i> Aceptar</button> 
-            </div>             
-                
-                <div class="col">
-                    <button  class="btn btn-success" (click)="verRechazo(factura)"><i class="fas fa-eye"></i> Denegar</button>               
-                 </div>
-                <div class="col">
-                    <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
+            <div class="row">
+                <div align="right" class="col-sm-5 col-md-6">
+                    <button class="btn btn-success" (click)="verAceptacion(factura)"><i class="fas fa-user-check"></i>
+                        Aceptar</button>
+                </div>
+                <br><br>
+                <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                    <button class="btn btn-danger" (click)="verRechazo(factura)"><i class="fas fa-user-times"></i>
+                        Denegar</button>
                 </div>
             </div>
+        </div>
     </div>
-    
-    </div>
+    <br><br>
+</div>

@@ -1,49 +1,42 @@
 <app-menu></app-menu>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-<div class="col-12 text-center mb-5 mt-2">
-    <div style="text-align: center;">
-        <img src="../../../../assets/logotipo.jpeg"  class="img-fluid" width="300" height="300">
-      </div>
-  <h1 class="text-capitalize">&bull; Informe Reparaciones Ejecutar &bull;</h1>
-  <div class="underline">
-  </div>
+<div style="text-align: center;">
+    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
 </div>
+<h1 style="text-align: center"><i class="fas fa-tools"></i> Informe Reparaciones mafer Ejecutar </h1>
 
+<form id="form" [formGroup]="informeForm" (ngSubmit)="guardar()" class="contact-form" (submit)="sendEmail($event)">
 
-<form id="form" [formGroup]="informeForm" (ngSubmit)="guardar()" class="contact-form" (submit)="sendEmail($event)"
->
- 
     <ul class="mt-5 mu=5">
 
         <li>
             <label>Ingrese Nombre de cliente</label>
-            <input type="text"  name= "name" formControlName="name">
+            <input type="text" name="name" formControlName="name">
         </li>
         <li>
             <label>Ingrese Gmail</label>
-            <input type="text"  name= "user_email" formControlName="user_email">
+            <input type="text" name="user_email" formControlName="user_email">
         </li>
 
         <li>
             <label>Placa:</label>
-            <input type="text" name= "placa" formControlName="placa">
+            <input type="text" name="placa" formControlName="placa">
         </li>
-       
+
         <li>
-            <label >Contenido de Informe:</label>
-            <textarea style="margin-left: 20px;"  id="txtContenido"  name ="message" formControlName="contenido"></textarea>
+            <label>Contenido de Informe:</label>
+            <textarea style="margin-left: 20px;" id="txtContenido" name="message"
+                formControlName="contenido"></textarea>
         </li>
-       
+
 
         <p align="center" class="mt-5">
             <button class="btn btn-warning" class="btn btn-warning" type="submit">
-             Enviar Informe</button>
+                Enviar Informe</button>
 
         </p>
 
-    
-       
+
+
     </ul>
 
 
