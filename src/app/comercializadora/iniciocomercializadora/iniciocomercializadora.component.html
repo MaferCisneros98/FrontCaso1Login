@@ -17,10 +17,10 @@
     <tbody>
       <tr *ngFor="let factura of facturas">
         <td align="center">{{factura.id_factura}}</td>
-        <td align="center">{{factura.cliente.apellido}}</td>
-       
-        
-        <td style="text-align: center"><button  class="btn btn-success" (click)="ver(factura)"><i class="fas fa-eye"></i> Ver</button></td>
+        <td align="center">{{factura.cliente.nombre}} {{factura.cliente.apellido}}</td>
+        <td align="center">{{factura.placa}}</td>
+        <td style="text-align: center">
+          <button  class="btn btn-success" (click)="ver(factura)"><i class="fas fa-eye"></i> Ver</button></td>
         
         
       </tr>

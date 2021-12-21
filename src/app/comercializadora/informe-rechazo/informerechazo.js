@@ -8,5 +8,5 @@ function sendMail(params) {
     emailjs.send('service_sd6en4k', 'template_1nc74yn', tempParams )
     .then(function(res){
         console.log("success", res.status);
-    })
+    });
 }

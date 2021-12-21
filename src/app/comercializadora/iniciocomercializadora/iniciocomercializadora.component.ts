@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FacturaCabecera } from 'src/app/models/FacturaCabecera';
+import { FacturaCuerpo } from 'src/app/models/FacturaCuerpo';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/service/producto.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -16,6 +17,7 @@ export class IniciocomercializadoraComponent implements OnInit {
 
   productos: Producto[] = [];
   facturas: FacturaCabecera[] = [];
+  factura: FacturaCuerpo[] = [];
   roles: string[];
   isComercializadora = false;
 
@@ -45,6 +47,7 @@ export class IniciocomercializadoraComponent implements OnInit {
     console.log('Dato enviado--> ' + facturaCabecera.id_factura);
     localStorage.setItem("idFactura", facturaCabecera.id_factura.toString());
     this.router.navigate(["verificacion"]);
+
   }
 
 

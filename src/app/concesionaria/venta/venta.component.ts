@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cliente } from '../../models/Cliente';
 import { ClientesService } from '../../services/clientes/clientes.service';
+import { VehiculosService } from 'src/app/services/vehiculos/vehiculos.service';
 
 
 
@@ -26,10 +27,17 @@ export class VentaComponent implements OnInit {
   
 
   
-  constructor(private http: HttpClient,private service:ClientesService) { }
+  constructor(private http: HttpClient,private service:ClientesService,private vehiculo:VehiculosService) { }
 
+  
   ngOnInit(): void {
     this.recuperarDatos();
+    this.vehiculo.getAllVehiculos().subscribe(resp=>{
+      this.vehiculo=resp;
+    },
+    error=>{console.error(error)}
+    )
+    
   }
 
 
@@ -40,13 +48,10 @@ export class VentaComponent implements OnInit {
     .subscribe(data=>{
       this.cliente=data;
     })
-
   }
-
   sumar(){
      this.factura.total = 2+2;
   }
-
 
   consultar() {
     location.href = 'listarclientes';

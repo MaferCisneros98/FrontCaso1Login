@@ -61,15 +61,22 @@
                     </li>
                     <!--placa vehiculo-->
                     <li>
+                        <span class="input-group-btn">
                         <label>placa:</label>
-                        <input type="text" class="input2" [(ngModel)]="producto.placa"
-                            [ngModelOptions]="{standalone:true}" required>
+                        <select  [(ngModel)]="producto.placa"  name="vehiculo" id="vehiculo"
+                        class="form-control" [ngModelOptions]="{standalone:true}" required style="margin-left: 120px;">
+                        <option *ngFor="let item of vehiculo" [ngValue]="item.placa" >
+                            {{item.placa}} 
+                        </option>
+                    </select>
+                </span>
                     </li>
                     <!--placa subtotal-->
                     <li>
                         <label>subtotal:</label>
                         <input type="text" class="input2" [(ngModel)]="producto.subtotal"
                             [ngModelOptions]="{standalone:true}" required>
+                            
                     </li>
                     <!--Iva-->
                     <li>

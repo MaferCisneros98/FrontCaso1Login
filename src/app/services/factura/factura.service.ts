@@ -9,6 +9,7 @@ import { FacturaCabecera } from '../../models/FacturaCabecera';
 export class FacturaService {
 
   private API_SERVER = "http://localhost:8080/facturacabecera/";
+  
 
   constructor(private httpClient : HttpClient) { }
 
@@ -25,6 +26,9 @@ export class FacturaService {
   }
 
   public facturaById(id: number){
+    return this.httpClient.get<FacturaCabecera>(this.API_SERVER+id);
+  }
+  public facturaCuerpoById(id: number){
     return this.httpClient.get<FacturaCabecera>(this.API_SERVER+id);
   }
 }

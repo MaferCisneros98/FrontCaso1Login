@@ -5,6 +5,8 @@ import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/service/producto.service';
 //correo
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { FacturaCabecera } from 'src/app/models/FacturaCabecera';
+import { FacturaService } from 'src/app/services/factura/factura.service';
 
 @Component({
   selector: 'app-comercializadora-aceptacion',
@@ -14,9 +16,10 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 export class ComercializadoraAceptacionComponent implements OnInit {
   
   producto: Producto = null;
+  factura:FacturaCabecera = new FacturaCabecera();
 
   constructor(
-    private productoService: ProductoService,
+    private facturaService: FacturaService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -25,38 +28,21 @@ export class ComercializadoraAceptacionComponent implements OnInit {
 
   
   ngOnInit() {
-    const id = this.activatedRoute.snapshot.params.id;
-    this.productoService.detail(id).subscribe(
-      data => {
-        this.producto = data;
-      },
-      err => {
-        this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
-        });
-        this.router.navigate(['/']);
-      }
-    );
+   this.cargar();
   }
   
-  onUpdate(): void {
-    const id = this.activatedRoute.snapshot.params.id;
-    this.productoService.update(id, this.producto).subscribe(
-      data => {
-        this.toastr.success('Producto Actualizado', 'OK', {
-          timeOut: 3000, positionClass: 'toast-top-center'
-        });
-        this.router.navigate(['/lista']);
-      },
-      err => {
-        this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
-        });
-        // this.router.navigate(['/']);
-      }
-    );
-  }
+  cargar() {
+    console.log('Ingresa a llamar cargar');
+    let id = localStorage.getItem("idFactura");
+    console.log('Id... >' + id);
+    const that = this;
+    this.facturaService.facturaById(+id)
+      .subscribe(data => {
+        console.log('holii' + data);
+        that.factura = data;
 
+      })
+  }
 
   displayBasic: boolean = false;
 
