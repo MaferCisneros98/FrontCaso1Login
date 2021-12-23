@@ -25,7 +25,7 @@ export class ListadoGarantiasComponent implements OnInit {
       id_garantia: ['', Validators.required],
       id_cliente: ['', Validators.required],
       motivo: ['', Validators.required],
-      tiempo: ['', Validators.required],
+      nombre: ['', Validators.required],
     });;
     this.solicitudeService.getAllSolicitudes().subscribe(resp =>{
       this.garantias = resp;

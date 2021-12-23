@@ -20,4 +20,12 @@ export class DetalleService {
     return this.httpClient.post<FacturaCuerpo>(this.API_SERVER+"guardar/",detalleFactura);
 
   }
+
+  public buscarPlaca(placa:string){
+    return this.httpClient.get(this.API_SERVER + "pf/"+ placa);
+  }
+
+ 
+
+
 }

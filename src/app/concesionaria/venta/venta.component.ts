@@ -8,8 +8,10 @@ import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cliente } from '../../models/Cliente';
 import { ClientesService } from '../../services/clientes/clientes.service';
-
-
+import { VehiculosService } from '../../services/vehiculos/vehiculos.service';
+import { FacturaService } from '../../services/factura/factura.service';
+import { FacturaCuerpo } from '../../models/FacturaCuerpo';
+import { DetalleService } from '../../services/detalle/detalle.service';
 
 @Component({
   selector: 'app-venta',
@@ -22,14 +24,42 @@ export class VentaComponent implements OnInit {
 
   cargar: boolean = false;
   factura: any = { detalleList: [] };
-  
+  vehiculo: any;
+  producto:any;
+  iva: number;
+  suma: number;
+  placaVehiculo:any;
+  dato:any;
   
 
   
-  constructor(private http: HttpClient,private service:ClientesService) { }
+  constructor(
+    private http: HttpClient,
+    private service:ClientesService,
+    private vehiculos: VehiculosService,
+    public Cuerpo :DetalleService,
+    ) { }
 
   ngOnInit(): void {
+    this.agregarPorducto();
     this.recuperarDatos();
+
+    this.vehiculos.getAllVehiculos().subscribe(resp =>{
+      this.vehiculo = resp;
+    },
+    error => { console.error(error)}
+    )
+  }
+
+
+  comprabarPlaca(){
+
+    this.Cuerpo.buscarPlaca("54254")
+    .subscribe(data => {
+        this.placaVehiculo = data;
+        console.log(this.placaVehiculo);
+      
+    })
   }
 
 
@@ -44,7 +74,13 @@ export class VentaComponent implements OnInit {
   }
 
   sumar(){
-     this.factura.total = 2+2;
+   
+    this.factura.total = 0;
+    this.iva = this.factura.detalleList[0].subtotal * 12 /100;
+    this.suma = (Number(this.factura.detalleList[0].subtotal) + Number(this.iva));
+    this.factura.total=this.suma;
+    console.log(this.suma)
+
   }
 
 
@@ -57,16 +93,16 @@ export class VentaComponent implements OnInit {
   }
 
   guardar(){
-
+    
     let formulario: any = document.getElementById('formulario');
     if (formulario.reportValidity()) {
       this.cargar = true;
-      this.factura.id_cliente=this.cliente.id_cliente;
+      this.factura.cliente=this.cliente;
       this.factura.fecha = new Date();
-      this.factura.total = 0;
+      /*
       for (let i = 0; i < this.factura.detalleList.length; i++) {
         this.factura.total += this.factura.detalleList[i].subtotal;
-      }
+      }*/
       this.servicioGuardar().subscribe(
         (response:any) => this.resultadoServicio(response)
       )
@@ -75,9 +111,13 @@ export class VentaComponent implements OnInit {
   }
 
 
+  
+
+
   resultadoServicio(res : any){
-    this.cargar = false;
-    this.factura = {detalleList:[]};
+    this.cargar = true;
+    //this.factura = {detalleList:[]};
+    //this.agregarPorducto();
     alert("factura guardada con id: "+res.id_factura);
   }
 

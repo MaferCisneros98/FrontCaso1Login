@@ -77,3 +77,18 @@ body{
   height:100vh; 
   margin-top: 0px;
 }
+
+
+
+.alert-danger{
+  background: #f8d7da;
+  border-color: #f5c6cb ;
+  margin-top: 5px;
+  width: 30%;
+  padding: 2px;
+  margin-left: 111px;
+}
+
+.container-error-message{
+  padding: 3xp;
+}

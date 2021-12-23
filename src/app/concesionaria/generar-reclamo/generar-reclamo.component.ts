@@ -46,7 +46,7 @@ export class GenerarReclamoComponent implements OnInit {
     this.reclamoForm  = this.fb.group({
       id_garantia: ['', Validators.required],
       id_cliente: ['', Validators.required],
-      tiempo: ['', Validators.required],
+      nombre: ['', Validators.required],
       motivo: ['', Validators.required],
       placa: ['', Validators.required],
       numero_chasis: ['', Validators.required],
@@ -65,7 +65,7 @@ export class GenerarReclamoComponent implements OnInit {
       this.reclamoForm  = this.fb.group({
         id_garantia: [this.garantia.id_garantia, Validators.required],
         id_cliente: [this.garantia.cliente.id_cliente, Validators.required],
-        tiempo: [this.garantia.tiempo, Validators.required],
+        nombre: [this.garantia.cliente.nombre, Validators.required],
         motivo: [this.garantia.motivo, Validators.required],
         placa: [this.garantia.vehiculo.placa, Validators.required],
         numero_chasis: [this.garantia.vehiculo.numero_chasis, Validators.required],

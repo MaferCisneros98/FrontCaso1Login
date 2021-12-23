@@ -17,7 +17,7 @@ export class ClientesService {
     return this.httpClient.get(this.API_SERVER); 
 
   }
-    
+     
   public saveClientes(cliente:any):Observable<any>{
     return this.httpClient.post(this.API_SERVER,cliente);
   }
@@ -33,4 +33,10 @@ export class ClientesService {
   public deteleCliente(id):Observable<any>{
     return this.httpClient.delete(this.API_SERVER + "delete/"+id);
   }
+
+  public buscarCedula(cedula:string){
+    return this.httpClient.get<Cliente>(this.API_SERVER + "xt/"+ cedula);
+  }
+
+  
 }

@@ -17,7 +17,7 @@ export class VehiculosService {
 
   }
 
-  public getVehiculoId(id: number){
+  public getVehiculoId(id: any):Observable<Vehiculo>{
     return this.httpClient.get<Vehiculo>(this.API_SERVER+id);
   }
 

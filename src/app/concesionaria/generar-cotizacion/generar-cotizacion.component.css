@@ -69,3 +69,30 @@ input{
   margin: -0.512em auto;
   width: 100%;
 }
+
+select {
+  padding: 2px;
+  font: 1em sans-serif;
+
+  /* Tamaño uniforme del campo de texto */
+  width: 80%;
+  height: 2%;
+  box-sizing: border-box;
+
+  /* Hacer coincidir los bordes del campo del formulario */
+  border: 1px solid #999;
+  border-color: rgb(65, 65, 65);
+  margin-left: 20px;
+}
+.alert-danger2{
+  background: #f8d7da;
+  border-color: #f5c6cb ;
+  margin-top: 5px;
+  width: 20%;
+  padding: 2px;
+  
+}
+
+.container-error-message2{
+  padding: 3xp;
+}

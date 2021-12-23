@@ -24,7 +24,7 @@
             <th scope="col">Id_Garantia</th>
             <th scope="col">Id_Cliente</th>
             <th scope="col">Motivo </th>
-            <th scope="col">Tiempo</th>
+            <th scope="col">Nombre</th>
             <th scope="col">Reclamos</th>
           </tr>
         </thead>
@@ -33,7 +33,7 @@
             <td>{{item.id_garantia}}</td>
             <td>{{item.cliente.id_cliente}}</td>
             <td>{{item.motivo}}</td>
-            <td>{{item.tiempo}}</td>
+            <td>{{item.cliente.nombre}}</td>
             <td><button (click)="CargarDatos(item)" type="button" class="btn btn-dark">Generar Reclamo</button></td>
           </tr>
          

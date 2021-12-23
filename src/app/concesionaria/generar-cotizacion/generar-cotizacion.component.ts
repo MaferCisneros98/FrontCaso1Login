@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import emailjs,{ EmailJSResponseStatus } from "emailjs-com";
 
 import { CotizacionService } from "../../services/cotizacion/cotizacion.service";
+import { VehiculosService } from '../../services/vehiculos/vehiculos.service';
+import { Vehiculo } from '../../models/Vehiculo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-generar-cotizacion",
@@ -12,11 +15,16 @@ import { CotizacionService } from "../../services/cotizacion/cotizacion.service"
 export class GenerarCotizacionComponent implements OnInit {
   cotizacionForm: FormGroup;
   cotizaciones: any;
+  vehiculo:any;
+  vehiculoForm: FormGroup;
+  vehiculoObjeto: Vehiculo;
   
 
   constructor(
     public fb: FormBuilder,
-    public cotizacionService: CotizacionService
+    public cotizacionService: CotizacionService,
+    public vehiculoService: VehiculosService,
+    private router: Router
   ) {}
 
   displayBasic: boolean = false;
@@ -36,19 +44,25 @@ export class GenerarCotizacionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this.cotizacionForm = this.fb.group({
-      'id_cotizacion': [""],
-      'cedula': ["", Validators.required],
-      'nombre': ["", Validators.required],
-      'apellido': ["", Validators.required],
-      'correo': ["", Validators.required],
-      'fecha_nacimiento': ["", Validators.required],
-      'modelo': ["", Validators.required],
-      'marca': ["", Validators.required],
-      'estado': [""],
+      id_cotizacion: [""],
+      cedula: ["", Validators.required],
+      nombre: ["", Validators.required],
+      apellido: ["", Validators.required],
+      correo: ["", Validators.required],
+      fecha_nacimiento: ["", Validators.required],
+      vehiculo: ["",Validators.required],
+      
     });
-  }
 
+    this.vehiculoService.getAllVehiculos().subscribe(resp => {
+      this.vehiculo = resp;
+    },
+    error => { console.error(error)}
+    )
+  }
+ 
   guardar(): void {
     this.cotizacionService.saveCotizacion(this.cotizacionForm.value).subscribe(
       (resp) => {
@@ -62,5 +76,23 @@ export class GenerarCotizacionComponent implements OnInit {
     );
   }
 
-  
+ 
+  /*
+  CargarDatos(placa){
+    console.log(placa);
+    this.vehiculoService.getVehiculoId(placa).subscribe(resp=>{
+      this.vehiculoObjeto = resp;
+      this.cotizacionForm = this.fb.group({
+        marca: [this.vehiculoObjeto.marca, Validators.required]
+      });
+      
+    }
+
+    )}*/
+
+  get cedula(){return this.cotizacionForm.get('cedula');}
+  get nombre(){return this.cotizacionForm.get('nombre');}
+  get apellido(){return this.cotizacionForm.get('apellido');}
+
+
 }

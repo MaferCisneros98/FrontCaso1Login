@@ -5,91 +5,115 @@
 </div>
 
 <div>
-    <button type="button" style="margin-left: 50px;" class="btn btn-warning" (click)="consultar()">Regresar a la lista</button>
+    <button type="button" style="margin-left: 50px;" class="btn btn-warning" (click)="consultar()">Regresar a la
+        lista</button>
 </div>
 <!--Inicio metodo guardar-->
-
-
 <div class="container mt-5" style="align-content: center;">
-    <form (ngSubmit)="guardar()" id="formulario" class="mb-5 ml-5">
-        <div class="underline mb-5 "></div>
-        <ul>
-            <li>
-                <!--Tres datos en una solo columna-->
-                <span class="input-group-btn">
-                    <!--cedula Cliente-->
-                    <label>Cedula:</label>
-                    <input readonly class="input2"  [(ngModel)]="cliente.cedula" type="text"  name="cedula">
-                    <!--nombre Cliente-->
-                    <label>Nombre:</label>
-                    <input readonly class="input2" [(ngModel)]="cliente.nombre" type="text"  name="nombre">
-                    <!--apellido Cliente-->
-                    <label>Apellido:</label>
-                        <input readonly [(ngModel)]="cliente.apellido" class="input2" type="text" name="apellido">
-                </span>
-            </li>
-            <!--Id cliente-->
-            
-            <!--Factura tipo-->
-            <li>
-                <label>Descripcion:</label>
-                <input type="text" class="input2" [(ngModel)]="factura.tipo" [ngModelOptions]="{standalone:true}"
-                    required>
-            </li>
-            <!--Dato de prueba-->
-            <li>
-                <label>Total:</label>
-                <input type="text" class="input2" [(ngModel)]="factura.total" [ngModelOptions]="{standalone:true}"
-                    required>
-                <button type="button" class="btn btn-warning" (click)="sumar()">Sumar</button>
-            </li>
-            <hr class="mt-2">
-            <div>
-                <div class="col-md-3 mt-3" align="center">
-                    <label>Vehiculos</label>
-                </div>
-                <!--Agregar boton para agregar varios vehiculos-->
+
+
+    <form (ngSubmit)="guardar()" id="formulario" class="ml-5">
+        <div class="underline mb-5 ">
+            <ul>
+                <div id="htmlData">
+                    <li>
+                        <!--Tres datos en una solo columna-->
+                        <span class="input-group-btn">
+                            <!--cedula Cliente-->
+                            <label>Cedula:</label>
+                            <input readonly class="input2" [(ngModel)]="cliente.cedula" type="text" name="cedula">
+                            <!--nombre Cliente-->
+                            <label>Nombre:</label>
+                            <input readonly class="input2" [(ngModel)]="cliente.nombre" type="text" name="nombre">
+                            <!--apellido Cliente-->
+                            <label>Apellido:</label>
+                            <input readonly [(ngModel)]="cliente.apellido" class="input2" type="text" name="apellido">
+                        </span>
+                    </li>
+
+
+                    <!--Factura tipo-->
+                    <li>
+                        <label>Descripcion:</label>
+                        <input type="text" class="input2" [(ngModel)]="factura.tipo"
+                            [ngModelOptions]="{standalone:true}" required>
+                    </li>
+                    <!--Dato de prueba-->
+
+                    <hr class="mt-2">
+                    <div>
+                        <div class="col-md-3 mt-3" align="center">
+                            <label class="mb-5">Vehiculos</label>
+                        </div>
+                        <!--Agregar boton para agregar varios vehiculos-->
+                        <!--  
                 <div class="col-md-9 mb-5 mt-5">
                     <button type="button" class="btn btn-dark" (click)="agregarPorducto()">Agreagar
                         Producto</button>
-                </div>
-                <div *ngFor="let producto of factura.detalleList">
-                    <li>
-
+                </div>-->
+                        <div *ngFor="let producto of factura.detalleList">
+                            <!--<li>
                         <div type="button" class="btn btn-danger" (click)="eliminar(producto)">Eliminar Producto
                         </div>
-                    </li>
-                    <!--placa vehiculo-->
-                    <li>
-                        <label>placa:</label>
-                        <input type="text" class="input2" [(ngModel)]="producto.placa"
-                            [ngModelOptions]="{standalone:true}" required>
-                    </li>
-                    <!--placa subtotal-->
-                    <li>
-                        <label>subtotal:</label>
-                        <input type="text" class="input2" [(ngModel)]="producto.subtotal"
-                            [ngModelOptions]="{standalone:true}" required>
-                    </li>
-                    <!--Iva-->
-                    <li>
-                        <label>iva:</label>
-                        <input type="text" class="input2" [(ngModel)]="producto.iva"
-                            [ngModelOptions]="{standalone:true}" required>
-                    </li>
-                    <!--Total-->
-                    <li>
-                        <label>Total:</label>
-                        <input type="text" class="input2" [(ngModel)]="producto.total"
-                            [ngModelOptions]="{standalone:true}" required>
-                    </li>
+                    </li>-->
+                            <!--placa vehiculo-->
+                            <li>
+                                <span class="input-group-btn">
+                                    <label>placa:</label>
+
+                                    <select [(ngModel)]="producto.placa" name="vehiculo" id="vehiculo"
+                                        class="form-control" [ngModelOptions]="{standalone:true}" required
+                                        style="margin-left: 120px;">
+
+                                        <option *ngFor="let item of vehiculo" [ngValue]="item.placa">
+                                            {{item.placa}} {{item.modelo}} {{item.color}}
+
+                                        </option>
+                                    </select>
+                                    <!--
+                        <input type="text" class="input2" [(ngModel)]="producto.modelo"
+                            [ngModelOptions]="{standalone:true}" required>-->
+                                </span>
+                            </li>
+                            <!--placa subtotal-->
+                            <li>
+                                <label>subtotal:</label>
+                                <input type="text" class="input2" [(ngModel)]="producto.subtotal"
+                                    [ngModelOptions]="{standalone:true}" required>
+                            </li>
+                            <!--Iva-->
+                            <li>
+                                <label>iva:</label>
+                                <input type="text" class="input2" required value="12%" readonly>
+                            </li>
+                            <!--Total-->
+                            <li>
+                                <label>Total:</label>
+                                <input type="text" class="input2" [(ngModel)]="factura.total"
+                                    [ngModelOptions]="{standalone:true}" required>
+                            </li>
+
+                            <div>
+                                <button type="submit" class="btn btn-dark mt-5" value="Guardar">Guardar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Cierre pdf-->
                 </div>
-                <input type="submit" class="btn btn-dark mt-5" value="Guardar">
-            </div>
 
-        </ul>
-
+            </ul>
+        </div>
     </form>
-    
-
+    <!--botones-->
     <div>
+        <button type="button" style="margin-left: 22px" class="btn btn-warning mt-5 mb-2" (click)="sumar()">Sumar</button>
+    </div>
+    <div>
+        
+        <button class="btn btn-danger  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
+    </div>
+</div>
+
+
+<div>

@@ -8,17 +8,45 @@
         <!--cedula-->
         <li>
             <label>Cedula:</label>
-            <input type="text" [(ngModel)]="cliente.cedula" name="cedula" ngModel required minlength=10 maxlength=10>
+            <input id="cedula" type="text" [(ngModel)]="cliente.cedula" name="cedula" ngModel required minlength=10 maxlength=10 #cedula="ngModel">
+            <!--Validacion de la cedula-->
+            <div *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)" class="alert-danger">
+                <div *ngIf="cedula.errors.required">
+                    La cedula es requerida
+                </div>
+                <div *ngIf="cedula.errors.minlength">
+                    Cedula debe tener 10 digitos
+                </div>
+            </div>
+            
         </li>
         <!--nombre-->
         <li>
             <label>Nombre:</label>
-            <input type="text" [(ngModel)]="cliente.nombre" name="nombre" ngModel required>
+            <input type="text" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" ngModel required required minlength=4 maxlength=20 #nombre="ngModel" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
+            <!--Validacion del nombre-->
+            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert-danger">
+                <div *ngIf="nombre.errors.required">
+                    El nombre es requerida
+                </div>
+                <div *ngIf="nombre.errors.minlength">
+                    El nombre debe tener 10 digitos
+                </div>
+            </div>
         </li>
         <!--apellido-->
         <li>
             <label>Apellido:</label>
-            <input type="text" [(ngModel)]="cliente.apellido" name="apellodo" ngModel required>
+            <input id="apellido" type="text" [(ngModel)]="cliente.apellido" name="apellido" ngModel required minlength=4 maxlength=20 #apellido="ngModel" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
+            <!--Validacion del apellido-->
+            <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)" class="alert-danger">
+                <div *ngIf="apellido.errors.required">
+                    El apellido es requerida
+                </div>
+                <div *ngIf="apellido.errors.minlength">
+                    El apellid debe tener 10 digitos
+                </div>
+            </div>
         </li>
         <!--fecha de nacimiento-->
         <li>

@@ -3,23 +3,49 @@
 <!--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />-->
 <header class="mt-3">Creación de Cliente</header>
 
-<form id="form" [formGroup]="clienteForm" (ngSubmit)="guardar()">
+<form id="form" [formGroup]="clienteForm" (ngSubmit)="guardarPorId()">
     <div class="underline"></div>
 
     <ul class="mt-5 mb-5">
-
         
         <li>
             <label>Cedula:</label>
-            <input type="text" formControlName="cedula" minlength=10 maxlength=10 data-ng-change="numbersOnly()">
+            <input type="text" formControlName="cedula" minlength=10 maxlength=10 data-ng-change="numbersOnly()" > 
+            <!--Validaciones cedula-->
+            <div class="alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
+                <div class="container-error-message" *ngIf="cedula.errors.required">
+                    Cedula requerida
+                </div>
+                <div class="container-error-message" *ngIf="cedula.errors.minlength">
+                    Cedula debe tener 10 digitos
+                </div>
+            </div>
         </li>
         <li>
             <label>Nombre:</label>
-            <input type="text" formControlName="nombre" pattern="(^[a-zA-Z]+$)">
+            <input type="text" id="nombre" formControlName="nombre" pattern="(^[a-zA-Z]+$)" minlength=4 maxlength=50 onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
+             <!--Validaciones nombre-->
+             <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div class="container-error-message" *ngIf="nombre.errors.required">
+                    Nombre requerido
+                </div>
+                <div class="container-error-message" *ngIf="nombre.errors.minlength">
+                    Nombre debe tener minimo 4 caracteres
+                </div>
+            </div>
         </li>
         <li>
             <label>Apellido:</label>
-            <input type="text" formControlName="apellido" pattern="(^[a-zA-Z]+$)">
+            <input type="text" id="apellido" formControlName="apellido" pattern="(^[a-zA-Z]+$)" minlength=4 maxlength=50 onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
+             <!--Validaciones apellido-->
+             <div class="alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                <div class="container-error-message" *ngIf="apellido.errors.required">
+                    Apellido requerido
+                </div>
+                <div class="container-error-message" *ngIf="apellido.errors.minlength">
+                    El apellido debe tener minimo 4 caracteres
+                </div>
+            </div>
         </li>
         <li>
             <label class="mr-5">Fecha de Nacimiento:</label>
