@@ -48,6 +48,10 @@ import { CrearRepuestosComponent } from './comercializadora/crear-repuestos/crea
 import { RepuestosComponent } from './comercializadora/repuestos/repuestos.component';
 import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.component';
 import { EditarClienteComponent } from './concesionaria/editar-cliente/editar-cliente.component';
+import { ListarinformeComponent } from './taller/listarinforme/listarinforme/listarinforme.component';
+import { ListarsolicitudComponent } from './taller/listarsolicitud/listarsolicitud/listarsolicitud.component';
+import { EditarsolicitudComponent } from './taller/editarsolicitud/editarsolicitud/editarsolicitud.component';
+import { EditarinformeComponent } from './taller/editarinforme/editarinforme/editarinforme.component';
 
 
 @NgModule({
@@ -85,7 +89,14 @@ import { EditarClienteComponent } from './concesionaria/editar-cliente/editar-cl
     CrearRepuestosComponent,
     RepuestosComponent,
     EditarRepuestoComponent,
-    EditarClienteComponent
+    EditarClienteComponent,
+    InformeTallerComponent,
+    ListarinformeComponent,
+    SolicitudTallerComponent,
+    ListarsolicitudComponent,
+    NuevoProductoComponent,
+    EditarsolicitudComponent,
+    EditarinformeComponent
 
   ],
   imports: [

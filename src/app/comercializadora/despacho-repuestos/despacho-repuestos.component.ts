@@ -58,6 +58,7 @@ if (index > -1) {
 console.log(item);
   }
   public sendEmail(e: Event){
+    console.log('Majooooo...');
     e.preventDefault();
   
     emailjs.sendForm('service_e24743a','template_rzk5o39',e.target as HTMLFormElement, 'user_c9o02iLdgvLwYyARv3g7J')

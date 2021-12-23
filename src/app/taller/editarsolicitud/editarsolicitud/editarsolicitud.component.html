@@ -1,0 +1,65 @@
+<app-menu></app-menu>
+
+  <div class="container" style="text-align: center">
+    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+  </div>
+<p class="text-center fs-2" ><b>EDITAR SOLICITUD DE REPUESTOS</b></p>
+<hr>
+
+<form >
+    <div class="underline"></div>
+    <ul class="mt-5 mu=5">
+
+        <div >
+            <label>Cedula:</label> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+            <input type="text" [(ngModel)]="solicitudTaller.id_cliente"   name="id_cliente">
+            
+        </div>
+        <br>
+        <br>
+        <div >
+            <label>Nombre:</label>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+            <input type="text" [(ngModel)]="solicitudTaller.nombre"   name="nombre">
+            
+        </div>
+        <br>
+        <br>
+        <div >
+            <label>Placa Vehículo:</label> &nbsp;
+            <input type="text input" [(ngModel)]="solicitudTaller.placa"  name="placa">
+           
+        </div>
+      
+        <br><br>
+        <div >
+            <label>Repuestos:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+            <input type="text" [(ngModel)]="solicitudTaller.repuestos"  name="repuestos">
+            
+        </div>
+      <br><br> 
+      <div >
+        <label>Cantidad:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+        <input type="text" [(ngModel)]="solicitudTaller.cantidad"   name="cantidad">
+        
+    </div>
+    <br>
+    <br>
+     <div >
+        <label>Descripción: </label>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        <input type="text" [(ngModel)]="solicitudTaller.descripcion"  name="descripcion">
+       
+     </div>
+  
+
+        <p  class="mt-5">
+            <button  (click)="Actualizar(solicitudTaller)" style="float: right" class="btn btn-default" class="btn btn-warning">Editar</button>
+        </p>
+        
+    </ul>
+
+<p  class="mt-5" style="margin-left: 35px;">
+    <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/listarsolicitud" >Regresar a la lista</button>
+</p>
+<br>
+</form>

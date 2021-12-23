@@ -1,51 +1,36 @@
 <app-menu></app-menu>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-<div class="col-12 text-center mb-5 mt-2">
     <div style="text-align: center;">
         <img src="../../../../assets/logotipo.jpeg"  class="img-fluid" width="300" height="300">
       </div>
-  <h1 class="text-capitalize">&bull; Lista de Repuestos &bull;</h1>
-  <form>
+  <h1 style="text-align: center"><i class="fas fa-tools"></i> Lista de Repuestos </h1>
+  
 <div class= "form-group">
   <input type="text" class="form-control" name="filterPost" placeholder="Buscar Repuesto por Marca..." [(ngModel)]="filterPost">
 </div>
 
-
-  </form>
-  <div class="underline">
-  </div>
-
-<p align="right" class="mt-5" style="margin-right: 115px;">
+<p align="right" style="margin-right: 115px;">
 </p>
-<div class="container mt-2">
+<div class="container">
   <table class="table table-bordered border-secondary">
-    <thead>
-      <tr class="table-info">
-     
+    <thead style="text-align: center">
+      <tr class="table-secondary">
         <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
         <th scope="col">Stock</th>
         <th scope ="col">Acciones</th>
-
       </tr>
     </thead>
     <tbody>
-      
-      <tr *ngFor="let item of repuestos | filter:filterPost ">
- 
+      <tr style="text-align: center" *ngFor="let item of repuestos | filter:filterPost ">
         <td>{{item.materiales}}</td>
         <td>${{item.precio}}</td>
         <td>{{item.stock}}</td>
-        <td>
-          <button (click)="Editar(item)" class="btn btn-success btn-xs" style="margin-left: 6px;">Editar</button>
-          <button (click)="Eliminar(item.id_repuesto)" class="btn btn-danger btn-xs" style="margin-left: 6px;">Eliminar</button>
-          
-
+        <td style="text-align: center">
+          <button (click)="Editar(item)" class="btn btn-success btn-xs" style="margin-left: 6px;"><i class="fas fa-edit"></i> Editar</button>
+          <button (click)="Eliminar(item.id_repuesto)" class="btn btn-danger btn-xs" style="margin-left: 6px;"><i class="fas fa-trash-alt"></i> Eliminar</button>
         </td>
       </tr>
     </tbody>
-
   </table>
 </div>
 

@@ -6,8 +6,11 @@ import { TokenService } from 'src/app/service/token.service';
 import jsPDF from 'jspdf';
 import jspdf, * as JSPdf from 'jspdf'; 
 import html2canvas from 'html2canvas';
+import { Router } from '@angular/router';
 //correo
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { Cliente } from 'src/app/models/Cliente';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-informecomer',
@@ -16,6 +19,10 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 })
 export class InformecomerComponent implements OnInit {
 
+  clientes: any;
+  personaForm:FormGroup
+  cliente:Cliente[];
+  
   public num1:number;
   public num2:number;
   public num3:number;
@@ -35,8 +42,13 @@ export class InformecomerComponent implements OnInit {
 
   constructor(private productoService: ProductoService,
     private toastr: ToastrService,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService,
+    private router: Router) { }
 
+    Venta(cliente:Cliente):void{
+      localStorage.setItem("id", cliente.id_cliente.toString());
+      this.router.navigate(["venta"]); 
+    }
     
     capturarContenido(){
       var data = document.getElementById('contenidoAConvertir');

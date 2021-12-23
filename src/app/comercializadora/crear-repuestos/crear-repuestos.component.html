@@ -5,17 +5,15 @@
     <div style="text-align: center;">
         <img src="../../../../assets/logotipo.jpeg"  class="img-fluid" width="300" height="300">
       </div>
-  <h1 class="text-capitalize">&bull; Ingresar Repuestos &bull;</h1>
+  <h1 class="text-capitalize">Ingresar Repuestos </h1>
   <div class="underline">
   </div>
 </div>
 
 
 <form id="form" [formGroup]="repuestosForm" (ngSubmit)="guardar()">
- 
-    <ul class="mt-5 mu=5">
-
-       
+    <ul>
+        
         <li>
             <label>Nombre</label>
             <input type="text" formControlName="materiales">
@@ -35,10 +33,7 @@
               Ingresar Repuesto</button>
 
         </p>
-
-    
-       
+        
     </ul>
-
 
 </form>

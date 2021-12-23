@@ -1,39 +1,64 @@
-
 <app-menu></app-menu>
-<div class="container">
+
   <div class="container" style="text-align: center">
     <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
-</div>
-  
-  <p class="text-center fs-2" ><b>SOLICITUD DE REPUESTOS</b></p>
+  </div>
 
-  <form class="form-floating" [formGroup]="solicitudForm" (ngSubmit)="guardarSolicitud()">
-    <input type="text" class="form-control" id="floatingInputValue" formControlName="id_cliente">
-    <label for="floatingInputValue">Ingrese la Cedula del propietario ejm: 0100000000</label>
-  
-  <br><br><br>
-  <div class="form-floating">
-    <input type="text" class="form-control" id="floatingInputValue"  formControlName="placa">
-    <label for="floatingInputValue">Ingrese la placa del vehículo ejem:AZ000</label>
+  <p class="text-center fs-2" ><b>SOLICITUD DE REPUESTOS</b></p>
+  <form class="form-floating" [formGroup]="solicitudForm" (ngSubmit)="guardarSolicitud()" (ngSubmit)="sendEmail($event)">
+    <div class="underline"></div>
+    <br><br>
+    <div>
+      <label for="floatingInputValue">Ingrese el correo:</label>
+      <input type="text"  id="floatingInputValue" name= "to_email" formControlName="to_email"  required>
+     
+    </div>
+    <br><br>
+    <div> 
+      <label >Cedula:</label>
+      &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
+    <input type="text"  id="floatingInputValue" formControlName="id_cliente" name="id_cliente" required>
+   
+  </div>
+  <br><br>
+  <div> 
+    <label >Nombre:</label>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+  <input type="text"  id="floatingInputValue" formControlName="nombre" name="nombre" required>
+ 
+</div>
+  <br><br>
+  <div >
+    <label>Placa Vehículo:</label> &nbsp;&nbsp;
+    <input type="text"  id="floatingInputValue"  formControlName="placa" name="placa" required>
+   
   </div>
     <br><br>
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text">Ingrese los <br>repuestos<br> a solicitar</span>
+      <label>Ingrese los <br>repuestos<br> a solicitar</label> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp; 
     </div>
-    <textarea class="form-control" aria-label="With textarea" formControlName="repuestos"></textarea>
+    <textarea  class="form-control input"  aria-label="With textarea" formControlName="repuestos" name= "repuestos" required></textarea>
   </div>
   <br><br>
+  <div >
+    <label>Cantidad:</label> 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text"  id="floatingInputValue"  formControlName="cantidad" name="cantidad" required>
+  </div>
+    <br><br>
 
   <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text">Descripcion</span>
+      <label>Descripción</label> &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;&nbsp; 
     </div>
-    <textarea class="form-control" aria-label="With textarea" id="floatingInputValue"placeholder="Ingrese una nota, caso contrario ingrese SN" value="Ingrese una nota, caso contrario ingrese SN" formControlName="descripcion"></textarea>
+    <textarea  class="form-control input"  aria-label="With textarea" id="floatingInputValue"placeholder="Ingrese una nota, caso contrario ingrese SN" value="Ingrese una nota, caso contrario ingrese SN" name="message" formControlName="descripcion"></textarea>
   </div>
-  <br><br><br>
+  <br><br>
   <div class="col text-center">
-    <button class="btn btn-default btn btn-secondary" type="submit">Enviar</button>
+    <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/">Regresar</button>
+    <button class="btn btn-default btn btn-warning input" style="float:right" type="submit">Enviar</button>
   </div>
+  <br>
 </form>

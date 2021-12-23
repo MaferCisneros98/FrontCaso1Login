@@ -1,30 +1,62 @@
-
 <app-menu></app-menu>
-<div class="container">
-  <div class="container" style="text-align: center">
-    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+<div class="container" style="text-align: center">
+  <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
 </div>
-  <p class="text-center fs-2" ><b>INFORME DE REPARACIÓN</b></p>
-
-<form class="form-floating" [formGroup]="informeForm" (ngSubmit)="guardar()">
-  <input type="text" class="form-control" id="floatingInputValue" formControlName="id_cliente">
-  <label for="floatingInputValue">Ingrese la Cedula del propietario ejm: 0100000000</label>
-
-<br><br><br>
-<div class="form-floating">
-  <input type="text" class="form-control" id="floatingInputValue"  formControlName="placa">
-  <label for="floatingInputValue">Ingrese la placa del vehículo ejem:AZ000</label>
+<p class="text-center fs-2"><b>INFORME DE REPARACIÓN</b></p>
+<br>
+<form class="form-floating" [formGroup]="informeForm" (ngSubmit)="guardar()" (ngSubmit)="sendEmail($event)">
+  <div class="underline"></div>
+  <div >
+    <br><br>
+    <label>Ingrese el correo:</label>
+  <input type="text"   name= "to_email" formControlName="to_email">
+ 
+</div>
+<br><br>
+<div  >
+  <label >Cedula:</label>
+  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
+  <input type="text"   name= "id_cliente" formControlName="id_cliente">
+  
+</div>
+<br><br>
+<div  >
+  <label >Nombre:</label>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <input type="text"    name= "nombre" formControlName="nombre">
+  
+</div>
+<br><br>
+<div  >
+  <label>Placa Vehículo:</label> &nbsp;&nbsp;
+  <input type="text"  name="placa"  formControlName="placa" >
+  
 </div>
   <br><br>
+ 
     <div class="input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text">Ingrese<br>Los materiales <br> utilizados <br> y mano de <br>obra</span>
-         
+          <label >Materiales <br> utilizados <br> y mano de <br>obra</label>
+           &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp; 
         </div>
-        <textarea class="form-control" aria-label="With textarea" formControlName="descripcion"></textarea>
+
+        <textarea class="form-control input"  name="message" aria-label="With textarea"  formControlName="descripcion"></textarea>
       </div>   
-       <br><br><br>
-  <div class="col text-center">
-    <button class="btn btn-default btn btn-secondary" type="submit">Enviar</button>
-  </div>
+       <br><br>
+       <div  >
+        <label>Total:</label> 
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="text"  name="total"  formControlName="total" >
+        
+      </div>
+     
+ <div>
+    <p  >
+      <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/">Regresar</button>
+  
+  
+    <button  class="btn btn-default btn btn-warning input2" style="float:right" type="submit">Enviar</button>
+ </p></div>
+<br><br>
 </form>
+

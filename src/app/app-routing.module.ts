@@ -35,6 +35,10 @@ import { DespachoRepuestosComponent } from './comercializadora/despacho-repuesto
 import { EditarRepuestoComponent } from './editar-repuesto/editar-repuesto.component';
 import { OrdenReparacionComponent } from './comercializadora/orden-reparacion/orden-reparacion.component';
 import { EditarClienteComponent } from './concesionaria/editar-cliente/editar-cliente.component';
+import { ListarinformeComponent } from './taller/listarinforme/listarinforme/listarinforme.component';
+import { ListarsolicitudComponent } from './taller/listarsolicitud/listarsolicitud/listarsolicitud.component';
+import { EditarsolicitudComponent } from './taller/editarsolicitud/editarsolicitud/editarsolicitud.component';
+import { EditarinformeComponent } from './taller/editarinforme/editarinforme/editarinforme.component';
 
 
 
@@ -52,11 +56,10 @@ const routes: Routes = [
   { path: 'rechazo', component: InformeRechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'rechazoInforme', component: RechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'verificacion/:id', component: VerificacionDocumentosComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
-  { path: 'informe-rechazo/:id', component: InformeRechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
+  { path: 'informe-rechazo/:id_factura', component: InformeRechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'informecomer', component: InformecomerComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'comercializadora-aceptacion/:id', component: ComercializadoraAceptacionComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'inicio-comercializadora', component: IniciocomercializadoraComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
-  { path: 'rechazo', component: InformeRechazoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'editar', component: EditarProductoComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'ordenR', component: OrdenReparacionComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
   { path: 'despacho', component: DespachoRepuestosComponent, canActivate: [guard], data: { expectedRol: ['comercializadora'] } },
@@ -83,6 +86,10 @@ const routes: Routes = [
   //taller
   { path: 'informe', component:InformeTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
   { path: 'solicitud', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'listasolicitud', component:ListarsolicitudComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'listainforme', component:ListarinformeComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'editarSolicitud', component:EditarsolicitudComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
+  { path: 'editarInforme', component:EditarinformeComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
   { path: '**', redirectTo: '', pathMatch: 'full' },
 
   

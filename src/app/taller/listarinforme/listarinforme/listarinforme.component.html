@@ -1,1 +1,47 @@
-<p>listarinforme works!</p>
+<app-menu></app-menu>
+
+  <div class="container" style="text-align: center">
+    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+  </div>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="col-12 text-center mb-5 mt-2">
+  <h1 class="text">Lista de Informes Generados</h1>
+  <hr>
+  <div class="underline">
+  </div>
+</div>
+<div class="container mt-2">
+  <table class="table table-bordered border-black" >
+    <thead >
+      <tr class="table-secondary ">
+        <th scope="col">Cedula</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Placa Vehiculo</th>
+        <th scope="col">Descripcion de Informe</th>
+        <th scope="col">Total</th> 
+        <th scope="col">Edicion</th> 
+      
+        
+      </tr>
+    </thead>
+  <tbody>
+      <tr *ngFor="let item of informes">
+        <td>{{item.id_cliente}}</td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.placa}}</td>
+        <td>{{item.descripcion}}</td>
+        <td>{{item.total}}</td>
+        <td> 
+          <button (click)= "Editar(item)"  class="btn btn-success btn-xs " >Editar Informe</button> 
+        </td>
+      </tr>
+  </tbody>
+  
+  </table>
+  <div class="mt-5 " style="margin-right: 50px; " text-align="right">
+    <button class="btn btn-default" class="btn btn-warning" type="button"  label="Ok" routerLink="/informe">Generar Nuevo Informe</button>
+  </div>
+</div>

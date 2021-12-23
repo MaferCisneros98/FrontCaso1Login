@@ -1,32 +1,23 @@
 <app-menu></app-menu>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-<div class="col-12 text-center mb-5 mt-2">
+
     <div style="text-align: center;">
         <img src="../../../../assets/logotipo.jpeg"  class="img-fluid" width="300" height="300">
       </div>
-  <h1 class="text-capitalize">&bull; Menú Repuestos &bull;</h1>
+  <h1 align="center"> Menú Repuestos </h1>
   <div class="underline">
   </div>
-</div>
-
-
 <form id="form" >
- 
     <ul class="mt-5 mu=5">
-
         <p align="center" class="mt-5" style="margin-right: 1px;">
-            <button class="btn btn-default" class="btn btn-warning" routerLink="/despacho">Despacho de Repuestos</button>
+            <button class="btn btn-default" class="btn btn-dark" routerLink="/repuesto"><i class="fas fa-plus"></i> Ingresar Repuestos</button>
         </p>
         <p align="center" class="mt-5" style="margin-right: 1px;">
-            <button class="btn btn-default" class="btn btn-warning" routerLink="/listaR">Lista de Repuestos</button>
+            <button  class="btn btn-default" class="btn btn-dark" routerLink="/listaR"><i class="fas fa-clipboard-list"></i> Lista de Repuestos</button>
         </p>
-        <p align="center" class="mt-5" style="margin-right: 1x;">
-            <button class="btn btn-default" class="btn btn-warning" routerLink="/repuesto">Ingresar Repuestos</button>
-        </p>
-    
-       
+        <p align="center" class="mt-5" style="margin-right: 1px;">
+            <button class="btn btn-default" class="btn btn-dark" routerLink="/despacho"><i class="fas fa-tools"></i> Despacho de Repuestos</button>
+        </p>      
     </ul>
-
-
 </form>
