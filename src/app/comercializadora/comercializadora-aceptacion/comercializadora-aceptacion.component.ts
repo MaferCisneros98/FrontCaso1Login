@@ -7,6 +7,7 @@ import { ProductoService } from 'src/app/service/producto.service';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { FacturaCabecera } from 'src/app/models/FacturaCabecera';
 import { FacturaService } from 'src/app/services/factura/factura.service';
+import { Cliente } from 'src/app/models/Cliente';
 
 @Component({
   selector: 'app-comercializadora-aceptacion',
@@ -36,6 +37,7 @@ export class ComercializadoraAceptacionComponent implements OnInit {
     let id = localStorage.getItem("idFactura");
     console.log('Id... >' + id);
     const that = this;
+    this.factura.cliente = new Cliente();
     this.facturaService.facturaById(+id)
       .subscribe(data => {
         console.log('holii' + data);

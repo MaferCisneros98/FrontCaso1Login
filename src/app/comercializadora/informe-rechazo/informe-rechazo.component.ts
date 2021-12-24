@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { ToastrService } from 'ngx-toastr';
+import { Cliente } from 'src/app/models/Cliente';
 import { FacturaCabecera } from 'src/app/models/FacturaCabecera';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/service/producto.service';
@@ -34,6 +35,7 @@ export class InformeRechazoComponent implements OnInit {
     let id = localStorage.getItem("idFactura");
     console.log('Id... >' + id);
     const that = this;
+    this.factura.cliente = new Cliente();
     this.facturaService.facturaById(+id)
       .subscribe(data => {
         console.log('holii' + data);

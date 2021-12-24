@@ -1,3 +1,5 @@
+import { Cliente } from "./Cliente";
+
 export class Reclamo{
     id_reclamo:number;
     id_garantia:number;
@@ -8,4 +10,5 @@ export class Reclamo{
     numero_chasis:number;
     marca:number;
     modelo:number;
+    cliente:Cliente;
 }
