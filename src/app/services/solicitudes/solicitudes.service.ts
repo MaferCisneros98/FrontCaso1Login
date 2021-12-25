@@ -11,7 +11,7 @@ import { SolicitudGarantia } from "src/app/models/SolicitudGarantia";
   })
   export class Solicitudes {
   
-    private API_SERVER = "http://localhost:8080/solicitudesgarantias/"; 
+    private API_SERVER = "http://localhost:8080/garantias/"; 
   
     constructor(private httpClient : HttpClient) { }
   
@@ -20,8 +20,8 @@ import { SolicitudGarantia } from "src/app/models/SolicitudGarantia";
   
     }
 
-    public saveGarantia(garantia:any):Observable<any>{
-      return this.httpClient.post(this.API_SERVER,garantia);
+    public saveGarantia(solicitudgarantia:any):Observable<any>{
+      return this.httpClient.post(this.API_SERVER,solicitudgarantia);
     }
   
     public getGarantiaId(id: any):Observable<SolicitudGarantia>{
