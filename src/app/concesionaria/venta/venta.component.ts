@@ -30,7 +30,7 @@ export class VentaComponent implements OnInit {
   suma: number;
   placaVehiculo:any;
   dato:any;
-  
+  fecha:Date;
 
   
   constructor(
@@ -79,6 +79,7 @@ export class VentaComponent implements OnInit {
     this.iva = this.factura.detalleList[0].subtotal * 12 /100;
     this.suma = (Number(this.factura.detalleList[0].subtotal) + Number(this.iva));
     this.factura.total=this.suma;
+    // this.factura.iva= this.iva;
     console.log(this.suma)
 
   }
@@ -98,7 +99,8 @@ export class VentaComponent implements OnInit {
     if (formulario.reportValidity()) {
       this.cargar = true;
       this.factura.cliente=this.cliente;
-      this.factura.fecha = new Date();
+      console.log('guardar feccha '+this.factura.fecha);
+      //this.factura.fecha = this.fecha;
       /*
       for (let i = 0; i < this.factura.detalleList.length; i++) {
         this.factura.total += this.factura.detalleList[i].subtotal;

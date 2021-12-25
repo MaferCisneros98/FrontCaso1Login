@@ -1,8 +1,8 @@
 import { Cliente } from "./Cliente";
 import { Vehiculo } from './Vehiculo';
 
-export class Garantia{
-    id_garantia:number;
+export class SolicitudGarantia{
+    id_solicitudgarantia:number;
     id_cliente:number;
     placa:string;
     tiempo:number;

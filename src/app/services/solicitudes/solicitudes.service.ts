@@ -1,7 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Garantia } from '../../models/Garantia';
+import { SolicitudGarantia } from "src/app/models/SolicitudGarantia";
+
 
 
 
@@ -10,7 +11,7 @@ import { Garantia } from '../../models/Garantia';
   })
   export class Solicitudes {
   
-    private API_SERVER = "http://localhost:8080/garantias/"; 
+    private API_SERVER = "http://localhost:8080/solicitudesgarantias/"; 
   
     constructor(private httpClient : HttpClient) { }
   
@@ -23,11 +24,11 @@ import { Garantia } from '../../models/Garantia';
       return this.httpClient.post(this.API_SERVER,garantia);
     }
   
-    public getGarantiaId(id: any):Observable<Garantia>{
-      return this.httpClient.get<Garantia>(this.API_SERVER+id);
+    public getGarantiaId(id: any):Observable<SolicitudGarantia>{
+      return this.httpClient.get<SolicitudGarantia>(this.API_SERVER+id);
     }
   
-    UpdateGarantia(garantia: Garantia){
-      return this.httpClient.put<Garantia>(this.API_SERVER + garantia.id_garantia, garantia);
+    UpdateGarantia(solicitudgarantia: SolicitudGarantia){
+      return this.httpClient.put<SolicitudGarantia>(this.API_SERVER + solicitudgarantia.id_solicitudgarantia, solicitudgarantia);
     }
   }

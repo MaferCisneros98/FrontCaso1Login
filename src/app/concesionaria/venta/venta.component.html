@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div>
-    <h1 align="center">Generar Compra</h1>
+    <h1 align="center">Generar Factura</h1>
 </div>
 
 <div>
@@ -17,6 +17,8 @@
             <ul>
                 <div id="htmlData">
                     <li>
+                        <!--Fecha-->
+
                         <!--Tres datos en una solo columna-->
                         <span class="input-group-btn">
                             <!--cedula Cliente-->
@@ -34,10 +36,16 @@
 
                     <!--Factura tipo-->
                     <li>
+                        <span >
                         <label>Descripcion:</label>
-                        <input type="text" class="input2" [(ngModel)]="factura.tipo"
+                        <input type="text" class="input2" [(ngModel)]="factura.tipo" name="descripcion"
                             [ngModelOptions]="{standalone:true}" required>
+                        <label class="mr-5">Fecha:</label>
+                        <input type="date" [(ngModel)]="factura.fecha" [ngModelOptions]="{standalone:true}" name="fecha" onkeydown="return false" min="2021-01-01"
+                            max="2030-12-30">
+                        </span>
                     </li>
+
                     <!--Dato de prueba-->
 
                     <hr class="mt-2">
@@ -83,8 +91,8 @@
                             </li>
                             <!--Iva-->
                             <li>
-                                <label>iva:</label>
-                                <input type="text" class="input2" required value="12%" readonly>
+                                <label>I.V.A. 12%:</label>
+                                <input type="text" class="input2" required [(ngModel)]="iva" name="iva" readonly>
                             </li>
                             <!--Total-->
                             <li>
@@ -107,10 +115,11 @@
     </form>
     <!--botones-->
     <div>
-        <button type="button" style="margin-left: 22px" class="btn btn-warning mt-5 mb-2" (click)="sumar()">Sumar</button>
+        <button type="button" style="margin-left: 22px" class="btn btn-warning mt-5 mb-2"
+            (click)="sumar()">Sumar</button>
     </div>
     <div>
-        
+
         <button class="btn btn-danger  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
     </div>
 </div>

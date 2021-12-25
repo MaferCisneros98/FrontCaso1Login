@@ -46,9 +46,9 @@ export class VerificacionDocumentosComponent implements OnInit {
     this.router.navigate(["informe-rechazo"]);
 
   }
-  verAceptacion(facturaCabecera:FacturaCabecera):void{
-    console.log('Dato enviado--> ' + facturaCabecera.id_factura);
-    localStorage.setItem("idFactura", facturaCabecera.id_factura.toString());
+  verAceptacion(reclamo:Reclamo):void{
+    console.log('Dato enviado--> ' + reclamo.id_reclamo);
+    localStorage.setItem("idFactura", reclamo.id_reclamo.toString());
     this.router.navigate(["comercializadora-aceptacion"]);
 
   }

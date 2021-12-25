@@ -29,11 +29,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor= "let item of garantias">
-            <td>{{item.id_garantia}}</td>
-            <td>{{item.cliente.id_cliente}}</td>
+          <tr *ngFor= "let item of solicitudgarantias">
+            <td>{{item.id_solicitudgarantia}}</td>
+            <!--<td>{{item.cliente.id_cliente}}</td>
             <td>{{item.motivo}}</td>
-            <td>{{item.cliente.nombre}}</td>
+            <td>{{item.cliente.nombre}}</td>-->
             <td><button (click)="CargarDatos(item)" type="button" class="btn btn-dark">Generar Reclamo</button></td>
           </tr>
          
