@@ -18,13 +18,14 @@ export class VerificacionDocumentosComponent implements OnInit {
 
 
   factura:FacturaCabecera = new FacturaCabecera();
-  reclamo: Reclamo = new Reclamo();
+  reclamos: Reclamo[]=[];
   
   constructor(
     private facturaService: FacturaService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
-    private reclamosService: ReclamosService,
+    
+    private reclamoService: ReclamosService,
     private router: Router
     ) { }
 
@@ -32,7 +33,7 @@ export class VerificacionDocumentosComponent implements OnInit {
   
   ngOnInit() {
     //this.cagar();
-    this. cagarReclamo();
+    this.cargarReclamo();
   }
   ver(facturaCabecera:FacturaCabecera):void{
     console.log('Dato enviado--> ' + facturaCabecera.id_factura);
@@ -40,9 +41,9 @@ export class VerificacionDocumentosComponent implements OnInit {
     this.router.navigate(["verificacion"]);
 
   }
-  verRechazo(facturaCabecera:FacturaCabecera):void{
-    console.log('Dato enviado--> ' + facturaCabecera.id_factura);
-    localStorage.setItem("idFactura", facturaCabecera.id_factura.toString());
+  verRechazo(reclamo:Reclamo):void{
+    console.log('Dato enviado--> ' + reclamo.id_reclamo);
+    localStorage.setItem("idFactura", reclamo.id_reclamo.toString());
     this.router.navigate(["informe-rechazo"]);
 
   }
@@ -65,9 +66,9 @@ export class VerificacionDocumentosComponent implements OnInit {
       
     })
   }*/
-
+/*
   cagarReclamo(){
-    console.log('Ingresa a llamar cargar');
+    console.log('Ingresa a llamar cargar Reclamo');
     let id=localStorage.getItem("idReclamo");
     console.log('Id... >' + id);
     const that = this;
@@ -78,9 +79,24 @@ export class VerificacionDocumentosComponent implements OnInit {
       that.reclamo=data;
       
     })
-  }
+  }*/
 
-  
+  cargarReclamo(): void {
+    this.reclamoService.getAllReclamos().subscribe(
+      data => {
+        this.reclamos = data;
+      },
+      err => {
+        console.log(" error"+err);
+      }
+    );
+  }
+  verReclamo(reclamos:Reclamo):void{
+    console.log('Dato enviado--> ' + reclamos.id_reclamo);
+    localStorage.setItem("idReclamos", reclamos.id_garantia.toString());
+    this.router.navigate(["verificacion"]);
+
+  }
 
   onUpdate(): void {
    

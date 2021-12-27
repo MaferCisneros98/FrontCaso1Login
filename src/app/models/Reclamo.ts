@@ -1,4 +1,5 @@
 import { Cliente } from "./Cliente";
+import { Vehiculo } from "./Vehiculo";
 
 export class Reclamo{
     id_reclamo:number;
@@ -11,4 +12,5 @@ export class Reclamo{
     marca:number;
     modelo:number;
     cliente:Cliente;
+    vehiculo: Vehiculo;
 }

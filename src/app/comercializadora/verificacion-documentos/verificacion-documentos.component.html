@@ -8,9 +8,13 @@
         <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i
                 class="fas fa-chevron-circle-left"></i> Regresar</a>
     </div>
-    <div class="container" *ngIf="factura">
+    <div class="container" *ngFor="let reclamo of reclamos">
         <div class="container">
             <div class="row">
+                  <!--Motivo-->
+                  <th for="name" class="mr-5">Motivo de la Garantia:</th>
+                  <textarea type="text" class="form-control" name="tipo" [(ngModel)]="reclamo.motivo" rows="2"
+                      required></textarea>
                 <div class="col-sm-5 col-md-6">
                     <h2 align="center">Factura</h2>
                     <div class="underline"></div>
@@ -21,32 +25,31 @@
                     <!--Cedula-->
                     <th for="name">Cédula: </th>
                     <input type="text" id="name1" name="cedula" class="form-control"
-                        [(ngModel)]="factura.cliente.cedula" placeholder="" required>
+                        [(ngModel)]="reclamo.cliente.cedula" placeholder="" required>
                     <!--Nombre-->
                     <th for="name">Nombre: </th>
                     <input type="text" id="name2" name="nombre" class="form-control"
-                        [(ngModel)]="factura.cliente.nombre" placeholder="" required>
-                    <!--Cedula-->
-                    <th for="name" class="mr-5">Descripcion:</th>
-                    <textarea type="text" class="form-control" name="tipo" [(ngModel)]="factura.tipo" rows="2"
-                        required></textarea>
+                        [(ngModel)]="reclamo.cliente.nombre" placeholder="" required>
+                        <!--Placa-->
+                    <th for="name">Placa: </th>
+                    <input type="text" id="name4" name="placa" [(ngModel)]="reclamo.placa" class="form-control" placeholder="" required>
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                     <h2 align="center">Garantia</h2>
                     <div class="underline"></div>
                     <!--Número de Chasis-->
                     <th for="name">Número de Chasis: </th>
-                    <input type="text" id="name3" name="factura.vehiculo.numero_chasis" class="form-control"
+                    <input type="text" id="name3" name="numero_chasis" [(ngModel)]="reclamo.numero_chasis"  class="form-control"
                         placeholder="" required>
                     <!--Número de Motor-->
                     <th for="name">Número de Motor: </th>
-                    <input type="text" id="name4" name="factura.fecha" class="form-control" placeholder="" required>
+                    <input type="text" id="name4" name="numero_motor" [(ngModel)]="reclamo.placa" class="form-control" placeholder="" required>
                     <!--Año Fabricacion-->
                     <th for="name">Año de fabicación: </th>
-                    <input type="text" id="name5" name="factura.fecha" class="form-control" placeholder="" required>
+                    <input type="text" id="name5" name="anio_fabricacion" [(ngModel)]="reclamo.vehiculo.anio_fabricacion" class="form-control" placeholder="" required>
                     <!--RAMV-->
                     <th for="name">RAMV:</th>
-                    <input type="text" id="name6" name="factura.fecha" class="form-control" placeholder="" required>
+                    <input type="text" id="name6" name="ramv" class="form-control" [(ngModel)]="reclamo.vehiculo.ramv" placeholder="" required>
                 </div>
             </div>
         </div>

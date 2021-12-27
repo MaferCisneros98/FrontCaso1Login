@@ -49,7 +49,7 @@ export class IniciocomercializadoraComponent implements OnInit {
     );
   }
   verReclamo(reclamos:Reclamo):void{
-    console.log('Dato enviado--> ' + reclamos.id_reclamo);
+    console.log('Dato enviado--> ' + reclamos.motivo);
     localStorage.setItem("idReclamos", reclamos.id_reclamo.toString());
     this.router.navigate(["verificacion"]);
 
