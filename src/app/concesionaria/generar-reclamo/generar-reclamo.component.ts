@@ -45,7 +45,7 @@ export class GenerarReclamoComponent implements OnInit {
     //this.Cargar()
     console.log(this.solicitudgarantia)
     this.reclamoForm  = this.fb.group({
-      id_garantia: ['', Validators.required],
+      id_solicitudgarantia: ['', Validators.required],
       id_cliente: ['', Validators.required],
       nombre: ['', Validators.required],
       motivo: ['', Validators.required],
@@ -64,7 +64,7 @@ export class GenerarReclamoComponent implements OnInit {
     this.servicesoli.getGarantiaId(id).subscribe(res=>{
       this.solicitudgarantia=res;
       this.reclamoForm  = this.fb.group({
-        id_garantia: [this.solicitudgarantia.id_solicitudgarantia, Validators.required],
+        id_solicitudgarantia: [this.solicitudgarantia.id_solicitudgarantia, Validators.required],
         id_cliente: [this.solicitudgarantia.cliente.id_cliente, Validators.required],
         nombre: [this.solicitudgarantia.cliente.nombre, Validators.required],
         motivo: [this.solicitudgarantia.motivo, Validators.required],
