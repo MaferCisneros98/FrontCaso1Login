@@ -8,7 +8,7 @@
         <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i
                 class="fas fa-chevron-circle-left"></i> Regresar</a>
     </div>
-    <div class="container" *ngFor="let reclamo of reclamos">
+    <div class="container" *ngIf="reclamo">
         <div class="container">
             <div class="row">
                   <!--Motivo-->
@@ -19,9 +19,7 @@
                     <h2 align="center">Factura</h2>
                     <div class="underline"></div>
                     <!--Fecha-->
-                    <th for="name">Fecha: </th>
-                    <input type="text" id="name" name="fecha" class="form-control" [(ngModel)]="factura.fecha"
-                        placeholder="" required>
+                 
                     <!--Cedula-->
                     <th for="name">Cédula: </th>
                     <input type="text" id="name1" name="cedula" class="form-control"
@@ -39,7 +37,7 @@
                     <div class="underline"></div>
                     <!--Número de Chasis-->
                     <th for="name">Número de Chasis: </th>
-                    <input type="text" id="name3" name="numero_chasis" [(ngModel)]="reclamo.numero_chasis"  class="form-control"
+                    <input type="text" id="name3" name="numero_chasis" [(ngModel)]="reclamo.vehiculo.numero_chasis"  class="form-control"
                         placeholder="" required>
                     <!--Número de Motor-->
                     <th for="name">Número de Motor: </th>
@@ -63,7 +61,7 @@
                 </div>
                 <br><br>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
-                    <button class="btn btn-danger" (click)="verRechazo(factura)"><i class="fas fa-user-times"></i>
+                    <button class="btn btn-danger" (click)="verRechazo(reclamo)"><i class="fas fa-user-times"></i>
                         Denegar</button>
                 </div>
             </div>

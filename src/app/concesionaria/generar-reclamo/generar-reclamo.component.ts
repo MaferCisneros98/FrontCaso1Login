@@ -87,7 +87,8 @@ export class GenerarReclamoComponent implements OnInit {
     })
   }
 
-  guardar(): void{
+  guardar(): void {
+    this.reclamoForm.value.estadoReclamo = 1;
     this.reclamosService.saveReclmamos(this.reclamoForm.value).subscribe(resp =>{
       alert("reclamo guardado");
       this.reclamoForm.reset();

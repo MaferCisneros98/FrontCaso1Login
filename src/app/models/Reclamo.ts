@@ -11,6 +11,7 @@ export class Reclamo{
     numero_chasis:number;
     marca:number;
     modelo:number;
+    estadoReclamo:number;
     cliente:Cliente;
     vehiculo: Vehiculo;
 }

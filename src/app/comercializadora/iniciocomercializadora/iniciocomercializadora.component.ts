@@ -20,7 +20,7 @@ export class IniciocomercializadoraComponent implements OnInit {
   productos: Producto[] = [];
   facturas: FacturaCabecera[] = [];
   factura: FacturaCuerpo[] = [];
-  reclamos: Reclamo[]=[];
+  reclamos: Reclamo[];
   roles: string[];
   isComercializadora = false;
 
@@ -34,23 +34,22 @@ export class IniciocomercializadoraComponent implements OnInit {
   ngOnInit() {
     
     this.cargarReclamo();
-    this.isComercializadora = this.tokenService.comercializadora();
     
   }
 
   cargarReclamo(): void {
-    this.reclamoService.getAllReclamos().subscribe(
+    this.reclamoService.lista().subscribe(
       data => {
         this.reclamos = data;
       },
       err => {
-        console.log(" error"+err);
+        console.log(err);
       }
     );
   }
   verReclamo(reclamos:Reclamo):void{
     console.log('Dato enviado--> ' + reclamos.motivo);
-    localStorage.setItem("idReclamos", reclamos.id_reclamo.toString());
+    localStorage.setItem("idReclamo", reclamos.id_reclamo.toString());
     this.router.navigate(["verificacion"]);
 
   }

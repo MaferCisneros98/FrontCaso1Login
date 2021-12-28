@@ -18,14 +18,14 @@ export class VerificacionDocumentosComponent implements OnInit {
 
 
   factura:FacturaCabecera = new FacturaCabecera();
-  reclamos: Reclamo[]=[];
+  reclamo: Reclamo;
   
   constructor(
     private facturaService: FacturaService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     
-    private reclamoService: ReclamosService,
+    private service: ReclamosService,
     private router: Router
     ) { }
 
@@ -33,7 +33,7 @@ export class VerificacionDocumentosComponent implements OnInit {
   
   ngOnInit() {
     //this.cagar();
-    this.cargarReclamo();
+    this.suscribir();
   }
   ver(facturaCabecera:FacturaCabecera):void{
     console.log('Dato enviado--> ' + facturaCabecera.id_factura);
@@ -81,10 +81,11 @@ export class VerificacionDocumentosComponent implements OnInit {
     })
   }*/
 
-  cargarReclamo(): void {
-    this.reclamoService.getAllReclamos().subscribe(
+  cargarReclamo(idReclamo: number): void {
+    this.service.reclamoById(idReclamo).subscribe(
       data => {
-        this.reclamos = data;
+        console.log('data --> ' + data);
+        this.reclamo = data;
       },
       err => {
         console.log(" error"+err);
@@ -95,7 +96,16 @@ export class VerificacionDocumentosComponent implements OnInit {
     console.log('Dato enviado--> ' + reclamos.id_reclamo);
     localStorage.setItem("idReclamos", reclamos.id_garantia.toString());
     this.router.navigate(["verificacion"]);
+  }
 
+  suscribir():void{
+    console.log('Ingresa a llamar cargar Reclamo');
+    let id=localStorage.getItem("idReclamo");
+    console.log('Id... >' + id);
+    const that = this;
+    
+    this.cargarReclamo(Number(id));
+    
   }
 
   onUpdate(): void {

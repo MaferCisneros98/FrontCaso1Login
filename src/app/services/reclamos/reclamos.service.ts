@@ -21,7 +21,10 @@ export class ReclamosService {
     return this.httpClient.get(this.API_SERVER); 
   }
 
-  public reclamosById(id: number){
+  public reclamoById(id: number){
     return this.httpClient.get<Reclamo>(this.API_SERVER+id);
+  }
+  public lista(): Observable<Reclamo[]> {
+    return this.httpClient.get<Reclamo[]>(this.API_SERVER + 'search');
   }
 }
