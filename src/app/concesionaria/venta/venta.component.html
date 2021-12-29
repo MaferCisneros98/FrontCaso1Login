@@ -67,14 +67,14 @@
                             <!--placa vehiculo-->
                             <li>
                                 <span class="input-group-btn">
-                                    <label>placa:</label>
+                                    <label>Vehiculo modelo:</label>
 
                                     <select [(ngModel)]="producto.placa" name="vehiculo" id="vehiculo"
                                         class="form-control" [ngModelOptions]="{standalone:true}" required
                                         style="margin-left: 120px;">
 
                                         <option *ngFor="let item of vehiculo" [ngValue]="item.placa">
-                                            {{item.placa}} {{item.modelo}} {{item.color}}
+                                            {{item.marca}} {{item.modelo}} {{item.color}}
 
                                         </option>
                                     </select>

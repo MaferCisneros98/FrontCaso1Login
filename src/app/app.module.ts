@@ -52,6 +52,8 @@ import { ListarinformeComponent } from './taller/listarinforme/listarinforme/lis
 import { ListarsolicitudComponent } from './taller/listarsolicitud/listarsolicitud/listarsolicitud.component';
 import { EditarsolicitudComponent } from './taller/editarsolicitud/editarsolicitud/editarsolicitud.component';
 import { EditarinformeComponent } from './taller/editarinforme/editarinforme/editarinforme.component';
+import { BuscarfacturaPipe } from './pipes/buscarfactura/buscarfactura.pipe';
+import { ListaFacturasComponent } from './concesionaria/lista-facturas/lista-facturas.component';
 
 
 @NgModule({
@@ -96,7 +98,9 @@ import { EditarinformeComponent } from './taller/editarinforme/editarinforme/edi
     ListarsolicitudComponent,
     NuevoProductoComponent,
     EditarsolicitudComponent,
-    EditarinformeComponent
+    EditarinformeComponent,
+    BuscarfacturaPipe,
+    ListaFacturasComponent
 
   ],
   imports: [

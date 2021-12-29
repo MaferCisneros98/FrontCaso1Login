@@ -54,6 +54,8 @@ export class GenerarReclamoComponent implements OnInit {
       marca: ['', Validators.required],
       color: ['', Validators.required],
       modelo: ['', Validators.required],
+      fecha_solicitud: ['', Validators.required],
+      fecha_reclamo: ["", Validators.required],
     });
   }
 
@@ -73,7 +75,10 @@ export class GenerarReclamoComponent implements OnInit {
         marca: [this.solicitudgarantia.vehiculo.marca, Validators.required],
         color: [this.solicitudgarantia.vehiculo.color, Validators.required],
         modelo: [this.solicitudgarantia.vehiculo.modelo, Validators.required],
+        fecha_solicitud:[this.solicitudgarantia.fecha_solicitud, Validators.required],
+        fecha_reclamo:["", Validators.required],
       });
+      
       //console.log(res)
       //console.log(this.garantia)
     }

@@ -25,7 +25,9 @@
             <th scope="col">Id_Cliente</th>
             <th scope="col">Motivo </th>
             <th scope="col">Nombre</th>
+            <th scope="col">Fecha Solicitud</th>
             <th scope="col">Reclamos</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -34,6 +36,7 @@
             <td>{{item.cliente.id_cliente}}</td>
             <td>{{item.motivo}}</td>
             <td>{{item.cliente.nombre}}</td>
+            <td>{{item.fecha_solicitud}}</td>
             <td><button (click)="CargarDatos(item)" type="button" class="btn btn-dark">Generar Reclamo</button></td>
           </tr>
          

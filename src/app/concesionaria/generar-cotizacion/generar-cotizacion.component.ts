@@ -31,7 +31,7 @@ export class GenerarCotizacionComponent implements OnInit {
 
   public sendEmail(e: Event) {
     e.preventDefault();
-    emailjs.sendForm("service_0aupzyk","template_ks9yyge", e.target as HTMLFormElement,"user_e0NCMuTaxxOqeRetJkf5j"
+    emailjs.sendForm("service_bj6m0t3","template_52kreyf", e.target as HTMLFormElement,"user_Kfkhy8iG0pw81DDW1sSiZ"
       )
       .then(
         (result: EmailJSResponseStatus) => {
@@ -93,6 +93,4 @@ export class GenerarCotizacionComponent implements OnInit {
   get cedula(){return this.cotizacionForm.get('cedula');}
   get nombre(){return this.cotizacionForm.get('nombre');}
   get apellido(){return this.cotizacionForm.get('apellido');}
-
-
 }

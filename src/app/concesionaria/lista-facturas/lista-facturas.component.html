@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<div class="container mb-5" align="center">
+<h2 class="text-capitalize">&bull; Facturas &bull;</h2>
+</div>
+
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="form-control" name="filterPost" placeholder="Buscar por cedula..."
+                    [(ngModel)]="filterPost">
+            </div>
+        </div>
+    </div>
+</div>
+<p align="right" class="mt-2" style="margin-right: 60px;">
+    <button class="btn btn-default" class="btn btn-success" type="button" (click)="consultar()">Regresar a la lista</button>
+</p>
+<div class="container">
+    <table table class="table table-bordered border-dark mt-3">
+        <thead class="table-secondary">
+            <th scope="col">Cedula</th>
+            <th scope="col">Nombre Cliente</th>
+            <th scope="col">Decripcion</th>
+            <th scope="col">fecha</th>
+            <th scope="col">Datos de compra</th>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let factura of facturas | buscarfactura:filterPost">
+                <th scope="row">{{factura.cliente.cedula}}</th>
+                <th scope="row">{{factura.cliente.nombre}} {{factura.cliente.apellido}}</th>
+                <th scope="row">{{factura.tipo}}</th>
+                <th scope="row">{{factura.fecha | date:'dd/MM/yyyy'}}</th>
+                <th scope="row">
+                    <ul *ngFor="let producto of factura.detalleList">
+                        <li>Producto: Chasis {{producto.vehiculo.numero_chasis}} {{producto.vehiculo.marca}}
+                            {{producto.vehiculo.modelo}} {{producto.vehiculo.color}}</li>
+                        <li>cantidad: {{producto.subtotal}}</li>
+                        <li>subtotal: {{factura.total}}</li>
+                    </ul>
+                </th>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

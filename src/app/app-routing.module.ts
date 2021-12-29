@@ -39,6 +39,7 @@ import { ListarinformeComponent } from './taller/listarinforme/listarinforme/lis
 import { ListarsolicitudComponent } from './taller/listarsolicitud/listarsolicitud/listarsolicitud.component';
 import { EditarsolicitudComponent } from './taller/editarsolicitud/editarsolicitud/editarsolicitud.component';
 import { EditarinformeComponent } from './taller/editarinforme/editarinforme/editarinforme.component';
+import { ListaFacturasComponent } from './concesionaria/lista-facturas/lista-facturas.component';
 
 
 
@@ -83,6 +84,7 @@ const routes: Routes = [
   {path: 'cotizacion', component: GenerarCotizacionComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
   {path: 'lista-cotizaciones', component: ListaCotizacionesComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] }},
   { path: 'reclamos-garantia', component: GenerarReclamoComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] } },
+  {path: 'lista-facturas', component: ListaFacturasComponent, canActivate: [guard], data: { expectedRol: ['concesionaria'] }},
   //taller
   { path: 'informe', component:InformeTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},
   { path: 'solicitud', component:SolicitudTallerComponent , canActivate: [guards], data: { expectedRol: ['taller'] }},

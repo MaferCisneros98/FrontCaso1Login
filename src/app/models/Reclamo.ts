@@ -12,6 +12,7 @@ export class Reclamo{
     marca:number;
     modelo:number;
     estadoReclamo:number;
+    fecha_reclamo:Date;
     cliente:Cliente;
     vehiculo: Vehiculo;
 }

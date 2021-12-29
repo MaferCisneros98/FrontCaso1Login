@@ -3,79 +3,101 @@
 
 <header>Cotizacion</header>
 
-<form id="form" [formGroup]="cotizacionForm" (ngSubmit)="guardar()" class="contact-form"  #f="ngForm" (submit)="sendEmail($event)">
+<form id="form" [formGroup]="cotizacionForm" (ngSubmit)="guardar()" class="contact-form" #f="ngForm"
+    (submit)="sendEmail($event)">
     <div class="underline"></div>
 
     <ul class="mt-5 mu=5">
         <!--Informacion Cliente-->
         <li>
-            <span class="input-group-btn">
-                <label>Cedula:</label>
-                <input class="input2" type="text" formControlName="cedula" minlength=10 maxlength=10>
-                <!--Validaciones cedula-->
-                <div class="alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
-                    <div class="container-error-message" *ngIf="cedula.errors.required">
-                        Cedula requerida
-                    </div>
-                    <div class="container-error-message" *ngIf="cedula.errors.minlength">
-                        Cedula debe tener 10 digitos
-                    </div>
+
+            <label>Cedula:</label>
+            <input class="input2" type="text" formControlName="cedula" minlength=10 maxlength=10>
+            <!--Validaciones cedula-->
+            <div class="alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
+                <div class="container-error-message" *ngIf="cedula.errors.required">
+                    Cedula requerida
                 </div>
-                <label>Nombre:</label>
-                <input id="nombre" name="user_name" class="input2" type="text" formControlName="nombre" pattern="(^[a-zA-Z]+$)" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
-                <!--Validaciones nombre-->
-                <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-                    <div class="container-error-message" *ngIf="nombre.errors.required">
-                        Nombre requerido
-                    </div>
-                    <div class="container-error-message" *ngIf="nombre.errors.minlength">
-                        Nombre debe tener minimo 4 caracteres
-                    </div>
+                <div class="container-error-message" *ngIf="cedula.errors.minlength">
+                    Cedula debe tener 10 digitos
                 </div>
-                <label>Apellido:</label>
-                <input id="apellido" name="apellido" class="input2" type="text" formControlName="apellido" pattern="(^[a-zA-Z]+$)" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
-                <!--Validaciones apellido-->
-                <div class="alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
-                    <div class="container-error-message" *ngIf="apellido.errors.required">
-                        Apellido requerido
-                    </div>
-                    <div class="container-error-message" *ngIf="apellido.errors.minlength">
-                        El apellido debe tener minimo 4 caracteres
-                    </div>
+            </div>
+        </li>
+        <li>
+            <label>Nombre:</label>
+            <input id="nombre" name="user_name" class="input2" type="text" formControlName="nombre"
+                pattern="(^[a-zA-Z]+$)"
+                onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
+            <!--Validaciones nombre-->
+            <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div class="container-error-message" *ngIf="nombre.errors.required">
+                    Nombre requerido
                 </div>
-            </span>
+                <div class="container-error-message" *ngIf="nombre.errors.minlength">
+                    Nombre debe tener minimo 4 caracteres
+                </div>
+            </div>
+        </li>
+        <li>
+            <label>Apellido:</label>
+            <input id="apellido" name="apellido" class="input2" type="text" formControlName="apellido"
+                pattern="(^[a-zA-Z]+$)"
+                onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
+            <!--Validaciones apellido-->
+            <div class="alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                <div class="container-error-message" *ngIf="apellido.errors.required">
+                    Apellido requerido
+                </div>
+                <div class="container-error-message" *ngIf="apellido.errors.minlength">
+                    El apellido debe tener minimo 4 caracteres
+                </div>
+            </div>
+
         </li>
         <!--Factura-->
         <div class="mt-5">
             <h4 align="center">Cotizacion</h4>
         </div>
         <div class="underline"></div>
-        <!--Fecha-->
+        <!--Email-->
         <li class="mt-5">
             <label class="mr-5">Correo:</label>
-            <input name="user_email" type="email" ngModel ngModel [email]="true" formControlName="correo" >
+            <input name="user_email" id="email" type="email" ngModel ngModel [email]="true" formControlName="correo">
+
         </li>
-        <!--Cedula-->
+        <!--Fecha de nacimiento-->
         <li>
             <label class="mr-5">Fecha de Nacimiento:</label>
             <input type="date" formControlName="fecha_nacimiento" onkeydown="return false" min="1980-01-01"
                 max="2002-12-30">
         </li>
-        <!--Nombre-->
+        <!--Placa vehiculo-->
         <li>
             <label class="mr-5">Modelo:</label>
             <!--<input type="text" name="message" formControlName="modelo">-->
-
-            <select  name="message" id="vehiculo" formControlName="vehiculo"
-                class="form-control">
+            <select name="autos" formControlName="vehiculo" class="select2">
 
                 <option *ngFor="let item of vehiculo" [ngValue]="item" selected>
-                    {{item.marca}} {{item.modelo}} {{item.color}} {{item.anio_fabricacion | date:'dd/MM/yyyy'}} 
+                    {{item.placa}}
+                </option>
+            </select>
+        </li>
+        <!--Datos de vehiculo-->
+        <li>
+            <label class="mr-5">Datos de vehiculo:</label>
+            <!--<input type="text" name="message" formControlName="modelo">-->
+
+            <select name="message" value="vehiculo.nombre">
+
+                <option *ngFor="let item of vehiculo" [ngValue]="item.modelo" selected>
+                    {{item.placa}} Marca: {{item.marca}}, Modelo: {{item.modelo}}, Color: {{item.color}}, Año de
+                    fabricacion: {{item.anio_fabricacion | date:'yyyy'}},
 
                     El precio para este vehiculo es de: {{item.precio}}
                 </option>
             </select>
         </li>
+
         <!--Descripcion-->
         <!--
         <li>
@@ -85,7 +107,7 @@
         </li>
         -->
 
-
+        <!--Boton-->
         <p align="right" class="mt-5">
 
             <button class="btn btn-default" class="btn btn-warning" [disabled]="cotizacionForm.invalid"
@@ -96,10 +118,6 @@
         <div class="underline"></div>
 
     </ul>
-
-
-
- 
 
 </form>
 <p align="right" class="mt-5" style="margin-right: 120px;">

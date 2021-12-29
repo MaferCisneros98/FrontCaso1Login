@@ -8,6 +8,7 @@ export class SolicitudGarantia{
     tiempo:number;
     motivo:string;
     numero_chasis:number;
+    fecha_solicitud:Date;
     cliente: Cliente;
     vehiculo: Vehiculo;
 }

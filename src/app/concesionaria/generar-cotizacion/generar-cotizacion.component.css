@@ -84,6 +84,21 @@ select {
   border-color: rgb(65, 65, 65);
   margin-left: 20px;
 }
+
+.select2{
+  padding: 2px;
+  font: 1em sans-serif;
+
+  /* Tamaño uniforme del campo de texto */
+  width: 20%;
+  height: 2%;
+  box-sizing: border-box;
+
+  /* Hacer coincidir los bordes del campo del formulario */
+  border: 1px solid #999;
+  border-color: rgb(65, 65, 65);
+  margin-left: 20px;
+}
 .alert-danger2{
   background: #f8d7da;
   border-color: #f5c6cb ;
