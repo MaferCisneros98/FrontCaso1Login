@@ -38,5 +38,7 @@ export class ClientesService {
     return this.httpClient.get<Cliente>(this.API_SERVER + "xt/"+ cedula);
   }
 
-  
+  public getVehiculos(cedula: string){
+    return this.httpClient.get<Cliente>(this.API_SERVER+'vehiculos/'+cedula);
+  }
 }

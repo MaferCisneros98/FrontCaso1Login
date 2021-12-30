@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Repuestos } from 'src/app/models/repuestos';
 import { RepuestosService } from 'src/app/services/repuestos/repuestos.service';
-
+import { BuscarRepuestosPipe } from 'src/app/pipes/buscar-repuestos.pipe';
 @Component({
   selector: 'app-lista-repuestos',
   templateUrl: './lista-repuestos.component.html',

@@ -4,4 +4,5 @@ export class informeTaller{
     placa: String;
     descripcion: String; 
     total:number
+    
 }

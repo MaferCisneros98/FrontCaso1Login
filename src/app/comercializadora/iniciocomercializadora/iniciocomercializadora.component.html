@@ -3,13 +3,14 @@
     <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
 </div>
 <div class="container">
-  <h1 align="center"><i class="fas fa-users"></i> Clientes</h1>
+  <h1 align="center"><i class="fas fa-users"></i> Reclamo Clientes</h1>
   <table class="table table-bordered border-secondary">
     <thead>
       <tr class="table-secondary">
         <th style="text-align: center" scope="col"> Id</th>
         <th style="text-align: center" scope="col">Nombre Cliente</th>
         <th style="text-align: center" scope="col">Placa</th>
+        <th style="text-align: center" scope="col">Fecha</th>
         <th style="text-align: center" scope="col">Ver</th>
 
       </tr>
@@ -20,6 +21,7 @@
         <td align="center">{{reclamo.id_reclamo}}</td>
         <td align="center">{{reclamo.cliente.nombre}}</td>
         <td align="center">{{reclamo.placa}}</td>
+        <td align="center">{{reclamo.fecha_reclamo}}</td>
       
         <td style="text-align: center">
           <button  class="btn btn-success" (click)="verReclamo(reclamo)"><i class="fas fa-eye"></i> Ver</button></td>

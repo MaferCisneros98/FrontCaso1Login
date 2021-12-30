@@ -31,4 +31,8 @@ export class FacturaService {
   public facturaCuerpoById(id: number){
     return this.httpClient.get<FacturaCabecera>(this.API_SERVER+id);
   }
+  getAllFactura():Observable<any>{
+    return this.httpClient.get(this.API_SERVER); 
+
+  }
 }

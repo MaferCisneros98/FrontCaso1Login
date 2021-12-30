@@ -47,7 +47,10 @@
       <li class="nav-item" *ngIf="isLogged">
         <a class="nav-link" routerLink="/ordenR" *ngIf="iscomercializadora"><i class="fas fa-users-cog"></i> Orden Reparacion</a>
       </li>
-
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/lista-orden" *ngIf="iscomercializadora"><i class="fas fa-list-alt"></i>
+         Listar Ordenes</a>
+      </li>
       <li class="nav-item"  *ngIf="isLogged">
         <a class="nav-link" routerLink="/inicio-comercializadora" *ngIf="iscomercializadora"><i class="fas fa-tasks"></i> Revisión Documentos</a>
       </li>
@@ -59,7 +62,10 @@
       <li class="nav-item" *ngIf="isLogged">
         <a class="nav-link" routerLink="/informecomer" *ngIf="iscomercializadora"><i class="far fa-clipboard"></i> Informe Concesionaria</a>
       </li>
-
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/reparaciones" *ngIf="iscomercializadora"><i class="fas fa-list-alt"></i>
+         Informe Reparaciones</a>
+      </li>
       <!--Taller-->
 
       <li class="nav-item" *ngIf="isLogged">

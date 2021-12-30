@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { Cliente } from 'src/app/models/Cliente';
 import { FormGroup } from '@angular/forms';
+import { Reclamo } from 'src/app/models/Reclamo';
+import { ReclamosService } from 'src/app/services/reclamos/reclamos.service';
 
 @Component({
   selector: 'app-informecomer',
@@ -22,6 +24,7 @@ export class InformecomerComponent implements OnInit {
   clientes: any;
   personaForm:FormGroup
   cliente:Cliente[];
+  
   
   public num1:number;
   public num2:number;
@@ -103,4 +106,5 @@ export class InformecomerComponent implements OnInit {
   showDialog() {
       this.displayBasic = true;
   }
+
 }

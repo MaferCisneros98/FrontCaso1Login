@@ -17,9 +17,9 @@
   <table class="table table-bordered border-black" >
     <thead >
       <tr class="table-secondary ">
-        <th scope="col">Cedula</th>
+        <th scope="col">Id_Informe</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Placa Vehiculo</th>
+        <th scope="col">Placa</th>
         <th scope="col">Descripcion de Informe</th>
         <th scope="col">Total</th> 
         <th scope="col">Edicion</th> 
@@ -29,7 +29,7 @@
     </thead>
   <tbody>
       <tr *ngFor="let item of informes">
-        <td>{{item.id_cliente}}</td>
+        <td>{{item.id_InformeTaller}}</td>
         <td>{{item.nombre}}</td>
         <td>{{item.placa}}</td>
         <td>{{item.descripcion}}</td>
@@ -42,6 +42,7 @@
   
   </table>
   <div class="mt-5 " style="margin-right: 50px; " text-align="right">
+   
     <button class="btn btn-default" class="btn btn-warning" type="button"  label="Ok" routerLink="/informe">Generar Nuevo Informe</button>
   </div>
 </div>

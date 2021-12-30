@@ -1,0 +1,57 @@
+<app-menu></app-menu>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<div class="col-12 text-center mb-5 mt-2">
+    <div style="text-align: center;">
+        <img src="../../../../assets/logotipo.jpeg"  class="img-fluid" width="300" height="300">
+      </div>
+  <h1 > Lista de Ordenes </h1>
+  <form>
+<div class= "form-group">
+  <input type="text" class="form-control" name="filterPost" placeholder="Buscar ." [(ngModel)]="filterPost">
+</div>
+
+
+  </form>
+  <div class="underline">
+  </div>
+
+<p align="right" class="mt-5" style="margin-right: 115px;">
+</p>
+<div class="container">
+  <table class="table table-bordered border-secondary">
+    <thead>
+      <tr class="table-dark">
+     
+        <th scope="col">Cedula</th>
+        <th scope="col">Nombre </th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Placa</th>
+        <th scope="col">Descripcion</th>
+      
+
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tbody>
+      
+        <tr *ngFor="let item of orden ">
+          
+          <td>{{item.cliente.cedula}}</td>
+          <td >{{item.cliente.nombre}}</td>
+          <td >{{item.cliente.apellido}}</td>
+          <td >{{item.vehiculo.placa}}</td>
+          <td>{{item.descripcion}}</td>
+          <td>
+            <button (click)="enviar(item)" class="btn btn-success btn-xs" style="margin-left: 6px;">Enviar</button>
+           
+            
+  
+          </td>
+        </tr>
+    </tbody>
+   
+
+  </table>
+</div>

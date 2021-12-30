@@ -5,8 +5,8 @@
     </div>
     <h1 align="center">Verificación Documentos</h1>
     <div class="col">
-        <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i
-                class="fas fa-chevron-circle-left"></i> Regresar</a>
+        <a href="inicio-comercializadora" class="btn btn-dark" style="margin-block: 20px; margin-trim: 400px;"
+        type="button"><i class="fas fa-chevron-circle-left"></i> Regresar</a>
     </div>
     <div class="container" *ngIf="reclamo">
         <div class="container">
@@ -31,6 +31,9 @@
                         <!--Placa-->
                     <th for="name">Placa: </th>
                     <input type="text" id="name4" name="placa" [(ngModel)]="reclamo.placa" class="form-control" placeholder="" required>
+                    <!--Fecha-->
+                    <th for="name">Fecha: </th>
+                    <input type="text" id="name4" name="fecha_reclamo" [(ngModel)]="reclamo.fecha_reclamo" class="form-control" placeholder="" required>
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                     <h2 align="center">Garantia</h2>

@@ -63,9 +63,12 @@ export class InformeRechazoComponent implements OnInit {
         )
           .then((result: EmailJSResponseStatus) => {
             console.log(result.text);
-            alert('Se guardo correctamente se enviara un mail al cliente');
+            this.toastr.success('Se guardo correctamente se enviara un mail al cliente ' , 'OK', {
+              timeOut: 3000, positionClass: 'toast-top-center'
+            });
           }, (error) => {
             console.log(error.text);
+            
             alert('Se guardo correctamente, pero no se pudo enviar mail al cliente');
           });
   

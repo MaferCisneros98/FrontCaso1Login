@@ -41,7 +41,7 @@ import { InformeTallerComponent } from './taller/informe-taller/informe-taller.c
 import { SolicitudTallerComponent } from './taller/solicitud-taller/solicitud-taller.component';
 import { CreateUsersComponent } from './admin/create-users.component';
 import { OrdenReparacionComponent } from './comercializadora/orden-reparacion/orden-reparacion.component';
-import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
+//import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
 import { ReparacionesEjecutarComponent } from './comercializadora/reparaciones-ejecutar/reparaciones-ejecutar.component';
 import { ListaRepuestosComponent } from './comercializadora/lista-repuestos/lista-repuestos.component';
 import { CrearRepuestosComponent } from './comercializadora/crear-repuestos/crear-repuestos.component';
@@ -54,7 +54,9 @@ import { EditarsolicitudComponent } from './taller/editarsolicitud/editarsolicit
 import { EditarinformeComponent } from './taller/editarinforme/editarinforme/editarinforme.component';
 import { BuscarfacturaPipe } from './pipes/buscarfactura/buscarfactura.pipe';
 import { ListaFacturasComponent } from './concesionaria/lista-facturas/lista-facturas.component';
-
+import { ListarOrdenComponent } from './comercializadora/listar-orden/listar-orden.component';
+import { DespachoComponent } from './comercializadora/despacho/despacho.component';
+//import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,6 @@ import { ListaFacturasComponent } from './concesionaria/lista-facturas/lista-fac
     InformeTallerComponent,
     SolicitudTallerComponent,
     OrdenReparacionComponent,
-    DespachoRepuestosComponent,
     ReparacionesEjecutarComponent,
     ListaRepuestosComponent,
     CrearRepuestosComponent,
@@ -100,7 +101,9 @@ import { ListaFacturasComponent } from './concesionaria/lista-facturas/lista-fac
     EditarsolicitudComponent,
     EditarinformeComponent,
     BuscarfacturaPipe,
-    ListaFacturasComponent
+    ListaFacturasComponent,
+    ListarOrdenComponent,
+    DespachoComponent,
 
   ],
   imports: [

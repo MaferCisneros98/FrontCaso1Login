@@ -25,12 +25,14 @@ export class CrearRepuestosComponent implements OnInit {
 
     });
   }
+ 
+
 
   guardar(): void{
     this.repuestoService.saveRepuestos(this.repuestosForm.value).subscribe(resp =>{
       this.repuestosForm.reset();
-      this.repuestos=this.repuestos.filter(repuesto => resp.id!==repuesto.id);
-      this.repuestos.push(resp);
+   //   this.repuestos=this.repuestos.filter(repuesto => resp.id!==repuesto.id);
+     // this.repuestos.push(resp);
     
     },
     error => {console.error(error)}

@@ -9,10 +9,9 @@
 <form >
     <div class="underline"></div>
     <ul class="mt-5 mu=5">
-
         <div >
             <label>Cedula:</label> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
-            <input type="text" [(ngModel)]="solicitudTaller.id_cliente"   name="id_cliente">
+            <input type="text" [(ngModel)]="solicitudTaller.cedula"  name="cedula">
             
         </div>
         <br>
@@ -20,46 +19,46 @@
         <div >
             <label>Nombre:</label>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            <input type="text" [(ngModel)]="solicitudTaller.nombre"   name="nombre">
+            <input type="text" [(ngModel)]="solicitudTaller.nombre"   name="nombre" >
             
         </div>
         <br>
         <br>
         <div >
             <label>Placa Vehículo:</label> &nbsp;
-            <input type="text input" [(ngModel)]="solicitudTaller.placa"  name="placa">
+            <input type="text " [(ngModel)]="solicitudTaller.placa"  name="placa" >
            
         </div>
       
         <br><br>
         <div >
             <label>Repuestos:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-            <input type="text" [(ngModel)]="solicitudTaller.repuestos"  name="repuestos">
+            <input type="text" [(ngModel)]="solicitudTaller.repuestos"  name="repuestos" >
             
         </div>
       <br><br> 
       <div >
         <label>Cantidad:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
-        <input type="text" [(ngModel)]="solicitudTaller.cantidad"   name="cantidad">
+        <input type="text" [(ngModel)]="solicitudTaller.cantidad"   name="cantidad" >
         
     </div>
     <br>
     <br>
      <div >
         <label>Descripción: </label>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-        <input type="text" [(ngModel)]="solicitudTaller.descripcion"  name="descripcion">
+        <input type="text" [(ngModel)]="solicitudTaller.descripcion"  name="descripcion" >
        
      </div>
   
 
         <p  class="mt-5">
-            <button  (click)="Actualizar(solicitudTaller)" style="float: right" class="btn btn-default" class="btn btn-warning">Editar</button>
+            <button  (click)="Actualizar(solicitudTaller)"  style="float: right" class="btn btn-default" class="btn btn-warning">Editar</button>
         </p>
         
     </ul>
 
 <p  class="mt-5" style="margin-left: 35px;">
-    <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/listarsolicitud" >Regresar a la lista</button>
+    <a routerLink="/listasolicitud" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i class="fas fa-chevron-circle-left"></i> Regresar a la lista</a>
 </p>
 <br>
 </form>

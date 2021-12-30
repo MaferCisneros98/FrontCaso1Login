@@ -1,38 +1,69 @@
 <app-menu></app-menu>
-<div class="container">
-  <div class="row">
+<div style="text-align: center" class="container">
+    <div class="container" style="text-align: center">
+      <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+    </div>
+    <br><br>
+    <div style="text-align: center" class="container">
+      <table class="table table-bordered border-secondary">
+        <thead>
+          <tr class="table-secondary">
+            <th style="text-align: center" scope="col"> Cedula Cliente</th>
+            <th style="text-align: center" scope="col"> Nombre Cliente</th>
+            <th style="text-align: center" scope="col"> Apellido Cliente</th>
+            <th style="text-align: center" scope="col">Placa</th>
+            <th style="text-align: center" scope="col">Garantía %</th>
+            <th style="text-align: center" scope="col">Costo Total</th>
+            <th style="text-align: center" scope="col">Ver</th>
+
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of clientes | filter:filterPost">
+            <td align="center">{{item.cedula}}</td>
+            <td align="center">{{item.nombre}}</td>
+            <td align="center">{{item.apellido}}</td>
+            <td align="center">{{num2}} </td>
+            <td align="center">{{num4}} </td>
+
+          </tr>
+        </tbody>
+      </table>
+      <br><br>
+    </div>
     <div id="htmlData">
-      <div class="container" style="text-align: center">
-        <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
-      </div>
-      <h1 align="center">Informe Comercializadora</h1>
-      <!--calculo-->
-      <div class="container">
-        <div class="card " style="width: 50rem;">
-          <div class="card-body">
-            <div class="container ">
-              <div class="row">
-                <!--costo-->
-                <div class="col-sm-5 col-md-6">
-                  <div class="col">
-                    <label for="name">Reparación: </label>
-                    <input type="number" name="num1" [(ngModel)]="num1" class="form-control" placeholder="Taller" required>
-                  </div>
-                  <!-- Force next columns to break to new line -->
-                  <div class="col">
-                    <label for="name">Costo: </label>
-                    <input type="text" name="num2" [(ngModel)]="num2" class="form-control" placeholder="%" required>
-                  </div>
-                  <br>
-                  <label for="name">Garantía Total: {{num3}}</label>
-                  <br><br>
-                  <label for="name">TOTAL A CANCELAR: {{num4}}</label>
-                  <br><br>
-                  <button class="btn btn-warning  ml-4" (click)="porcentaje()"> Porcentaje</button>
-                  <button class="btn btn-dark  ml-4" (click)="total()"> Total</button>
+    <h1 align="center">Informe Comercializadora</h1>
+    <!--calculo-->
+    <div class="container">
+      <div class="card " style="width: 70rem;">
+        <div style="text-align: center" class="card-body">
+          <div class="container ">
+            <div class="row">
+              <!--costo-->
+              <div style="text-align: center" class="col-sm-5 col-md-6">
+                <div class="col">
+                  <label for="name">Reparación: </label>
+                  <input type="number" name="num1" [(ngModel)]="num1" class="form-control" placeholder="Taller"
+                    required>
                 </div>
-                <!--enviar-->
-                
+                <div class="col">
+                  <label for="name">Costo: </label>
+                  <input type="text" name="num2" [(ngModel)]="num2" class="form-control" placeholder="%" required>
+                </div>
+                <br>
+                <label for="name">Garantía Total: {{num3}}</label>
+                <br><br>
+                <label for="name">TOTAL A CANCELAR: {{num4}}</label>
+                <br><br>
+                <button class="btn btn-warning  ml-4" (click)="porcentaje()"> Porcentaje</button>
+                <button class="btn btn-dark  ml-4" (click)="total()"> Total</button>
+              </div>
+              <!--enviar-->
+
+              
+                <div style="text-align: center" class="col-sm-5 col-md-6">
                   <form class="contact-form" (submit)="sendEmail($event)">
                   <div class="col">
                     <label for="name">Cliente: </label>
@@ -56,53 +87,21 @@ Porcentaje de garantía: {{num2}}
 Valor total a pagar: {{num4}} 
                     </textarea>
                   </div>
-                  <br><br>
-                  <input type="submit" value="Enviar">
-                
-              </form>
-              </div>
+                </form>
+                </div>
+                <br><br>
+                <input type="submit" value="Enviar">
+              
             </div>
           </div>
         </div>
       </div>
-
-      <!--      -->
-
     </div>
   </div>
-</div>
 
-<!--botones-->
-<div>
-  <br><br>
-  <button class="btn btn-danger  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
-</div>
-<br><br>
-<div class="container">
-  <table class="table table-bordered border-secondary">
-    <thead>
-      <tr class="table-secondary">
-        <th style="text-align: center" scope="col"> Cedula Cliente</th>
-        <th style="text-align: center" scope="col"> Nombre Cliente</th>
-        <th style="text-align: center" scope="col"> Apellido Cliente</th>
-        <th style="text-align: center" scope="col">Placa</th>
-        <th style="text-align: center" scope="col">Garantía %</th>
-        <th style="text-align: center" scope="col">Costo Total</th>
-        <th style="text-align: center" scope="col">Ver</th>
-        
-
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let item of clientes | filter:filterPost">
-        <td align="center">{{item.cedula}}</td>
-        <td align="center">{{item.nombre}}</td>
-        <td align="center">{{item.apellido}}</td>
-        <td align="center">{{num2}} </td>
-        <td align="center">{{num4}} </td>
-  
-      </tr>
-    </tbody>
-  </table>
+  <!--botones-->
+  <div>
+    <br><br>
+    <button class="btn btn-danger  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
+  </div>
 </div>

@@ -7,45 +7,91 @@
   <p class="text-center fs-2" ><b>SOLICITUD DE REPUESTOS</b></p>
   <form class="form-floating" [formGroup]="solicitudForm" (ngSubmit)="guardarSolicitud()" (ngSubmit)="sendEmail($event)">
     <div class="underline"></div>
-    <br><br>
+    <br>
+    <span class="input-group-btn">
+      <label>Buscar Cliente</label>
+      <select formControlName="facturacabecera" name="factura" id="factura"
+          class="form-control" required>
+          <option *ngFor="let item of factura" [ngValue]="item">
+              {{item.id_factura}} {{item.cliente.nombre}} {{item.cliente.apellido}} {{item.cliente.cedula}} {{item.detalleList.placa}}
+          </option>
+      </select>
+    </span>
+<br>
+
     <div>
       <label for="floatingInputValue">Ingrese el correo:</label>
-      <input type="text"  id="floatingInputValue" name= "to_email" formControlName="to_email"  required>
+      <input type="text"  id="floatingInputValue" name= "to_email"   required>
      
     </div>
-    <br><br>
+    <br>
     <div> 
       <label >Cedula:</label>
       &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
-    <input type="text"  id="floatingInputValue" formControlName="id_cliente" name="id_cliente" required>
-   
+    <input type="text"  id="floatingInputValue" formControlName="cedula"  name="cedula"  minlength=10 maxlength=10>
+    <div class="alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
+      <div class="container-error-message" *ngIf="cedula.errors.required">
+          Cedula requerida
+      </div>
+      <div class="container-error-message" *ngIf="cedula.errors.minlength">
+          Cedula debe tener 10 digitos
+      </div>
   </div>
-  <br><br>
+  </div>
+ 
+  <br>
   <div> 
     <label >Nombre:</label>
     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-  <input type="text"  id="floatingInputValue" formControlName="nombre" name="nombre" required>
- 
+  <input type="text"  id="floatingInputValue" formControlName="nombre" name="nombre" pattern="(^[a-zA-Z]+$)">
+  <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+    <div class="container-error-message" *ngIf="nombre.errors.required">
+        Nombre requerido
+    </div>
+    <div class="container-error-message" *ngIf="nombre.errors.minlength">
+        Nombre debe tener minimo 4 caracteres
+    </div>
 </div>
-  <br><br>
+</div>
+
+  <br>
   <div >
     <label>Placa Vehículo:</label> &nbsp;&nbsp;
-    <input type="text"  id="floatingInputValue"  formControlName="placa" name="placa" required>
-   
+    <input type="text"  id="floatingInputValue" formControlName="placa"  name="placa" pattern="[A-Z]{3}[-]\d{3}">
+    <div class="alert-danger" *ngIf="placa.invalid && (placa.dirty || placa.touched)">
+      <div class="container-error-message" *ngIf="placa.errors.required">
+          Placa requerida
+      </div>
+     
   </div>
-    <br><br>
+  </div>
+    <br>
 
   <div class="input-group">
     <div class="input-group-prepend">
       <label>Ingrese los <br>repuestos<br> a solicitar</label> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp; 
     </div>
-    <textarea  class="form-control input"  aria-label="With textarea" formControlName="repuestos" name= "repuestos" required></textarea>
+    <textarea  class="form-control input"  aria-label="With textarea" formControlName="repuestos" name= "repuestos" pattern="(^[a-zA-Z]+$)"></textarea>
+    <div class="alert-danger" *ngIf="repuestos.invalid && (repuestos.dirty || repuestos.touched)">
+      <div class="container-error-message" *ngIf="repuestos.errors.required">
+          Repuestos requerido
+      </div>
+     
+  </div>
   </div>
   <br><br>
   <div >
     <label>Cantidad:</label> 
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <input type="text"  id="floatingInputValue"  formControlName="cantidad" name="cantidad" required>
+    <input type="text"  id="floatingInputValue"  formControlName="cantidad" name="cantidad" minlength=1 maxlength=2>
+    <div class="alert-danger" *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched)">
+      <div class="container-error-message" *ngIf="cantidad.errors.required">
+          Cantidad requerida
+      </div>
+      <div class="container-error-message" *ngIf="cantidad.errors.minlength">
+         Cantidad debe tener min 1 dígito
+      </div>
+  </div>
   </div>
     <br><br>
 
@@ -53,12 +99,23 @@
     <div class="input-group-prepend">
       <label>Descripción</label> &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;&nbsp; 
     </div>
-    <textarea  class="form-control input"  aria-label="With textarea" id="floatingInputValue"placeholder="Ingrese una nota, caso contrario ingrese SN" value="Ingrese una nota, caso contrario ingrese SN" name="message" formControlName="descripcion"></textarea>
+    <textarea  class="form-control input"  aria-label="With textarea" id="floatingInputValue" placeholder="Ingrese una nota, caso contrario ingrese SN" value="Ingrese una nota, caso contrario ingrese SN" name="message" formControlName="descripcion" pattern="(^[a-zA-Z]+$)"></textarea>
+    <div class="alert-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+      <div class="container-error-message" *ngIf="descripcion.errors.required">
+          Descripcion requerida
+      </div>
+      <div class="container-error-message" *ngIf="descripcion.errors.minlength">
+          Descripcion debe tener minimo 2 caracteres
+      </div>
+  </div>
   </div>
   <br><br>
-  <div class="col text-center">
-    <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/">Regresar</button>
-    <button class="btn btn-default btn btn-warning input" style="float:right" type="submit">Enviar</button>
-  </div>
-  <br>
+  <div>
+    <p>
+      <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i
+        class="fas fa-chevron-circle-left"></i> Regresar</a>
+  
+    <button  class="btn btn-default btn btn-warning input2" style="float:right" type="submit">Enviar</button>
+ </p></div>
+ <br>
 </form>

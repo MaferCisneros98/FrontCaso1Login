@@ -6,57 +6,104 @@
 <br>
 <form class="form-floating" [formGroup]="informeForm" (ngSubmit)="guardar()" (ngSubmit)="sendEmail($event)">
   <div class="underline"></div>
-  <div >
+<br>
+  <div>
+    <br>
+    <span class="input-group-btn">
+      <label>Buscar Orden</label>
+      <select formControlName="facturacabecera" name="facturacabecera" id="facturacabecera" 
+      class="form-control"
+         required>
+        <option *ngFor="let item of facturacabecera" [ngValue]="item">
+          {{item.id_factura}} {{item.cliente.nombre}} {{item.cliente.apellido}} {{item.cliente.cedula}}
+        </option>
+      </select>
+    </span>
+    <br>
     <br><br>
     <label>Ingrese el correo:</label>
-  <input type="text"   name= "to_email" formControlName="to_email">
- 
-</div>
-<br><br>
-<div  >
-  <label >Cedula:</label>
-  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
-  <input type="text"   name= "id_cliente" formControlName="id_cliente">
-  
-</div>
-<br><br>
-<div  >
-  <label >Nombre:</label>
-  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-  <input type="text"    name= "nombre" formControlName="nombre">
-  
-</div>
-<br><br>
-<div  >
-  <label>Placa Vehículo:</label> &nbsp;&nbsp;
-  <input type="text"  name="placa"  formControlName="placa" >
-  
-</div>
-  <br><br>
- 
-    <div class="input-group">
-        <div class="input-group-prepend">
-          <label >Materiales <br> utilizados <br> y mano de <br>obra</label>
-           &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp; 
-        </div>
+    <input type="text" name="to_email">
 
-        <textarea class="form-control input"  name="message" aria-label="With textarea"  formControlName="descripcion"></textarea>
-      </div>   
-       <br><br>
-       <div  >
-        <label>Total:</label> 
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        <input type="text"  name="total"  formControlName="total" >
-        
+  </div>
+  <br><br>
+  <div>
+    <label>Cedula:</label>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" name="cedula" formControlName="cedula" minlength=10 maxlength=10>
+    <div class="alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
+      <div class="container-error-message" *ngIf="cedula.errors.required">
+          Cedula requerida
+      </div>
+      <div class="container-error-message" *ngIf="cedula.errors.minlength">
+          Cedula debe tener 10 digitos
+      </div>
+  </div>
+  </div>
+  <br><br>
+  <div>
+    <label>Nombre:</label>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" name="nombre" formControlName="nombre" pattern="(^[a-zA-Z]+$)">
+    <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+      <div class="container-error-message" *ngIf="nombre.errors.required">
+          Nombre requerido
+      </div>
+      <div class="container-error-message" *ngIf="nombre.errors.minlength">
+          Nombre debe tener minimo 4 caracteres
+      </div>
+  </div>
+  </div>
+  <br><br>
+  <div>
+    <label>Placa Vehículo:</label> &nbsp;&nbsp;
+    <input type="text" name="placa" formControlName="placa" pattern="[A-Z]{3}[-]\d{3}">
+    <div class="alert-danger" *ngIf="placa.invalid && (placa.dirty || placa.touched)">
+      <div class="container-error-message" *ngIf="placa.errors.required">
+          Placa requerida
       </div>
      
- <div>
-    <p  >
-      <button class="btn btn-default" class="btn btn-dark" style="float: left" routerLink="/">Regresar</button>
-  
-  
-    <button  class="btn btn-default btn btn-warning input2" style="float:right" type="submit">Enviar</button>
- </p></div>
-<br><br>
-</form>
+  </div>
+  </div>
+  <br><br>
 
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <label>Materiales <br> utilizados <br> y mano de <br>obra</label>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+    </div>
+    <textarea class="form-control input" name="message" formControlName="descripcion" pattern="(^[a-zA-Z]+$)"></textarea>
+    <div class="alert-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+      <div class="container-error-message" *ngIf="descripcion.errors.required">
+          Descripcion requerida
+      </div>
+      <div class="container-error-message" *ngIf="descripcion.errors.minlength">
+          Descripcion debe tener minimo 2 caracteres
+      </div>
+  </div>
+  </div>
+  <br><br>
+  <div>
+    <label>Total:</label>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+    <input type="text" name="total" formControlName="total" minlength=1 maxlength=4>
+    <div class="alert-danger" *ngIf="total.invalid && (total.dirty || total.touched)">
+      <div class="container-error-message" *ngIf="total.errors.required">
+          Total requerido
+              </div>
+      <div class="container-error-message" *ngIf="total.errors.minlength">
+        Total debe tener min 1 dígito
+      </div>
+  </div>
+  </div>
+
+  <div>
+    <p>
+      <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i
+          class="fas fa-chevron-circle-left"></i> Regresar</a>
+
+
+      <button class="btn btn-default btn btn-warning input2" style="float:right" type="submit">Enviar</button>
+    </p>
+  </div>
+  <br><br>
+</form>
