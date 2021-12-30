@@ -26,11 +26,11 @@
                   </div>
                   <div class="col">
                     <label for="name">Cliente: </label>
-                    <input type="text" name="user_name" class="form-control" placeholder="Cliente" required>
+                    <input type="text" name="nombre" class="form-control"[(ngModel)]="informe.nombre" placeholder="Cliente" required>
                   </div>
                   <div class="col">
                     <label for="name">Placa: </label>
-                    <input type="email" name="user_email" class="form-control" placeholder="Placa" required>
+                    <input type="email" name="palca" [(ngModel)]="informe.placa"class="form-control" placeholder="Placa" required>
                   </div>
                   <div class="col">
                     <label>Correo Cliente</label>
@@ -55,7 +55,7 @@ Valor total a pagar: {{num4}}
               <div style="text-align: center" class="col-sm-5 col-md-6">
                 <div class="col">
                   <label for="name">Reparación: </label>
-                  <input type="number" name="num1" [(ngModel)]="num1" class="form-control" placeholder="Taller"
+                  <input type="number" name="num1" [(ngModel)]="informe.total" class="form-control" placeholder="Taller"
                     required>
                 </div>
                 <div class="col">

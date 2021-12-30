@@ -132,7 +132,7 @@ export class InicioinformeconcesionariaComponent implements OnInit {
 
   suscribir(): void {
     console.log('Ingresa a llamar cargar Orden Informe');
-    let id = localStorage.getItem("idOrden");
+    let id = localStorage.getItem("idInformeTaller");
     console.log('Id... >' + id);
     const that = this;
     this.cargarInformeOrden(Number(id));
