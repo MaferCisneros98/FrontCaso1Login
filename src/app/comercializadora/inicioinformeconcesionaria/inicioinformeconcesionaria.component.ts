@@ -39,10 +39,10 @@ export class InicioinformeconcesionariaComponent implements OnInit {
 
 
   porcentaje() {
-    this.num3 = (this.num1 * this.num2) / 100;
+    this.num3 = (this.informe.total * this.num2) / 100;
   }
   total() {
-    this.num4 = (this.num1 - this.num3);
+    this.num4 = (this.informe.total - this.num3);
   }
 
   
