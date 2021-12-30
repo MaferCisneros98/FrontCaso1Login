@@ -9,11 +9,9 @@
         <thead>
           <tr class="table-secondary">
             <th style="text-align: center" scope="col"> Cedula Cliente</th>
-            <th style="text-align: center" scope="col"> Nombre Cliente</th>
-            <th style="text-align: center" scope="col"> Apellido Cliente</th>
+            <th style="text-align: center" scope="col"> Nombre y Apellido Cliente</th>
             <th style="text-align: center" scope="col">Placa</th>
-            <th style="text-align: center" scope="col">Garantía %</th>
-            <th style="text-align: center" scope="col">Costo Total</th>
+            <th style="text-align: center" scope="col">Costo Taller</th>
             <th style="text-align: center" scope="col">Ver</th>
 
 
@@ -21,87 +19,17 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let item of clientes | filter:filterPost">
-            <td align="center">{{item.cedula}}</td>
-            <td align="center">{{item.nombre}}</td>
-            <td align="center">{{item.apellido}}</td>
-            <td align="center">{{num2}} </td>
-            <td align="center">{{num4}} </td>
+          <tr *ngFor="let taller of informes">
+            <td align="center">{{taller.cedula}}</td>
+            <td align="center">{{taller.nombre}}{{taller.apellido}}</td>
+            <td align="center">{{taller.placa}}</td>
+            <td align="center">{{taller.total}}</td>
+            <td style="text-align: center">
+              <button  class="btn btn-success" (click)="verInformeOrden(taller)"><i class="fas fa-eye"></i> Ver</button></td>
 
           </tr>
         </tbody>
       </table>
       <br><br>
     </div>
-    <div id="htmlData">
-    <h1 align="center">Informe Comercializadora</h1>
-    <!--calculo-->
-    <div class="container">
-      <div class="card " style="width: 70rem;">
-        <div style="text-align: center" class="card-body">
-          <div class="container ">
-            <div class="row">
-              <!--costo-->
-              <div style="text-align: center" class="col-sm-5 col-md-6">
-                <div class="col">
-                  <label for="name">Reparación: </label>
-                  <input type="number" name="num1" [(ngModel)]="num1" class="form-control" placeholder="Taller"
-                    required>
-                </div>
-                <div class="col">
-                  <label for="name">Costo: </label>
-                  <input type="text" name="num2" [(ngModel)]="num2" class="form-control" placeholder="%" required>
-                </div>
-                <br>
-                <label for="name">Garantía Total: {{num3}}</label>
-                <br><br>
-                <label for="name">TOTAL A CANCELAR: {{num4}}</label>
-                <br><br>
-                <button class="btn btn-warning  ml-4" (click)="porcentaje()"> Porcentaje</button>
-                <button class="btn btn-dark  ml-4" (click)="total()"> Total</button>
-              </div>
-              <!--enviar-->
-
-              
-                <div style="text-align: center" class="col-sm-5 col-md-6">
-                  <form class="contact-form" (submit)="sendEmail($event)">
-                  <div class="col">
-                    <label for="name">Cliente: </label>
-                    <input type="text" name="user_name" class="form-control" placeholder="Cliente" required>
-                  </div>
-                  <div class="col">
-                    <label for="name">Placa: </label>
-                    <input type="email" name="user_email" class="form-control" placeholder="Placa" required>
-                  </div>
-                  <div class="col">
-                    <label>Correo Cliente</label>
-                    <input type="text" class="form-control" name="user_email" required>
-                  </div>
-                  <div class="col">
-                    <label>Mensaje</label>
-                    <textarea class="form-control" name="message" rows="4" placeholder=required>
-Nombre Cliente:
-Placa Cliente:  
-Costo de taller: {{num1}} 
-Porcentaje de garantía: {{num2}} 
-Valor total a pagar: {{num4}} 
-                    </textarea>
-                  </div>
-                </form>
-                </div>
-                <br><br>
-                <input type="submit" value="Enviar">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--botones-->
-  <div>
-    <br><br>
-    <button class="btn btn-danger  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
-  </div>
 </div>

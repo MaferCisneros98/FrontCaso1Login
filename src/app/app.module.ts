@@ -56,6 +56,7 @@ import { BuscarfacturaPipe } from './pipes/buscarfactura/buscarfactura.pipe';
 import { ListaFacturasComponent } from './concesionaria/lista-facturas/lista-facturas.component';
 import { ListarOrdenComponent } from './comercializadora/listar-orden/listar-orden.component';
 import { DespachoComponent } from './comercializadora/despacho/despacho.component';
+import { InicioinformeconcesionariaComponent } from './comercializadora/inicioinformeconcesionaria/inicioinformeconcesionaria.component';
 //import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
 
 @NgModule({
@@ -104,6 +105,7 @@ import { DespachoComponent } from './comercializadora/despacho/despacho.componen
     ListaFacturasComponent,
     ListarOrdenComponent,
     DespachoComponent,
+    InicioinformeconcesionariaComponent,
 
   ],
   imports: [
