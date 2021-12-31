@@ -8,6 +8,7 @@ import { FacturaService } from 'src/app/services/factura/factura.service';
 import { FacturaCabecera } from 'src/app/models/FacturaCabecera';
 import { OrdenReparacion } from 'src/app/models/OrdenReparacion';
 import { OrdenReparacionService } from 'src/app/services/ordenReparacion/orden-reparacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-informe-taller',
@@ -21,14 +22,14 @@ export class InformeTallerComponent implements OnInit {
   facturacabecera: FacturaCabecera[];
   orden: OrdenReparacion[];
   nombres:String;
-  router: any;
+  
   constructor(
     public fb: FormBuilder,
     public informeService: InformetallerService,
     public solicitudService: SolicitudtallerService,
     private facturaservice: FacturaService,
-    private ordenservice:OrdenReparacionService
-
+    private ordenservice:OrdenReparacionService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
