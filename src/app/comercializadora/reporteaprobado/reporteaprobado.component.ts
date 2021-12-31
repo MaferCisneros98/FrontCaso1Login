@@ -58,7 +58,7 @@ export class ReporteaprobadoComponent implements OnInit {
   }
 
   cargarReclamoAprobado(): void {
-    this.reclamoService.lista().subscribe(
+    this.reclamoService.listaAprobada().subscribe(
       data => {
         this.reclamos = data;
       },

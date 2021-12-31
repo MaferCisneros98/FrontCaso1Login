@@ -42,7 +42,6 @@ import { EditarinformeComponent } from './taller/editarinforme/editarinforme/edi
 import { ListaFacturasComponent } from './concesionaria/lista-facturas/lista-facturas.component';
 import { ListarOrdenComponent } from './comercializadora/listar-orden/listar-orden.component';
 import { InicioinformeconcesionariaComponent } from './comercializadora/inicioinformeconcesionaria/inicioinformeconcesionaria.component';
-import { ReportesgarantiaestadoComponent } from './comercializadora/reportesgarantiaestado/reportesgarantiaestado.component';
 import { ReporteaprobadoComponent } from './comercializadora/reporteaprobado/reporteaprobado.component';
 import { ReportedenegadoComponent } from './comercializadora/reportedenegado/reportedenegado.component';
 
