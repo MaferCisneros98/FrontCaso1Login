@@ -6,6 +6,7 @@ export class informeTaller{
     descripcion:String; 
     total:number;
     ordenreparacion: OrdenReparacion;
+    costoTotal:number;
 
     
 }

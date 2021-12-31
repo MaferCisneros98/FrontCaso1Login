@@ -66,6 +66,14 @@
         <a class="nav-link" routerLink="/reparaciones" *ngIf="iscomercializadora"><i class="fas fa-list-alt"></i>
          Informe Reparaciones</a>
       </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/reporteaprobado" *ngIf="iscomercializadora"><i class="fas fa-clipboard-check"></i>
+         Reportes Garantias Aceptadas</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/reportedenegado" *ngIf="iscomercializadora"><i class="fas fa-clipboard-check"></i>
+         Reportes Garantias Denegadas</a>
+      </li>
       <!--Taller-->
 
       <li class="nav-item" *ngIf="isLogged">

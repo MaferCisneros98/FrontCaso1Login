@@ -30,4 +30,12 @@ export class ReclamosService {
   public listarPorEstado(estado:number){
     return this.httpClient.get(this.API_SERVER+'tipo/'+estado);
   }
+
+  public listaAprobada(): Observable<Reclamo[]> {
+    return this.httpClient.get<Reclamo[]>(this.API_SERVER + 'searchAprobadas');
+  }
+
+  public listaDenegado(): Observable<Reclamo[]> {
+    return this.httpClient.get<Reclamo[]>(this.API_SERVER + 'searchDenegadas');
+  }
 }

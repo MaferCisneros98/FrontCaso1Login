@@ -1,93 +1,120 @@
 <app-menu></app-menu>
-<div style="text-align: center" class="container">
+
+  <div id="htmlData">
   <div class="container" style="text-align: center">
     <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
   </div>
   <div class="container" *ngIf="informe">
-    <div id="htmlData">
+    
       <h1 align="center">Informe Comercializadora</h1>
       <!--calculo-->
       <div class="container">
+        <div style="text-align: center" class="card-body">
+          <!--enviar-->
+          <div style="text-align: center">
 
-        
-
-          <div style="text-align: center" class="card-body">
-
-            <div class="container ">
-              <div class="row">
-                <!--enviar-->
-
-                <div style="text-align: left" class="col-sm-5 col-md-6">
-
-                  <form class="contact-form" (submit)="sendEmail($event)">
-                    <div class="col">
-                      <th for="name">Cédula: </th>
-                      <input type="text" name="user_name" class="form-control" [(ngModel)]="informe.cedula"
-                        placeholder="Cliente" required>
-                    </div>
-                    <div class="col">
-                      <th for="name">Cliente: </th>
-                      <input type="text" name="nombre" class="form-control" [(ngModel)]="informe.nombre"
-                        placeholder="Cliente" required>
-                    </div>
-                    <div class="col">
-                      <th for="name">Placa: </th>
-                      <input type="email" name="palca" [(ngModel)]="informe.placa" class="form-control"
-                        placeholder="Placa" required>
-                    </div>
-                    <div class="col">
-                      <th>Correo Cliente</th>
-                      <input type="text" class="form-control" name="user_email" required>
-                    </div>
-                    <div class="col">
-                      <th>Mensaje</th>
-                      <textarea class="form-control" name="message" rows="4" placeholder=required>
+            <form class="contact-form" (submit)="sendEmail($event)">
+              <div class="form-group">
+                <div class="form-row">
+              <div class="col">
+                <th for="name">Cédula: </th>
+                <input type="text" name="user_name" class="form-control" [(ngModel)]="informe.cedula"
+                  placeholder="Cliente" required>
+              </div>
+              <div class="col">
+                <th for="name">Cliente: </th>
+                <input type="text" name="nombre" class="form-control" [(ngModel)]="informe.nombre" placeholder="Cliente"
+                  required>
+              </div>
+            
+              <div class="col">
+                <th for="name">Placa: </th>
+                <input type="email" name="palca" [(ngModel)]="informe.placa" class="form-control" placeholder="Placa"
+                  required>
+              </div>
+            
+              <div class="col">
+                <th>Correo Cliente</th>
+                <input type="text" class="form-control" name="user_email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <br><br>
+              <th>Mensaje</th>
+              <textarea class="form-control" name="message" rows="8" placeholder=required>
 Nombre Cliente:{{informe.nombre}}
 Placa Cliente:  {{informe.placa}}
 Costo de taller: {{informe.total}} 
-Porcentaje de garantía: {{num2}} 
+Porcentaje de garantía: {{num2}}
 Valor total a pagar: {{num4}} 
-                              </textarea>
-                    </div>
-                    <div class="col">
-                      <th for="name">Reparación: </th>
-                      <input type="number" name="num1" [(ngModel)]="informe.total" class="form-control"
-                        placeholder="Taller" required>
-                    </div>
-                    <div class="col">
-                      <th for="name">Costo: </th>
-                      <input type="text" name="num2" [(ngModel)]="num2" class="form-control" placeholder="%" required>
-                    </div>
-                    <br><br>
-                    <th for="name">Garantía Total: {{num3}}</th>
-                    <br><br>
-                    <th for="num4">TOTAL A CANCELAR: {{num4}}</th>
-                    <br><br>
-                    <button class="btn btn-warning  ml-4" (click)="porcentaje()"> Porcentaje</button>
-                    <button class="btn btn-dark  ml-4" (click)="total()"> Total</button>
-                    <br><br>
-                    <button (click)="Guardar(informe)" class="btn btn-default" class="btn btn-warning">Guardar</button>
-                  </form>
-                  <br><br>
-                  <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fas fa-share-square"></i> Enviar</button>
-                </div>
-
-                <!--costo-->
-                <div style="text-align: center" class="col-sm-5 col-md-6">
-                  
-
-                </div>
+              </textarea>   
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <th for="name">Reparación: </th>
+                <input type="number" name="num1" [(ngModel)]="informe.total" class="form-control" placeholder="Taller"
+                  required>
+              </div>
+              <div class="col">
+                <th for="name">Costo: </th>
+                <input type="text" name="num2" [(ngModel)]="num2" class="form-control" placeholder="%" required>
               </div>
             </div>
+              <br><br>
+              <th for="name">Garantía Total: {{num3}}</th>
+              <br><br>
+              <th for="num4">TOTAL A CANCELAR: {{num4}}</th>
+              <br><br>
+              <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fas fa-share-square"></i>
+                Enviar</button>
+              <br><br>
+            </div>
+            </form>
+            <div class="form-row">
+            <div style="text-align: center" class="col">
+            <button class="btn  btn-dark " (click)="porcentaje()"> Porcentaje</button>
+          </div> 
+            <div style="text-align: center" class="col">
+            <button class="btn btn-dark " (click)="total()"> Total</button>
+          </div>  
+            
+            <div style="text-align: center" class="col">
+              
+              </div>
+              <div style="text-align: center" class="col">
+                
+              </div>
+              <div style="text-align: center" class="col">
+                
+              </div>
+              <div style="text-align: center" class="col">
+                
+                </div>
+                <div style="text-align: center" class="col">
+                  
+                  </div>
+                  <div style="text-align: center" class="col">
+                    
+                    </div>
           </div>
-        
+          <div style="text-align: center" class="col">
+            <button (click)="Guardar(informe)" class="btn btn-success"><i class="fas fa-save"></i> Guardar </button>
+            </div>
+          
+            
+            <br><br>
+          </div>
+          <!--costo-->
+          <div style="text-align: center" class="col-sm-5 col-md-6">
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
   <!--botones-->
   <div>
     <br><br>
-    <button class="btn btn-danger  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
+    
+    <button style="text-align: center" class="btn btn-dark  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
+  
   </div>
-</div>

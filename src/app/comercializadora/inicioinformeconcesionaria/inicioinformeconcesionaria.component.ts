@@ -139,12 +139,12 @@ export class InicioinformeconcesionariaComponent implements OnInit {
 
   }
   
-  /*Guardar(informe:informeTaller){
+  Guardar(informe:informeTaller){
     this.informeService.UpdateInforme(informe)
     .subscribe(data=>{
       this.informe.costoTotal=this.num4;
       console.log( data);
       alert("Costo guardado");
     })
-  }*/
+  }
 }

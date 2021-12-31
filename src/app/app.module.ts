@@ -57,6 +57,9 @@ import { ListaFacturasComponent } from './concesionaria/lista-facturas/lista-fac
 import { ListarOrdenComponent } from './comercializadora/listar-orden/listar-orden.component';
 import { DespachoComponent } from './comercializadora/despacho/despacho.component';
 import { InicioinformeconcesionariaComponent } from './comercializadora/inicioinformeconcesionaria/inicioinformeconcesionaria.component';
+import { ReportesgarantiaestadoComponent } from './comercializadora/reportesgarantiaestado/reportesgarantiaestado.component';
+import { ReporteaprobadoComponent } from './comercializadora/reporteaprobado/reporteaprobado.component';
+import { ReportedenegadoComponent } from './comercializadora/reportedenegado/reportedenegado.component';
 //import { DespachoRepuestosComponent } from './comercializadora/despacho-repuestos/despacho-repuestos.component';
 
 @NgModule({
@@ -106,6 +109,9 @@ import { InicioinformeconcesionariaComponent } from './comercializadora/inicioin
     ListarOrdenComponent,
     DespachoComponent,
     InicioinformeconcesionariaComponent,
+    ReportesgarantiaestadoComponent,
+    ReporteaprobadoComponent,
+    ReportedenegadoComponent,
 
   ],
   imports: [

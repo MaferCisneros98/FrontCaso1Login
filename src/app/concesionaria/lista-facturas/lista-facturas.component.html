@@ -25,7 +25,6 @@
             <th scope="col">Decripcion</th>
             <th scope="col">fecha</th>
             <th scope="col">Datos de compra</th>
-
         </thead>
         <tbody>
             <tr *ngFor="let factura of facturas | buscarfactura:filterPost">
@@ -37,8 +36,8 @@
                     <ul *ngFor="let producto of factura.detalleList">
                         <li>Producto: Chasis {{producto.vehiculo.numero_chasis}} {{producto.vehiculo.marca}}
                             {{producto.vehiculo.modelo}} {{producto.vehiculo.color}}</li>
-                        <li>cantidad: {{producto.subtotal}}</li>
-                        <li>subtotal: {{factura.total}}</li>
+                        <li>subtotal: ${{producto.subtotal}}</li>
+                        <li>total: ${{factura.total}}</li>
                     </ul>
                 </th>
 

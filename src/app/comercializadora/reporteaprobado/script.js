@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         html2pdf()
             .set({
                 margin: 1,
-                filename: 'InformeConcesionaria.pdf',
+                filename: 'ReporteGarantiaAprobadas.pdf',
                 image: {
                     type: 'jpeg',
                     quality: 0.98
@@ -26,16 +26,3 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(err => console.log(err));
     });
 });
-
-function sendMail(params) {
-    var tempParams ={
-        from_name: document.getElementById("fromName").value,
-        to_name: document.getElementById("toName").value,
-        message: document.getElementById("msg").value
-    };
-
-    emailjs.send('service_kgs1ylm','template_aa0ns5r', tempParams )
-    .then(function(res){
-        console.log("success", res.status);
-    })
-}

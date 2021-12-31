@@ -1,0 +1,40 @@
+<app-menu></app-menu>
+<div id="htmlData">
+<div class="container" style="text-align: center">
+    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+</div>
+<div class="container">
+  <h1 align="center"><i class="fas fa-clipboard-list"></i> Reporte Garantias Denegadas</h1>
+  <table class="table table-bordered border-secondary">
+    <thead>
+      <tr class="table-secondary">
+        <th style="text-align: center" scope="col"> Marca</th>
+        <th style="text-align: center" scope="col">Modelo</th>
+        <th style="text-align: center" scope="col">Año Fabricacion</th>
+        <th style="text-align: center" scope="col">Color</th>
+        
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let reclamo of reclamos">
+        <td align="center">{{reclamo.marca}}</td>
+        <td align="center">{{reclamo.modelo}}</td>
+        <td align="center">{{reclamo.vehiculo.anio_fabricacion}}</td>
+        <td align="center">{{reclamo.vehiculo.color}}</td>
+      
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</div>
+<div>
+  <br><br>
+  
+  <button style="text-align: center" class="btn btn-dark  ml-4" (click)="downloadPDF()"><i class="fas fa-print"></i> Descargar PDF</button>
+
+</div>

@@ -52,10 +52,10 @@ export class InformecomerComponent implements OnInit {
       }
     );
   }
-  /*verInformeOrden(informes:informeTaller):void{
-    console.log('Dato enviado--> ' + informes.id_InformeTaller);
-    localStorage.setItem("idInformeTaller", informes.id_InformeTaller.toString());
+  verInformeOrden(informes:informeTaller):void{
+    console.log('Dato enviado--> ' + informes.id_informetaller);
+    localStorage.setItem("idInformeTaller", informes.id_informetaller.toString());
     this.router.navigate(["inicioinformeconcesionaria"]);
 
-  }*/
+  }
 }
