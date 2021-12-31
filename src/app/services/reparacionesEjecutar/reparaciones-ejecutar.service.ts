@@ -5,11 +5,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ReparacionesEjecutarService {
-  private API_SERVER = "http://localhost:8080/informeC/";
+  private API_SERVER = "http://localhost:8080/informe_c/";
   constructor(private httpClient : HttpClient) { }
+
   public saveInformeC(informe:any):Observable<any>{
-    return this.httpClient.post(this.API_SERVER,informe);
+    return this.httpClient.post(this.API_SERVER+"save",informe);
   }
+
   
-  
+  public getAllReparacionesEjecutar():Observable<any>{
+    return this.httpClient.get(this.API_SERVER); 
+
+  }
 }

@@ -20,10 +20,10 @@ export class InformetallerService {
  public saveInforme(informe:any):Observable<any>{
     return this.httpClient.post(this.API_SERVER,informe);
   }
-  public obtenerInformebyId(id_InformeTaller:number){
-    return this.httpClient.get<informeTaller>(this.API_SERVER+id_InformeTaller);
+  public obtenerInformebyId(id_informetaller:number){
+    return this.httpClient.get<informeTaller>(this.API_SERVER+id_informetaller);
   }
   UpdateInforme(informe:informeTaller){
-    return this.httpClient.put<informeTaller>(this.API_SERVER + informe.id_InformeTaller, informe);
+    return this.httpClient.put<informeTaller>(this.API_SERVER + informe.id_informetaller, informe);
   }
 }

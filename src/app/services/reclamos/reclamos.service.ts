@@ -27,4 +27,7 @@ export class ReclamosService {
   public lista(): Observable<Reclamo[]> {
     return this.httpClient.get<Reclamo[]>(this.API_SERVER + 'search');
   }
+  public listarPorEstado(estado:number){
+    return this.httpClient.get(this.API_SERVER+'tipo/'+estado);
+  }
 }

@@ -60,7 +60,7 @@ export class ComercializadoraAceptacionComponent implements OnInit {
     this.reclamoService.saveReclmamos(this.reclamo).subscribe(resp => {
       console.log("guardado correctamente");
       e.preventDefault();
-      emailjs.sendForm('service_sd6en4k', 'template_1nc74yn', e.target as HTMLFormElement, 'user_IvU8IS2fzIeqIl279WKE5'
+      emailjs.sendForm('service_kgs1ylm','template_aa0ns5r', e.target as HTMLFormElement, 'user_VjTiHaAoi53UW8XWtkmUO'
       )
         .then((result: EmailJSResponseStatus) => {
           console.log(result.text);

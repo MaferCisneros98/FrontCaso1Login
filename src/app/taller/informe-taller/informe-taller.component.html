@@ -10,22 +10,21 @@
   <div>
     <br>
     <span class="input-group-btn">
-      <label>Buscar Orden</label>
-      <select formControlName="facturacabecera" name="facturacabecera" id="facturacabecera" 
-      class="form-control"
-         required>
-        <option *ngFor="let item of facturacabecera" [ngValue]="item">
-          {{item.id_factura}} {{item.cliente.nombre}} {{item.cliente.apellido}} {{item.cliente.cedula}}
-        </option>
+      <label>Buscar Cliente</label>
+      <select (change)="onChange($event)" formControlName="ordenreparacion" name="orden" id="orden"
+          class="form-control" required>
+          <option *ngFor="let or of orden" [ngValue]="or">
+              {{or.cliente.cedula}} 
+          </option>
       </select>
     </span>
     <br>
-    <br><br>
+    <br>
     <label>Ingrese el correo:</label>
     <input type="text" name="to_email">
 
   </div>
-  <br><br>
+  <br>
   <div>
     <label>Cedula:</label>
     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
@@ -39,7 +38,7 @@
       </div>
   </div>
   </div>
-  <br><br>
+  <br>
   <div>
     <label>Nombre:</label>
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -53,7 +52,7 @@
       </div>
   </div>
   </div>
-  <br><br>
+  <br>
   <div>
     <label>Placa Vehículo:</label> &nbsp;&nbsp;
     <input type="text" name="placa" formControlName="placa" pattern="[A-Z]{3}[-]\d{3}">
@@ -64,7 +63,7 @@
      
   </div>
   </div>
-  <br><br>
+  <br>
 
   <div class="input-group">
     <div class="input-group-prepend">
@@ -81,7 +80,7 @@
       </div>
   </div>
   </div>
-  <br><br>
+  <br>
   <div>
     <label>Total:</label>
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
@@ -95,14 +94,10 @@
       </div>
   </div>
   </div>
-
+  <br><br>
   <div>
     <p>
-      <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i
-          class="fas fa-chevron-circle-left"></i> Regresar</a>
-
-
-      <button class="btn btn-default btn btn-warning input2" style="float:right" type="submit">Enviar</button>
+      <button class="btn btn-default btn btn-warning input2" style="float:right  " type="submit">Enviar</button>
     </p>
   </div>
   <br><br>

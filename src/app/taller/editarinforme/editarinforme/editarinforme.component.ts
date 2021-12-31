@@ -32,7 +32,7 @@ export class EditarinformeComponent implements OnInit {
     .subscribe(data=>{
       this.informeTaller=data;
       alert("Informe actualizado");
-      this.router.navigate(["listar"]);
+      this.router.navigate(["listainforme"]);
     })
   }
 

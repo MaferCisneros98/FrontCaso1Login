@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 //correo
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { Cliente } from 'src/app/models/Cliente';
-import { FormGroup } from '@angular/forms';
 import { Reclamo } from 'src/app/models/Reclamo';
 import { ReclamosService } from 'src/app/services/reclamos/reclamos.service';
 import { InformetallerService } from 'src/app/services/informetaller/informetaller.service';
@@ -22,9 +21,8 @@ import { informeTaller } from 'src/app/models/informeTaller';
   styleUrls: ['./inicioinformeconcesionaria.component.css']
 })
 export class InicioinformeconcesionariaComponent implements OnInit {
-
+  
   clientes: any;
-  personaForm: FormGroup;
   informes: informeTaller[];
   cliente: Cliente[];
   informe: informeTaller;
@@ -48,6 +46,7 @@ export class InicioinformeconcesionariaComponent implements OnInit {
   
 
   constructor(private productoService: ProductoService,
+  
     private toastr: ToastrService,
     private tokenService: TokenService,
     public informeService: InformetallerService,
@@ -94,13 +93,14 @@ export class InicioinformeconcesionariaComponent implements OnInit {
   }
   ngOnInit() {
     this.suscribir();
+
   }
 
   displayBasic: boolean = false;
 
   public sendEmail(e: Event) {
     e.preventDefault();
-    emailjs.sendForm('service_sd6en4k', 'template_1nc74yn', e.target as HTMLFormElement, 'user_IvU8IS2fzIeqIl279WKE5'
+    emailjs.sendForm('service_kgs1ylm','template_aa0ns5r', e.target as HTMLFormElement, 'user_VjTiHaAoi53UW8XWtkmUO'
     )
       .then((result: EmailJSResponseStatus) => {
         console.log(result.text);
@@ -124,8 +124,8 @@ export class InicioinformeconcesionariaComponent implements OnInit {
     );
   }
   verInformeOrden(informes: informeTaller): void {
-    console.log('Dato enviado--> ' + informes.id_InformeTaller);
-    localStorage.setItem("idInformeTaller", informes.id_InformeTaller.toString());
+    console.log('Dato enviado--> ' + informes.id_informetaller);
+    localStorage.setItem("idInformeTaller", informes.id_informetaller.toString());
     this.router.navigate(["inicioinformeconcesionaria"]);
 
   }
@@ -138,4 +138,13 @@ export class InicioinformeconcesionariaComponent implements OnInit {
     this.cargarInformeOrden(Number(id));
 
   }
+  
+  /*Guardar(informe:informeTaller){
+    this.informeService.UpdateInforme(informe)
+    .subscribe(data=>{
+      this.informe.costoTotal=this.num4;
+      console.log( data);
+      alert("Costo guardado");
+    })
+  }*/
 }

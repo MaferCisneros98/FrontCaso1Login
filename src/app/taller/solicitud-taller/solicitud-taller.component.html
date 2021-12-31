@@ -10,10 +10,10 @@
     <br>
     <span class="input-group-btn">
       <label>Buscar Cliente</label>
-      <select formControlName="facturacabecera" name="factura" id="factura"
+      <select (change)="onChange($event)" formControlName="ordenreparacion" name="orden" id="orden"
           class="form-control" required>
-          <option *ngFor="let item of factura" [ngValue]="item">
-              {{item.id_factura}} {{item.cliente.nombre}} {{item.cliente.apellido}} {{item.cliente.cedula}} {{item.detalleList.placa}}
+          <option *ngFor="let or of orden" [ngValue]="or">
+              {{or.cliente.cedula}} 
           </option>
       </select>
     </span>
@@ -28,7 +28,7 @@
     <div> 
       <label >Cedula:</label>
       &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
-    <input type="text"  id="floatingInputValue" formControlName="cedula"  name="cedula"  minlength=10 maxlength=10>
+    <input type="text"  id="floatingInputValue"  formControlName="cedula" name="cedula"  minlength=10 maxlength=10>
     <div class="alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
       <div class="container-error-message" *ngIf="cedula.errors.required">
           Cedula requerida
@@ -79,7 +79,7 @@
      
   </div>
   </div>
-  <br><br>
+  <br>
   <div >
     <label>Cantidad:</label> 
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -93,7 +93,7 @@
       </div>
   </div>
   </div>
-    <br><br>
+    <br>
 
   <div class="input-group">
     <div class="input-group-prepend">
@@ -109,12 +109,9 @@
       </div>
   </div>
   </div>
-  <br><br>
+  <br>
   <div>
     <p>
-      <a href="" class="btn btn-dark" style=" margin-block: 20px; margin-top: 40px;" type="button"><i
-        class="fas fa-chevron-circle-left"></i> Regresar</a>
-  
     <button  class="btn btn-default btn btn-warning input2" style="float:right" type="submit">Enviar</button>
  </p></div>
  <br>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Cliente } from 'src/app/models/Cliente';
 import { informeTaller } from 'src/app/models/informeTaller';
 import { InformetallerService } from 'src/app/services/informetaller/informetaller.service';
 
@@ -10,28 +11,22 @@ import { InformetallerService } from 'src/app/services/informetaller/informetall
   styleUrls: ['./listarinforme.component.css']
 })
 export class ListarinformeComponent implements OnInit {
+  informes: informeTaller[];
+  constructor(
+    public informeService: InformetallerService,
+    private router: Router
+  ) { }
 
-  listainformeForm:FormGroup;
-  informes: any;
-  informe:informeTaller[];
-    constructor(
-      public fb :FormBuilder,
-      public informeService: InformetallerService,
-      private router:Router
-    ) { }
-  
-    ngOnInit(): void {
-      
-    this.informeService.obtenerInforme().subscribe(resp=>{
-      this.informes=resp;},
-       error =>{console.error(error)
+  ngOnInit(): void {
+    this.informeService.obtenerInforme().subscribe(resp => {
+      this.informes = resp;    
     });
-    }
-
-    Editar(informe:informeTaller):void{
-      localStorage.setItem("id", informe.id_InformeTaller.toString());
-    this.router.navigate(["editarInforme"]);
-    }
-  
   }
-  
+
+  Editar(informe: informeTaller): void {
+    localStorage.setItem("id", informe.id_informetaller.toString());
+    
+    this.router.navigate(["editarInforme"]);
+  }
+
+}

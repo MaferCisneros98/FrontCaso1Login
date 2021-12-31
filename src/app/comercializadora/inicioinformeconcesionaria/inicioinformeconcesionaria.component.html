@@ -2,78 +2,85 @@
 <div style="text-align: center" class="container">
   <div class="container" style="text-align: center">
     <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
-  </div> 
+  </div>
   <div class="container" *ngIf="informe">
-  <div id="htmlData">
-    <h1 align="center">Informe Comercializadora</h1>
-    <!--calculo-->
-    <div class="container">   
-      
-      <div class="card " style="width: 70rem;">
+    <div id="htmlData">
+      <h1 align="center">Informe Comercializadora</h1>
+      <!--calculo-->
+      <div class="container">
+
         
-        <div style="text-align: center" class="card-body">
-          
-          <div class="container ">
-            <div class="row">
-              <!--enviar-->
-              
-              <div style="text-align: center" class="col-sm-5 col-md-6">
-                
-                <form class="contact-form" (submit)="sendEmail($event)">
-                  <div class="col">
-                    <label for="name">Cédula: </label>
-                    <input type="text" name="user_name" class="form-control" [(ngModel)]="informe.cedula" placeholder="Cliente" required>
-                  </div>
-                  <div class="col">
-                    <label for="name">Cliente: </label>
-                    <input type="text" name="nombre" class="form-control"[(ngModel)]="informe.nombre" placeholder="Cliente" required>
-                  </div>
-                  <div class="col">
-                    <label for="name">Placa: </label>
-                    <input type="email" name="palca" [(ngModel)]="informe.placa"class="form-control" placeholder="Placa" required>
-                  </div>
-                  <div class="col">
-                    <label>Correo Cliente</label>
-                    <input type="text" class="form-control" name="user_email" required>
-                  </div>
-                  <div class="col">
-                    <label>Mensaje</label>
-                    <textarea class="form-control" name="message" rows="4" placeholder=required>
+
+          <div style="text-align: center" class="card-body">
+
+            <div class="container ">
+              <div class="row">
+                <!--enviar-->
+
+                <div style="text-align: left" class="col-sm-5 col-md-6">
+
+                  <form class="contact-form" (submit)="sendEmail($event)">
+                    <div class="col">
+                      <th for="name">Cédula: </th>
+                      <input type="text" name="user_name" class="form-control" [(ngModel)]="informe.cedula"
+                        placeholder="Cliente" required>
+                    </div>
+                    <div class="col">
+                      <th for="name">Cliente: </th>
+                      <input type="text" name="nombre" class="form-control" [(ngModel)]="informe.nombre"
+                        placeholder="Cliente" required>
+                    </div>
+                    <div class="col">
+                      <th for="name">Placa: </th>
+                      <input type="email" name="palca" [(ngModel)]="informe.placa" class="form-control"
+                        placeholder="Placa" required>
+                    </div>
+                    <div class="col">
+                      <th>Correo Cliente</th>
+                      <input type="text" class="form-control" name="user_email" required>
+                    </div>
+                    <div class="col">
+                      <th>Mensaje</th>
+                      <textarea class="form-control" name="message" rows="4" placeholder=required>
 Nombre Cliente:{{informe.nombre}}
 Placa Cliente:  {{informe.placa}}
 Costo de taller: {{informe.total}} 
 Porcentaje de garantía: {{num2}} 
 Valor total a pagar: {{num4}} 
                               </textarea>
-                  </div>
-                </form>
-                <br><br>
-                <input type="submit" value="Enviar">
-              </div>
-              
-              <!--costo-->
-              <div style="text-align: center" class="col-sm-5 col-md-6">
-                <div class="col">
-                  <label for="name">Reparación: </label>
-                  <input type="number" name="num1" [(ngModel)]="informe.total" class="form-control" placeholder="Taller"
-                    required>
+                    </div>
+                    <div class="col">
+                      <th for="name">Reparación: </th>
+                      <input type="number" name="num1" [(ngModel)]="informe.total" class="form-control"
+                        placeholder="Taller" required>
+                    </div>
+                    <div class="col">
+                      <th for="name">Costo: </th>
+                      <input type="text" name="num2" [(ngModel)]="num2" class="form-control" placeholder="%" required>
+                    </div>
+                    <br><br>
+                    <th for="name">Garantía Total: {{num3}}</th>
+                    <br><br>
+                    <th for="num4">TOTAL A CANCELAR: {{num4}}</th>
+                    <br><br>
+                    <button class="btn btn-warning  ml-4" (click)="porcentaje()"> Porcentaje</button>
+                    <button class="btn btn-dark  ml-4" (click)="total()"> Total</button>
+                    <br><br>
+                    <button (click)="Guardar(informe)" class="btn btn-default" class="btn btn-warning">Guardar</button>
+                  </form>
+                  <br><br>
+                  <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fas fa-share-square"></i> Enviar</button>
                 </div>
-                <div class="col">
-                  <label for="name">Costo: </label>
-                  <input type="text" name="num2" [(ngModel)]="num2" class="form-control" placeholder="%" required>
+
+                <!--costo-->
+                <div style="text-align: center" class="col-sm-5 col-md-6">
+                  
+
                 </div>
-                <br>
-                <label for="name">Garantía Total: {{num3}}</label>
-                <br><br>
-                <label for="name">TOTAL A CANCELAR: {{num4}}</label>
-                <br><br>
-                <button class="btn btn-warning  ml-4" (click)="porcentaje()"> Porcentaje</button>
-                <button class="btn btn-dark  ml-4" (click)="total()"> Total</button>
               </div>
             </div>
           </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>

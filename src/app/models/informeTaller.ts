@@ -1,8 +1,11 @@
+import { OrdenReparacion } from "./OrdenReparacion";
+
 export class informeTaller{
-    id_InformeTaller: number;
-    id_cliente: number;
-    placa: String;
-    descripcion: String; 
-    total:number
+
+    id_informetaller:number;
+    descripcion:String; 
+    total:number;
+    ordenreparacion: OrdenReparacion;
+
     
 }

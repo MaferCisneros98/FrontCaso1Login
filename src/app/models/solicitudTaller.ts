@@ -1,9 +1,11 @@
+import { OrdenReparacion } from "./OrdenReparacion";
+
 export class solicitudTaller{
-id_solicitud:number;
-cedula:String;
-nombre:String;
-placa:String;
-repuestos:String;
-cantidad:number;
-descripcion:String;
+
+    id_solicitud:number;
+    cantidad:number;
+    descripcion:String;
+    repuestos:String;
+    ordenreparacion:OrdenReparacion;
+
 }

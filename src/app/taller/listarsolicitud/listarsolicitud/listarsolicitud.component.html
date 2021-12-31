@@ -1,8 +1,8 @@
 <app-menu></app-menu>
 
-  <div class="container" style="text-align: center">
-    <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
-  </div>
+<div class="container" style="text-align: center">
+  <img src="../../../../assets/logotipo.jpeg" class="img-fluid" width="300" height="300">
+</div>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -23,29 +23,26 @@
         <th scope="col">Repuestos</th>
         <th scope="col">Cantidad</th>
         <th scope="col">Descripcion de la Solicitud</th>
-        <th scope="col">Edicion</th> 
+        <th scope="col">Edicion</th>
       </tr>
     </thead>
-  <tbody>
-      <tr *ngFor="let item of solicitudes ">
+    <tbody>
+      <tr *ngFor="let item of solicitudes">
         <td>{{item.id_solicitud}}</td>
-        <td>{{item.nombre}}</td>
-        <td>{{item.placa}}</td>
+        <td>{{item.ordenreparacion.cliente.nombre}} {{item.ordenreparacion.cliente.apellido}}</td>
+        <td>{{item.ordenreparacion.vehiculo.placa}}</td>
         <td>{{item.repuestos}}</td>
         <td>{{item.cantidad}}</td>
         <td>{{item.descripcion}}</td>
-        <td> 
-         
-          <button (click)="Editar(item)" class="btn btn-success btn-xs " > Editar Solicitud</button> 
+        <td>
+          <button (click)="Editar(item)" class="btn btn-success btn-xs">Editar Solicitud</button>
         </td>
-      
       </tr>
-  </tbody>
-  
+    </tbody>
   </table>
+
   <div class="mt-5 " style="margin-right: 50px; " text-align="right">
-    <button  class="btn btn-warning" type="button" routerLink="/solicitud">Generar Nueva Solicitud</button>
-   
+    <button class="btn btn-warning" type="button" routerLink="/solicitud">Generar Nueva Solicitud</button>
   </div>
- 
+
 </div>

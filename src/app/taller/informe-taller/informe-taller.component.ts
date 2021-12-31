@@ -6,6 +6,8 @@ import { SolicitudtallerService } from 'src/app/services/solicitudtaller/solicit
 import { solicitudTaller } from 'src/app/models/solicitudTaller';
 import { FacturaService } from 'src/app/services/factura/factura.service';
 import { FacturaCabecera } from 'src/app/models/FacturaCabecera';
+import { OrdenReparacion } from 'src/app/models/OrdenReparacion';
+import { OrdenReparacionService } from 'src/app/services/ordenReparacion/orden-reparacion.service';
 
 @Component({
   selector: 'app-informe-taller',
@@ -17,11 +19,15 @@ export class InformeTallerComponent implements OnInit {
   informes: any;
   solicitudTaller: solicitudTaller = new solicitudTaller();
   facturacabecera: FacturaCabecera[];
+  orden: OrdenReparacion[];
+  nombres:String;
+  router: any;
   constructor(
     public fb: FormBuilder,
     public informeService: InformetallerService,
     public solicitudService: SolicitudtallerService,
     private facturaservice: FacturaService,
+    private ordenservice:OrdenReparacionService
 
   ) { }
 
@@ -34,20 +40,12 @@ export class InformeTallerComponent implements OnInit {
       placa: ['', Validators.required],
       descripcion: ['', Validators.required],
       total: ['', Validators.required],
-      facturacabecera: ['', Validators.required],
+      ordenreparacion: ['', Validators.required],
+      
 
     });
-    this.obtenerFacturas();
+    this.CargarOrden();
   }
-  recuperarDatos() {
-    let id = localStorage.getItem("id");
-    this.solicitudService.obtenerSolicitudbyId(+id)
-      .subscribe(data => {
-        this.solicitudTaller = data;
-      })
-  }
-
-
 
   guardar(): void {
     this.informeService.saveInforme(this.informeForm.value).subscribe(resp => {
@@ -55,17 +53,16 @@ export class InformeTallerComponent implements OnInit {
 
     },
       error => { console.error(error) }
+      
     )
+    alert("Informe Guardado");
+    this.router.navigate(["listainforme"]);
   }
 
 
-  obtenerFacturas() {
-
-    this.facturaservice.getAllFacturas().subscribe(data => {
-      //  console.log(data.cliente.nombre,"HOLAAAAAAAAA" ) 
-
-      this.facturacabecera = data;
-
+  CargarOrden() {
+    this.ordenservice.getAllOrdenR().subscribe(data => {
+      this.orden = data;
     })
   }
 
@@ -85,6 +82,14 @@ export class InformeTallerComponent implements OnInit {
   showDialog() {
     this.displayBasic = true;
   }
+
+  onChange(event) {
+    this.nombres = this.orden[event.target.options.selectedIndex].cliente.nombre+" "+this.orden[event.target.options.selectedIndex].cliente.apellido
+    this.informeForm.controls['nombre'].setValue(this.nombres);
+    this.informeForm.controls['cedula'].setValue(this.orden[event.target.options.selectedIndex].cliente.cedula);
+    this.informeForm.controls['placa'].setValue(this.orden[event.target.options.selectedIndex].vehiculo.placa);
+  }
+
   get cedula(){return this.informeForm.get('cedula');}
   get nombre(){return this.informeForm.get('nombre');}
   get placa(){return this.informeForm.get('placa');}
