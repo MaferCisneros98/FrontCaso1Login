@@ -100,7 +100,7 @@ export class InicioinformeconcesionariaComponent implements OnInit {
 
   public sendEmail(e: Event) {
     e.preventDefault();
-    emailjs.sendForm('service_kgs1ylm','template_aa0ns5r', e.target as HTMLFormElement, 'user_VjTiHaAoi53UW8XWtkmUO'
+    emailjs.sendForm('service_tli8hyl','template_qbnil5c', e.target as HTMLFormElement, 'user_t6S96GZrp23U5L3TaibHm'
     )
       .then((result: EmailJSResponseStatus) => {
         console.log(result.text);

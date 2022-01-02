@@ -34,7 +34,7 @@ function sendMail(params) {
         message: document.getElementById("msg").value
     };
 
-    emailjs.send('service_kgs1ylm','template_aa0ns5r', tempParams )
+    emailjs.send('service_tli8hyl','template_qbnil5c', tempParams )
     .then(function(res){
         console.log("success", res.status);
     })
